@@ -27,7 +27,7 @@ Futures offer several advantages over trading the underlying asset directly. Fut
     
 -   can be used to hedge price risk
     
--   tend to incur lower transaction fees
+-   tend to incur smaller transaction fees
     
 **Directional trades**
 
