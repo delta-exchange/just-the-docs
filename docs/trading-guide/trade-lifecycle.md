@@ -11,7 +11,7 @@ nav_order: 1
 
 ### Funding exchange wallet
 
-Bitcoin is the currency of transactions on Delta. This means that margins and PnL on Delta are denominated in Bitcoins. Before you are able to trade, you need to fund your exchange wallet with Bitcoins. You can see detail on how to deposit/ withdraw Bitcoins from your Delta wallet on the **Account Details** page.
+Bitcoin is the currency of transactions on Delta Exchange. This means that margins and PnL on Delta are denominated in Bitcoins. Before you are able to trade, you need to fund your exchange wallet with Bitcoins. You can see detail on how to deposit/ withdraw Bitcoins from your Delta wallet on the **Account Details** page.
 
  ### Placing an order
 
