@@ -9,13 +9,15 @@ permalink: /
 
 # Getting Started
 
-  Delta is an exchange for trading of cryptocurrency derivatives. We currently offer Futures contracts on bitcoin (BTC) and ether (ETH). The following features stand us apart from other cryptocurrency exchanges:
+  Delta Exchange is a pltform for trading of cryptocurrency derivatives. We currently offer Futures contracts on bitcoin (BTC), ether (ETH), ripple (XRP) and stellar lumens (XLM). The following features stand us apart from other cryptocurrency exchanges:
 
--   **Leverage:** All derivative contracts traded on Delta have built in leverage of up to $100$x. This means that with say $100 worth of BTC, you can take a position of size $10000.
+-   **Leverage:** All derivative contracts traded on Delta Exchange have built in leverage of up to $100$x. This means that with say 1 BTC, you can take a position of up to 100 BTC.
     
--   **Speculate or manage risk:** Our futures contracts can be used to benefit from both rise or fall in cryptocurrency prices or to hedge price risk.
+-   **Speculate or manage risk:** Our futures contracts can be used to trade both rising markets (by going long) and falling markets (by going short) profitably or to hedge price risk.
     
--   **BTC settlement:** Fiat currencies are not supported on Delta. This means that all the calculations of profit/ loss as well as trade settlement in done in BTC terms.
+-   **Cryptocurrency settlement:** Fiat currencies (e.g. US Dollar) are not supported on Delta. This means that all the calculations of trade profit/ loss as well as trade settlement in done in cryptocurrency terms. Currently we have two types of contracts: 
+(a) bitcoin settled futures contracts: these futures contracts are margined and settled in bitcoin. Hence, to trade these contracts you need to have bitcoins.
+(b) stablecoin settled futures contracts: these futures contract are margined and settled in USDC. USDC is a stablecoin whose value is pegged to the US Dollar. To trade USDC settled futures, you need to have USDC.
     
 Once you have created your account, you need to transfer BTC to your Delta Wallet before your can start trading.
 
