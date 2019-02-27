@@ -17,7 +17,7 @@ permalink: /docs/trading-guide
 
 Bitcoin is the currency of transactions on Delta. This means that margins and PnL on Delta are denominated in Bitcoins. Before you are able to trade, you need to fund your exchange wallet with Bitcoins. You can see detail on how to deposit/ withdraw Bitcoins from your Delta wallet on the **Account Details** page.
 
- ### Placing an order
+### Placing an order
 
 Orders can be placed in Place Order Panel in the trading dashboard. We currently support three types of order:
 
@@ -81,11 +81,13 @@ To understand the computation of Fair_Basis, we first need to introduce the noti
 
  Impact Position, in terms of number is contracts to be traded, is provided in the specifications for each Futures contract. It is easy to see that Impact Price is a function of: (a) Impact Position and (b current state of the order book.
 
+```
 $$Impact\_Bid\_Price = Average \ Fill \ Price \ to \ execute \ a \ typical \ short \ trade$$
 
 $$Impact\_Ask\_Price = Average \ Fill \ Price \  to \  execute \ a \ typical \ long \ trade$$
 
  $$Impact\_Mid\_Price = Average (Impact\_Bid\_Price, Impact\_Ask\_Price)$$
+ ```
 
   
 ### Fair Basis Calculation
