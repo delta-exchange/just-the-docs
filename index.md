@@ -11,7 +11,7 @@ permalink: /
 
  Delta Exchange is a pltform for trading of cryptocurrency derivatives. We currently offer Futures contracts on bitcoin (BTC), ether (ETH), ripple (XRP) and stellar lumens (XLM). The following features stand us apart from other cryptocurrency exchanges:
 
-- **Leverage:** All derivative contracts traded on Delta Exchange have built in leverage of up to $$100x$$. This means that with say 1 BTC, you can take a position of up to 100 BTC.
+- **Leverage:** All derivative contracts traded on Delta Exchange have built in leverage of up to $$100$$x. This means that with say 1 BTC, you can take a position of up to 100 BTC.
     
 - **Speculate or manage risk:** Our futures contracts can be used to trade both rising markets (by going long) and falling markets (by going short) profitably or to hedge price risk.
     
@@ -26,9 +26,7 @@ Once you have created your account, you need to fund your Delta Exhange wallet w
 
 The trading dashboard of Delta Exchange is comprised of multiple panels. These include chart, order book/ recent trades, order submission and open orders & position panels. The functions and uses of these panels are delineated in the picture below.
 
-![trading terminal](https://drive.google.com/file/d/1d3xUt7mWutD6w_4AUg6gDNlkOcxmGQKE/view?usp=sharing)
-
-![an image alt text](images/LandingPage.png "Delta Exchange Trading Terminal")
+![trading terminal](/images/LandingPage.png "Delta Exchange Trading Terminal")
 
 To place a trade, you need to:
 
