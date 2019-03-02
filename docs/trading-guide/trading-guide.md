@@ -120,7 +120,7 @@ If the trade against you, the unrealised loss in your position is adjusted again
 
 - **Position Margin:** Margin allocated to all existing (may include multiple long/ short positions) in given derivatives contract
 
-- **$Order Margin$:** Margin allocated to all open orders in a given derivatives contract
+- **Order Margin:** Margin allocated to all open orders in a given derivatives contract
 
 It is worth noting that Unrealized PnL is not factored into Position Margin or Order Margin.
 
@@ -139,13 +139,13 @@ Everytime a new order is placed, the system does three things:
 ### Reservation Margin Computation
 
 Initial Margin (IM) requirements for a standalone order are as follows:
--   **Buy limit order:** $$IM = (Initial\ Margin\% * \#Contracts * Multiplier * Limit\_Bid\_Price)$$
+-   Buy limit order: $$IM = (Initial\ Margin\% * \#Contracts * Multiplier * Limit\_Bid\_Price)$$
     
--   **Buy market order:** $$IM = (InitialMargin\% * \#Contracts * Multiplier * MarkPrice)$$
+-   Buy market order: $$IM = (InitialMargin\% * \#Contracts * Multiplier * MarkPrice)$$
     
--   **Sell limit order:** $$IM = (InitialMargin\% * \#Contracts * Multiplier * Max (Limit\ Offer\ Price, BestBid)$$
+-   Sell limit order: $$IM = (InitialMargin\% * \#Contracts * Multiplier * Max (Limit\ Offer\ Price, BestBid)$$
     
--   **Sell market order:** $$IM = (InitialMargin\% * \#Contracts * Multiplier * Max (MarkPrice, BestBid)$$
+-   Sell market order: $$IM = (InitialMargin\% * \#Contracts * Multiplier * Max (MarkPrice, BestBid)$$
     
 
  Now, if there are existing positions/ open orders in the contract, then the Initial Margin requirement for the new combination of position and open orderss is recomputed. For this computation, positions or orders on opposite side are netted in such a manner that for two offsetting orders, margin is reserved only once.
@@ -175,13 +175,13 @@ If a position is acquired at multiple entry prices, an average entry price is co
 ## <a id="liquidation"></a>Liquidation
 Each position on Delta has an associated prices:
 
--   Liquidation Price: At Liquidation Price, the difference of Position Margin minus Unrealized PnL of the position is equal to the $Liquidation \ Margin$.
+-   Liquidation Price: At Liquidation Price, the difference of Position Margin minus Unrealized PnL of the position is equal to the Liquidation Margin.
     
 -   Bankruptcy Price: At Bankruptcy Price, the Unrealized Loss of a position equal to the Position Margin.
     
 When Liquidation Price of a position is hit, liquidation of this position is initiated. It is worth noting that since Delta Exchange uses Segregated Margins, liquidation of position in a particular contract has no bearing on other existing positions and open orders on other derivative contracts.
 
-Liquidation mechanism on Delta is comprised of the following steps:
+Liquidation mechanism on Delta Exchange is comprised of the following steps:
 
 -   All open orders on the derivative contract are cancelled. This may or may not free up some margin blocked for these order.
     
@@ -213,14 +213,14 @@ Auto deleveraging (ADL) is initiated if liquidation of a position is doesn’t g
 
 ADL counterparties are selected on the basis of profits (in $$\%$$ terms) of their positions. All open positions are ranked according to their $$Profit\%$$, with the position with the highest $$Profit\%$$ on top. Deleveraging starts from the top position and continues to deleverage the subsequent positions until all the leftover contracts from the Liquidation order which led to ADL are matched.
 
- You can gauge the likelihood of your position being selected as an ADL counterparty using the ADL Indicator. This indicator informs in which quintile your position falls when all open positions in your side (long or short) are sorted by $$Profit\%$$. Obviously, positions in the top (bottom) quintile are most (least likely to get deleveraged.
+ You can gauge the likelihood of your position being selected as an ADL counterparty using the ADL Indicator. This indicator informs in which quintile your position falls when all open positions in your side (long or short) are sorted by $$Profit\%$$. Obviously, positions in the top (bottom) quintile are most (least) likely to get deleveraged.
 
  **ADL Example**
 
-In Dollar-Bitcoin Futures contract, there are 7 longs, and their positions sizes and $Profit\%$ are as follows:
+In Dollar-Bitcoin Futures contract, there are 7 longs, and their positions sizes and $$Profit\%$$ are as follows:
 
 | Account 	| #Contracts 	| Unrealised PnL 	| Profit %Rank 	| Quintile 	|
-|-----------|---------------|-------------------|---------------|-----------|
+|:---------:| :------------:| :---------------:|:--------------:|:---------:|
 |    1    	|     100    	|      -10%      	|       6      	|     1    	|
 |    2    	|     20     	|       20%      	|       1      	|     5    	|
 |    3    	|     50     	|       5%       	|       3      	|     4    	|

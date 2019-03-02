@@ -31,13 +31,11 @@ Futures offer several advantages over trading the underlying asset directly. Fut
     
 **Directional trades**
 
-View on the price of an underlying can be expressed via a Futures contract for it. Going long (buying) futures will generally lead to a profit if the price of the underlying rises. Conversely,
-
-shorting (selling) Futures will generally result in a profit if the price of the underlying declines.
+View on the price of an underlying can be expressed via a Futures contract for it. Going long (buying) futures will generally lead to a profit if the price of the underlying rises. Conversely, shorting (selling) Futures will generally result in a profit if the price of the underlying declines.
 
  **Hedging**
 
-A Futures contract can be used to hedge the price risk of the underlying asset. Let’s say you own 1 BTC (Bitcoin). If you want to lock the current BTC price of $8000, then you can short sell 8000 BTC/ USD Futures (assuming each contract size is 1 USD). Once this hedge is in place, regardless of bitcoin price movement, the effective value of your position will remain constant at $8000.
+A Futures contract can be used to hedge the price risk of the underlying asset. Let’s say you own $$1$$ BTC (Bitcoin). If you want to lock the current BTC price of $$$8000$$, then you can short sell $$8000$$ BTC/ USD Futures (assuming each contract size is $$1$$ USD). Once this hedge is in place, regardless of bitcoin price movement, the effective value of your position will remain constant at $8000.
 
 ## Math for Futures
 
@@ -51,19 +49,19 @@ The math behind Futures is better illustrated with an example. Let’s say, we w
 
 **Multiplier:** This refers to the quantity of the underlying that the two parties trading a single Futures contract agree to buy/ sell in future. If our ETH-BTC Futures contract entails agreement to buy/ sell m Ethers at a future date, then m is the multiplier.
 
-Given above, if you buy (or even sell) *n* ETH-BTC Futures contracts at Fut_EntryPrice, then your overall position size (nominal exposure) is:
+Given above, if you buy (or even sell) $$n$$ ETH-BTC Futures contracts at $$Fut_EntryPrice$$, then your overall position size (nominal exposure) is:
 
 $$n *m* Fut\_EntryPrice \  (in \ BTC)$$
 
-To understand why this the position size consider this: the buyer of the Futures contract has agreed to buy *n*m* Ethers at contract expiry, with each Ether priced at Fut_EntryPrice Bitcoins. Thus, at the time of settlement, he will need to have n*m*Fut_EntryPrice Bitcoins to honor the agreement.
+To understand why this the position size consider this: the buyer of the Futures contract has agreed to buy $$n\*m$$ Ethers at contract expiry, with each Ether priced at $$Fut_EntryPrice Bitcoins$$. Thus, at the time of settlement, he will need to have $$n*m*Fut_EntryPrice$$ Bitcoins to honor the agreement.
 
  However, to be able to enter into a Futures trade, you are not required to have resources equalling the position size. This is where financial leverage kicks in.
 
- **Margin%:** This is the fraction of your position size that you are required to post as collateral when entering into a Futures trade. So, in our example, to buy/ sell *n* contracts, you need to have only:
+ **Margin%:** This is the fraction of your position size that you are required to post as collateral when entering into a Futures trade. So, in our example, to buy/ sell $$n$$ contracts, you need to have only:
 
 $$n*m* Margin\% *  Fut\_EntryPrice \ (in \ BTC)$$
 
-This also means that maximum position size that you can afford is 1/Margin% times the collateral (in BTC) that you have available. Thus,
+This also means that maximum position size that you can afford is $$1/Margin\%$$ times the collateral (in BTC) that you have available. Thus,
 
 $$^1/(Margin\%) = Financial\ leverage$$
 
@@ -78,7 +76,7 @@ $$PnL = n*m*(Fut\_CurrentPrice - Fut\_EntryPrice) \ (in \  BTC)$$
 
 $$PnL = - n*m*(Fut\_CurrentPrice - Fut\_EntryPrice) \ (in\  BTC)$$
 
-  It is worth noting that your (realised or unrealised) profits and losses are adjusted from the margin you post. Profit on a Futures position add to the Margin (collateral). Conversely, loss erodes margin and you might need to top it up to continue holding your position.
+It is worth noting that your (realised or unrealised) profits and losses are adjusted from the margin you post. Profit on a Futures position add to the Margin (collateral). Conversely, loss erodes margin and you might need to top it up to continue holding your position.
 
 **Realised PnL**
 In case of Futures, PnL can be realised either by exiting the position in market or via settlement process at the maturity of the contract
@@ -99,7 +97,7 @@ $$PnL = -n*m*(Fut\_ExitPrice - Fut\_EntryPrice)\  (in \ BTC)$$
 
 $$PnL = -n*m*(Fut\_SettlementPrice - Fut\_EntryPrice) \  (in \  BTC) $$
 
- *Settlement price is determined at the maturity of the contract through a pre-defined method described in the [contract specifications](https://delta.exchange/contracts/) . All open positions at the time of contract maturity are closed at the settlement price.*
+ Settlement price is determined at the maturity of the contract through a pre-defined method described in the [contract specifications](https://delta.exchange/contracts/) . All open positions at the time of contract maturity are closed at the settlement price.
 
 ## Inverse Futures
 
