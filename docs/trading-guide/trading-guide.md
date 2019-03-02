@@ -118,7 +118,7 @@ $$Futures\_Fair\_Price = Underlying\_Index\_Price + Fair\_Basis$$
 
 It is worth noting that only live positions are marked using the Fair Price. Thus, unrealised PnL may swing with the Mark Price, realised PnL is determined using actual traded price and is unimpacted by Mark Price.
 
-## <a id="marginexplain"></a>Margining Explainer
+## <a name="marginexplain"></a>Margining Explainer
 
 Margin is the collateral that you need to post when entering into a leveraged derivatives contract. The amount required to enter into a new position is referred to as Initial Margin, which is dependent on the leverage offered in the derivatives contract.
 
