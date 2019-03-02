@@ -41,7 +41,7 @@ A new order is allowed to be submitted to the exchange only if the trader has su
     
 Details on the various types of margins and their calculations are available [here](#margining-explainer).
 
-Existing positions on Delta are marked at [fair Price](#fpm). This means that your unrealised PnL and hence the current value of margin allocated to a particular position are a function of the marked price. PnL calculations are illustrated with example in the [PnL Math](#pnlmath) section.
+Existing positions on Delta are marked at [fair Price](#fair-price-marking). This means that your unrealised PnL and hence the current value of margin allocated to a particular position are a function of the marked price. PnL calculations are illustrated with example in the [PnL Math](#pnl-math) section.
 
 ### Settlement
 
@@ -172,9 +172,9 @@ Reservation  Margin is then the difference of the Initial Margin requirement for
 
 In a given contract, Order Margin account contains margin blocked for all the current open orders. If one or more of these open orders is cancelled, the Initial Margin requirement for the remaining open orders and existing orders is recomputed. The new Initial Margin requirement will either be same as earlier or lower. If case of latter, excess margin is released.
 
-## <a id="pnlmath"></a>PnL Math
+## PnL Math
 
-All open positions on Delta are marked at the [Fair Price](#fpm) of the Futures contract. Thus, Unrealized PnL and Liquidiation Prices are computed using Fair Prices, while Realized PnL is based on actual entry and exit prices.
+All open positions on Delta are marked at the [Fair Price](#fair-price-marking) of the Futures contract. Thus, Unrealized PnL and Liquidiation Prices are computed using Fair Prices, while Realized PnL is based on actual entry and exit prices.
 
 PnL for a long/ short position in a Vanilla Futures
 
@@ -188,7 +188,7 @@ $$PnL = ± n*m*(1/ Fut\_EntryPrice - 1/ Fut\_CurrentPrice)$$
 
 If a position is acquired at multiple entry prices, an average entry price is computed and used for PnL computation.
 
-## <a id="liquidation"></a>Liquidation
+## Liquidation
 Each position on Delta has an associated prices:
 
 -   Liquidation Price: At Liquidation Price, the difference of Position Margin minus Unrealized PnL of the position is equal to the Liquidation Margin.
@@ -215,11 +215,11 @@ As soon as the Mark prices reaches $$9500$$ or below, your position will enter L
 
 **Case 1:** Liquidation order gets filled at $$9400$$. At this price since your margin is not fully eroded, the remaining margin is released.
 
-**Case 2:** The Liquidation order at gets only partially filled and say 300 contracts are left over. This will trigger [ADL](#autodel). The system will find counterparties on the short side and a trade between you and these counterparties for $$300$$ contracts at $$9200$$  (i.e. the Bankruptcy Price) is made to happen.
+**Case 2:** The Liquidation order at gets only partially filled and say 300 contracts are left over. This will trigger [ADL](#auto-deleveraging). The system will find counterparties on the short side and a trade between you and these counterparties for $$300$$ contracts at $$9200$$  (i.e. the Bankruptcy Price) is made to happen.
 
   
 
-## <a id="autodel"></a>Auto deleveraging
+## Auto deleveraging
 
 Auto deleveraging (ADL) is initiated if liquidation of a position is doesn’t get completed before the Mark  Price reaches the Bankruptcy Price of the position. This means that the Liquidation order (which is an immediate-or-cancel order at Bankruptcy Price) is either completely or partially unfilled. In this situation, the left over contracts from the position under liquidation are forcefully matched (at the Bankruptcy Price) with counterparties on the opposite side.
 
