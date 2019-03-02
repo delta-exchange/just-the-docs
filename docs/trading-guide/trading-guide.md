@@ -90,19 +90,19 @@ To understand the computation of $$Fair\_Basis$$, we first need to introduce the
 
 Impact Position, in terms of number is contracts to be traded, is provided in the specifications for each futures contract. It is easy to see that Impact Price is a function of: (a) Impact Position and (b) current state of the order book.
 
-$$Impact\_Bid\_Price = text{Average fill price to execute a typical short trade$$
+$$Impact\_Bid\_Price = text{Average fill price to execute a typical short trade}$$
 
 $$Impact\_Ask\_Price = Average \ Fill \ Price \  to \  execute \ a \ typical \ long \ trade$$
 
- $$Impact\_Mid\_Price = Average (Impact\_Bid\_Price, Impact\_Ask\_Price)$$
+$$Impact\_Mid\_Price = Average (Impact\_Bid\_Price, Impact\_Ask\_Price)$$
  
 
   
 ### Fair Basis Calculation
 
- We first compute an annualised fair value basis rate, $$\%Fair\_Basis$$:
+We first compute an annualised fair value basis rate, $$\%Fair\_Basis$$:
 
- $$\%Fair\_Basis = (Impact\_Mid\_Price/ Underlying\_Index\_Price - 1) * (365*86400/ time\_to\_expiry\_in\_sec)$$
+$$\%Fair\_Basis = (Impact\_Mid\_Price/ Underlying\_Index\_Price - 1) * (365*86400/ time\_to\_expiry\_in\_sec)$$
 
 $$\%Fair\_Basis$$ is computed only once every minute. Further, in case at any time of update, market is illiquid, i.e. 
 
@@ -147,7 +147,9 @@ Everytime a new order is placed, the system does three things:
 ### Reservation Margin Computation
 
 Initial Margin (IM) requirements for a standalone order are as follows:
--   Buy limit order: $$IM = (Initial\ Margin\% * \#Contracts * Multiplier * Limit\_Bid\_Price)$$
+-   Buy limit order
+
+$$IM = (Initial\ Margin\% * \#Contracts * Multiplier * Limit\_Bid\_Price)$$
     
 -   Buy market order: $$IM = (InitialMargin\% * \#Contracts * Multiplier * MarkPrice)$$
     
