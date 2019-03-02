@@ -90,7 +90,7 @@ To understand the computation of $$Fair\_Basis$$, we first need to introduce the
 
 Impact Position, in terms of number is contracts to be traded, is provided in the specifications for each futures contract. It is easy to see that Impact Price is a function of: (a) Impact Position and (b) current state of the order book.
 
-$$Impact\_Bid\_Price = text{Average fill price to execute a typical short trade}$$
+$$Impact\_Bid\_Price = \text{Average fill price to execute a typical short trade}$$
 
 $$Impact\_Ask\_Price = Average \ Fill \ Price \  to \  execute \ a \ typical \ long \ trade$$
 
@@ -151,14 +151,20 @@ Initial Margin (IM) requirements for a standalone order are as follows:
 
 $$IM = (Initial\ Margin\% * \#Contracts * Multiplier * Limit\_Bid\_Price)$$
     
--   Buy market order: $$IM = (InitialMargin\% * \#Contracts * Multiplier * MarkPrice)$$
+-   Buy market order
+
+$$IM = (InitialMargin\% * \#Contracts * Multiplier * MarkPrice)$$
     
--   Sell limit order: $$IM = (InitialMargin\% * \#Contracts * Multiplier * Max (Limit\ Offer\ Price, BestBid)$$
+-   Sell limit order
+
+$$IM = (InitialMargin\% * \#Contracts * Multiplier * Max (Limit\ Offer\ Price, BestBid)$$
     
--   Sell market order: $$IM = (InitialMargin\% * \#Contracts * Multiplier * Max (MarkPrice, BestBid)$$
+-   Sell market order
+
+$$IM = (InitialMargin\% * \#Contracts * Multiplier * Max (MarkPrice, BestBid)$$
     
 
- Now, if there are existing positions/ open orders in the contract, then the Initial Margin requirement for the new combination of position and open orderss is recomputed. For this computation, positions or orders on opposite side are netted in such a manner that for two offsetting orders, margin is reserved only once.
+Now, if there are existing positions/ open orders in the contract, then the Initial Margin requirement for the new combination of position and open orderss is recomputed. For this computation, positions or orders on opposite side are netted in such a manner that for two offsetting orders, margin is reserved only once.
 
 Reservation  Margin is then the difference of the Initial Margin requirement for the combined position (existing + new order) and the Position Margin and Order Margin currently allocated to the derivative contract.
 
