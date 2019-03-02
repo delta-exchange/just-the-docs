@@ -19,7 +19,7 @@ A derivative is a financial security which derives its value from an underlying 
   
 **Trading Futures vs. the underlying**
 
-Futures offer several advantages over trading the underlying asset directly. Futures .. :
+Futures offer several advantages over trading the underlying asset directly. Futures .. 
 
 -   enable you to benefit from both price increases (long position) as well as declines (short position)
     
@@ -49,11 +49,11 @@ The math behind Futures is better illustrated with an example. Let’s say, we w
 
 **Multiplier:** This refers to the quantity of the underlying that the two parties trading a single Futures contract agree to buy/ sell in future. If our ETH-BTC Futures contract entails agreement to buy/ sell m Ethers at a future date, then m is the multiplier.
 
-Given above, if you buy (or even sell) $$n$$ ETH-BTC Futures contracts at $$Fut_EntryPrice$$, then your overall position size (nominal exposure) is:
+Given above, if you buy (or even sell) $$n$$ ETH-BTC Futures contracts at $$Fut\_EntryPrice$$, then your overall position size (nominal exposure) is:
 
 $$n *m* Fut\_EntryPrice \  (in \ BTC)$$
 
-To understand why this the position size consider this: the buyer of the Futures contract has agreed to buy $$n\*m$$ Ethers at contract expiry, with each Ether priced at $$Fut_EntryPrice Bitcoins$$. Thus, at the time of settlement, he will need to have $$n*m*Fut_EntryPrice$$ Bitcoins to honor the agreement.
+To understand why this the position size consider this: the buyer of the Futures contract has agreed to buy $$n*m$$ Ethers at contract expiry, with each Ether priced at $$Fut\_EntryPrice$$ BTC. Thus, at the time of settlement, he will need to have $$n*m*Fut\_EntryPrice$$ BTC to honor the agreement.
 
  However, to be able to enter into a Futures trade, you are not required to have resources equalling the position size. This is where financial leverage kicks in.
 
@@ -113,11 +113,11 @@ $$PnL = - n*m*(1/ Fut\_EntryPrice - 1/ Fut\_CurrentPrice) \ (in \  BTC)$$
 
 ## Leverage
 
-Leverage has a multiplier effect on your trading returns. This is best illustrated with an example. Let’s say you have $100, and you think BTC price is likely to go up. Currently, 1 BTC = $10,000
+Leverage has a multiplier effect on your trading returns. This is best illustrated with an example. Let’s say you have $$$100$$, and you think BTC price is likely to go up. Currently, $$1$$ BTC = $$$10,000$$
 
-### No Leverage (trade the underlying)
+**No Leverage (trade the underlying)**
 
-Buy 0.01 BTC using your $100. If after a week, BTC rises by 10% to $11,000 , your position in BTC is now worth $110 and your PnL is $10. And, the return on your equity (RoE), $100 in this case is:
+Buy $$0.01$$ BTC using your $$$100$$. If after a week, BTC rises by $$10%$$ to $$$11,000$$ , your position in BTC is now worth $$$110$$ and your PnL is $$$10$$. And, the return on your equity (RoE), $$$100$$ in this case is:
 
   $$RoE_{NoLeverage} = PnL / Equity$$
 
@@ -125,21 +125,22 @@ $$= \$10/\$100 = 10\%$$
 
   
 
-### With Leverage (trade the Futures contract)
+**With Leverage (trade the Futures contract)**
 
-Long USD - BTC Futures contract using $100 as the margin money. Let’s assume that the contract size is 0.01 BTC and Margin% is 10%. This means that $100 as margin is sufficient for 10 contracts.
+Long USD - BTC Futures contract using $100 as the margin money. Let’s assume that the contract size is $$0.01$$ BTC and Margin% is $$10%$$. This means that $100 as margin is sufficient for $$10$$ contracts.
 
  Let’s further assume that the Futures contract price broadly follows BTC price movement. Now, we can approximate the PnL as
 
  $$PnL = 10 * 0.01 * (11000 - 10000) = \$100$$
 
-  So, in this case, we have generated a PnL of $100 with the an equity of $100.
+  So, in this case, we have generated a PnL of $$$100$$ with the an equity of $$$100$$.
 
 $$RoE_{Leverage} = \$100/ \$100 = 100\%$$
 
  It is also easy to see that,
 
 $$RoE_{Leverage} = RoE_{NoLeverage}/ Margin\% $$
-$$= RoE_{NoLeverage} *Financial_{Leverage}$$
 
- Do note that leverage is a double edged sword. Just as it will amplify your profits, it will also have the same multiplier effect on your losses.
+$$= RoE_{NoLeverage}*Financial\_Leverage}$$
+
+Do note that leverage is a double edged sword. Just as it will amplify your profits, it will also have the same multiplier effect on your losses.

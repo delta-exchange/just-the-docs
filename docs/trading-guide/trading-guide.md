@@ -219,7 +219,7 @@ ADL counterparties are selected on the basis of profits (in $$\%$$ terms) of the
 
 In Dollar-Bitcoin Futures contract, there are 7 longs, and their positions sizes and $$Profit\%$$ are as follows:
 
-| Account 	| #Contracts 	| Unrealised PnL 	| Profit %Rank 	| Quintile 	|
+| Account 	| #Contracts 	| Unrealised PnL 	| Profit% Rank 	| Quintile 	|
 |:---------:| :------------:| :---------------:|:--------------:|:---------:|
 |    1    	|     100    	|      -10%      	|       6      	|     1    	|
 |    2    	|     20     	|       20%      	|       1      	|     5    	|
