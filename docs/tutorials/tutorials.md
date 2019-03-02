@@ -139,11 +139,9 @@ $$RoE_{Leverage} = \$100/ \$100 = 100\%$$
 
  It is also easy to see that,
 
- $$
- \begin{align*}
-
+$$
+\begin{align*}
 & RoE_{Leverage} = RoE_{NoLeverage}/ Margin% \\
-
 & = RoE_{NoLeverage}*Financial\_Leverage
 \end{align*}
 $$

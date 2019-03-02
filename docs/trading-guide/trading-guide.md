@@ -70,7 +70,7 @@ It is worth noting that Fair Price marking is relevant only computation of Unrea
 
 ### Calculation of Fair Price of a Futures Contract
 
-At maturity, $$Futures\_Price = Underlying\_Index Price$$, for any futures contract. At all other times, the price of a futures contract broadly moves in tandem with the price of the Underlying Index, with the difference between the two referred to as basis, i.e.
+At maturity, \(Futures\_Price = Underlying\_Index Price\), for any futures contract. At all other times, the price of a futures contract broadly moves in tandem with the price of the Underlying Index, with the difference between the two referred to as basis, i.e.
 
 $$Basis = Futures\_Price - Underlying\_Index\_Price$$
 
@@ -84,7 +84,7 @@ The $$Underlying\_Index\_Price$$ is obviously independent of the trading happeni
 
 To understand the computation of $$Fair\_Basis$$, we first need to introduce the notion of Impact Price. This price tries to estimate the price at which a typical long or short position (called Impact Position) in the futures contract can be entered at any given time.
 
-Impact Position, in terms of number is contracts to be traded, is provided in the specifications for each futures contract. It is easy to see that Impact Price is a function of: (a) Impact Position and (b current state of the order book.
+Impact Position, in terms of number is contracts to be traded, is provided in the specifications for each futures contract. It is easy to see that Impact Price is a function of: (a) Impact Position and (b) current state of the order book.
 
 $$Impact\_Bid\_Price = Average \ Fill \ Price \ to \ execute \ a \ typical \ short \ trade$$
 
@@ -100,7 +100,10 @@ $$Impact\_Ask\_Price = Average \ Fill \ Price \  to \  execute \ a \ typical \ l
 
  $$\%Fair\_Basis = (Impact\_Mid\_Price/ Underlying\_Index\_Price - 1) * (365*86400/ time\_to\_expiry\_in\_sec)$$
 
-$$\%Fair\_Basis$$ is computed only once every minute. Further, in case at any time of update, market is illiquid, i.e. $$(Impact\_Ask\_Price - Impact\_Bid\_Price) > Maintenance\_Margin$$, $$\%Fair\_Basis$$ is not updated.
+$$\%Fair\_Basis$$ is computed only once every minute. Further, in case at any time of update, market is illiquid, i.e. 
+$$(Impact\_Ask\_Price - Impact\_Bid\_Price) > Maintenance\_Margin$$, 
+
+$$\%Fair\_Basis$$ is not updated.
 
 $$\text{Now, } Fair\_Basis = Underlying\_Index\_Price * \%Fair\_Basis * (time\_to\_expiry\_in\_sec/ (365* 86400))$$
 
@@ -193,9 +196,9 @@ Liquidation mechanism on Delta Exchange is comprised of the following steps:
     
 
 **Liquidation Examples**
-You have an open long position of $$1000$$ contracts in Bitcoin-Dollar Futures with an Average Entry Price of $$$10000$$. The Liquidation Price for this position is $$9500$$ and the Bankruptcy Price is $$9200$$.
+You have an open long position of $$1000$$ contracts in Bitcoin-Dollar Futures with an Average Entry Price of $$10000$$. The Liquidation Price for this position is $$9500$$ and the Bankruptcy Price is $$9200$$.
 
-As soon as the Mark prices reaches $9500$ or below, your position will enter Liquidation. An immediate-or-cancel sell order is submitted on your behalf at $$9200$$. The limit price of this order assures that if the order is matched, the portfolio value of the margin account will not be less than zero.
+As soon as the Mark prices reaches $$9500$$ or below, your position will enter Liquidation. An immediate-or-cancel sell order is submitted on your behalf at $$9200$$. The limit price of this order assures that if the order is matched, the portfolio value of the margin account will not be less than zero.
 
 **Case 1:** Liquidation order gets filled at $$9400$$. At this price since your margin is not fully eroded, the remaining margin is released.
 
