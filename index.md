@@ -26,7 +26,7 @@ Once you have created your account, you need to fund your Delta Exhange wallet w
 
 The trading dashboard of Delta Exchange is comprised of multiple panels. These include chart, order book/ recent trades, order submission and open orders & position panels. The functions and uses of these panels are delineated in the picture below.
 
-![image](/just-the-docs/images/LandingPage.jpg "Delta Exchange Trading Terminal")
+![image](/assets/images/just-the-docs.png "Delta Exchange Trading Terminal")
 
 To place a trade, you need to:
 
