@@ -139,8 +139,13 @@ $$RoE_{Leverage} = \$100/ \$100 = 100\%$$
 
  It is also easy to see that,
 
-$$RoE_{Leverage} = RoE_{NoLeverage}/ Margin\% $$
+ $$
+ \begin{align*}
 
-$$= RoE_{NoLeverage}*Financial\_Leverage}$$
+& RoE_{Leverage} = RoE_{NoLeverage}/ Margin% \\
+
+& = RoE_{NoLeverage}*Financial\_Leverage
+\end{align*}
+$$
 
 Do note that leverage is a double edged sword. Just as it will amplify your profits, it will also have the same multiplier effect on your losses.
