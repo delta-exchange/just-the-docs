@@ -92,9 +92,9 @@ Impact Position, in terms of number is contracts to be traded, is provided in th
 
 $$Impact\_Bid\_Price = \text{Average fill price to execute a typical short trade}$$
 
-$$Impact\_Ask\_Price = Average \ Fill \ Price \  to \  execute \ a \ typical \ long \ trade$$
+$$Impact\_Ask\_Price = \text{Average fill price to execute a typical long trade}$$
 
-$$Impact\_Mid\_Price = Average (Impact\_Bid\_Price, Impact\_Ask\_Price)$$
+$$Impact\_Mid\_Price = \text{Average of} Impact\_Bid\_Price \text{ and} Impact\_Ask\_Price$$
  
 
   
