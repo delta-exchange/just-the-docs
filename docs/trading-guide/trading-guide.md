@@ -94,7 +94,7 @@ $$Impact\_Bid\_Price = \text{Average fill price to execute a typical short trade
 
 $$Impact\_Ask\_Price = \text{Average fill price to execute a typical long trade}$$
 
-$$Impact\_Mid\_Price = \text{Average of} Impact\_Bid\_Price \text{ and} Impact\_Ask\_Price$$
+$$Impact\_Mid\_Price = \text{Average of } Impact\_Bid\_Price \text{ and } Impact\_Ask\_Price$$
  
 
   
@@ -106,7 +106,7 @@ $$\%Fair\_Basis = (Impact\_Mid\_Price/ Underlying\_Index\_Price - 1) * (365*8640
 
 $$\%Fair\_Basis$$ is computed only once every minute. Further, in case at any time of update, market is illiquid, i.e. 
 
-$$(Impact\_Ask\_Price - Impact\_Bid\_Price) > Maintenance\_Margin$$, 
+$$(Impact\_Ask\_Price - Impact\_Bid\_Price) > Maintenance\_Margin$$ 
 
 $$\%Fair\_Basis$$ is not updated.
 
