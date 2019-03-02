@@ -70,13 +70,17 @@ It is worth noting that Fair Price marking is relevant only computation of Unrea
 
 ### Calculation of Fair Price of a Futures Contract
 
-At maturity, \(Futures\_Price = Underlying\_Index Price\), for any futures contract. At all other times, the price of a futures contract broadly moves in tandem with the price of the Underlying Index, with the difference between the two referred to as basis, i.e.
+The price of a futures contract converges to the underlying index price at the time of contract maturity, i.e.
+
+$$Futures\_Price = Underlying\_Index Price$$
+
+At all other times, the price of a futures contract broadly moves in tandem with the price of the Underlying Index, with the difference between the two referred to as basis, i.e.
 
 $$Basis = Futures\_Price - Underlying\_Index\_Price$$
 
- Since the Underlying Index is the foundation of the Futures contract, it is logical to assume that
+Since the Underlying Index is the foundation of the futures contract, it is logical to assume that
 
-$$Futures\_Fair_Price = Underlying\_Index\_Price + Fair\_Basis$$
+$$Futures\_Fair\_Price = Underlying\_Index\_Price + Fair\_Basis$$
 
 The $$Underlying\_Index\_Price$$ is obviously independent of the trading happening on Delta Exchange and is sourced in real-time from leading spot exchanges.
 
@@ -86,7 +90,7 @@ To understand the computation of $$Fair\_Basis$$, we first need to introduce the
 
 Impact Position, in terms of number is contracts to be traded, is provided in the specifications for each futures contract. It is easy to see that Impact Price is a function of: (a) Impact Position and (b) current state of the order book.
 
-$$Impact\_Bid\_Price = Average \ Fill \ Price \ to \ execute \ a \ typical \ short \ trade$$
+$$Impact\_Bid\_Price = text{Average fill price to execute a typical short trade$$
 
 $$Impact\_Ask\_Price = Average \ Fill \ Price \  to \  execute \ a \ typical \ long \ trade$$
 
@@ -101,6 +105,7 @@ $$Impact\_Ask\_Price = Average \ Fill \ Price \  to \  execute \ a \ typical \ l
  $$\%Fair\_Basis = (Impact\_Mid\_Price/ Underlying\_Index\_Price - 1) * (365*86400/ time\_to\_expiry\_in\_sec)$$
 
 $$\%Fair\_Basis$$ is computed only once every minute. Further, in case at any time of update, market is illiquid, i.e. 
+
 $$(Impact\_Ask\_Price - Impact\_Bid\_Price) > Maintenance\_Margin$$, 
 
 $$\%Fair\_Basis$$ is not updated.
