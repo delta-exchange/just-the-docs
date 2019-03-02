@@ -12,7 +12,7 @@ nav_order: 2
 
 ## Futures
 
-A derivative is a financial security which derives its value from an underlying asset or group of assets. The derivative itself is a contract between two parties and its price is driven by fluctuations in the underlying asset.
+A derivative [here](#margining-explainer) is a financial security which derives its value from an underlying asset or group of assets. The derivative itself is a contract between two parties and its price is driven by fluctuations in the underlying asset.
 
  Futures is a type of derivative that is essentially an agreement between two parties to buy/ sell an asset (e.g. Ether) at a predetermined future date and price. There is a deterministic but complex relation between the price of the underlying asset and its Futures contract. However, simplistically, we can assume that both spot and Futures price tend to move in the same direction.
 
