@@ -39,7 +39,7 @@ A new order is allowed to be submitted to the exchange only if the trader has su
     
 -   Trader has an existing position in the contract: in this case, the system computes the margin required for the updated overall position after the placed order has been executed. The difference between this computed margin requirement and the current position margin is what is additionally needed for this order. This is the amount that is block as order margin.
     
-Details on the various types of margins and their calculations are available [here](#marginexplain).
+Details on the various types of margins and their calculations are available [here](#margining-explainer).
 
 Existing positions on Delta are marked at [fair Price](#fpm). This means that your unrealised PnL and hence the current value of margin allocated to a particular position are a function of the marked price. PnL calculations are illustrated with example in the [PnL Math](#pnlmath) section.
 
@@ -120,7 +120,7 @@ It is worth noting that only live positions are marked using the Fair Price. Thu
 
 ## Margining Explainer
 
-<a="marginexplain"></a> Margin is the collateral that you need to post when entering into a leveraged derivatives contract. The amount required to enter into a new position is referred to as Initial Margin, which is dependent on the leverage offered in the derivatives contract.
+Margin is the collateral that you need to post when entering into a leveraged derivatives contract. The amount required to enter into a new position is referred to as Initial Margin, which is dependent on the leverage offered in the derivatives contract.
 
 If the trade against you, the unrealised loss in your position is adjusted against the initially posted margin. When the remaining margin (Initial Margin - Unrealised Loss) goes below Liquidation Margin, [liquidation process](#liquidation) is triggered.
 
