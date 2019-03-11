@@ -59,10 +59,8 @@ Trading in one or more futures contracts can be halted for scheduled and unsched
  - **Market disruption events:** Unavailability of spot price from one or more exchanges that contribute to the underlying index may impair our ability to mark open positions correctly, forcing us to suspend trading. Additionally, exceptional situations like uncharacteristically high price volatility may also warrant suspension of trading. It is important to note that market disruption events could also impact contract maturities and settlement.
 
 Why Unavailability of Spot is a Market Disruption Event
+
 At Delta Exchange we use [fair price marking](#fair-price-marking). This means that all open positions on Delta Exchange are marked at Mark Price, which in turn depends on the spot price. Thus, unavailability of spot price results in inability to mark open positions correctly.
-
- When it is time to restart trading activity, market is put in post-only mode. New maker orders will be accepted, but no matches will occur. Trading will resume once there is sufficient liquidity in the order book 
-
   
 ### Trading Resumption Process
 Post a trading suspension event, We use a single price auction to resume normal trading. This happens in two steps:
