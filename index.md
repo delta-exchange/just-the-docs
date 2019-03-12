@@ -9,7 +9,7 @@ permalink: /
 
 # Getting Started
 
- Delta Exchange is a pltform for trading of cryptocurrency derivatives. We currently offer Futures contracts on bitcoin (BTC), ether (ETH), ripple (XRP) and stellar lumens (XLM). The following features stand us apart from other cryptocurrency exchanges:
+ Delta Exchange is a platform for trading of cryptocurrency derivatives. We currently offer Futures contracts on bitcoin (BTC), ether (ETH), ripple (XRP), Binance Coin (BNB) and stellar lumens (XLM). The following features stand us apart from other cryptocurrency exchanges:
 
 - **Leverage:** All derivative contracts traded on Delta Exchange have built in leverage of up to $$100$$x. This means that with say 1 BTC, you can take a position of up to 100 BTC.
     
