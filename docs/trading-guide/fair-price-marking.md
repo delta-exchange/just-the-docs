@@ -4,14 +4,14 @@ title: Fair Price Marking
 has_children: false
 parent: Margin Trading Guide
 nav_order: 1
-permalink: /docs/trading-guide/fair-price-marking
 ---
 
+# Fair Price Marking
 
 1. TOC
 {:toc}
 
-## Fair Price Marking
+## Why Fair Price Marking
 
 Leverage is inherent in derivative contracts, combined with high volatility of crypto-currencies can lead to unwarranted liquidations. Lack of liquidity could further exacerbate this situation as price swings in a derivatives contract relative to the underlying index could widen even further.
 
