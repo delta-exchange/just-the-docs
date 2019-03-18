@@ -18,7 +18,7 @@ Bitcoin is the only funding currency on Delta Exchange. This means that you can 
 ## Currency conversion
 Even though bitcoin is the only funding currency on Delta Exchange, not all futures contracts are settled in bitcoin. For example, we have stablecoin-settled contracts where the margining and settlement happens in USDC. Therefore, you'd need USDC for trading these futures contracts. Since we currently don't support deposit/ withdrawal of USDC (or for that matter any other crypto apart from bitcoin), we have provided a **currency converter tool** that enables users to change bitcoin to the desired cryptocurrency.
 
-![image]({{site.baseurl}}/assets/images/CurrencyConverter.png "Delta Exchange Currency Converter")
+![image]({{site.baseurl}}/assets/images/CurrencyConverter1.jpg "Delta Exchange Currency Converter")
 
 It is worth noting that the exchange rate offered in the currency conversion is in line with the prevailing rates at the top spot exchanges. Further, currency conversion doesn't attract any trading fees.
 
