@@ -17,7 +17,7 @@ Trading in one or more futures contracts can be halted for scheduled and unsched
 
 ## Why Unavailability of Spot is a Market Disruption Event
 
-At Delta Exchange we use [fair price marking](#fair-price-marking). This means that all open positions on Delta Exchange are marked at Mark Price, which in turn depends on the spot price. Thus, unavailability of spot price results in inability to mark open positions correctly.
+At Delta Exchange we use [fair price marking]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking). This means that all open positions on Delta Exchange are marked at Mark Price, which in turn depends on the spot price. Thus, unavailability of spot price results in inability to mark open positions correctly.
   
 ## Trading Resumption Process
 Post a trading suspension event, We use a single price auction to resume normal trading. This happens in two steps:

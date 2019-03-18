@@ -6,12 +6,10 @@ parent: Margin Trading Guide
 nav_order: 5
 ---
 
-# Liquidtion
+# Liquidation
 
-1. TOC
-{:toc}
 
-Each position on Delta has an associated prices:
+Each position on Delta Exchange has two associated prices:
 
 -   Liquidation Price: At Liquidation Price, the difference of Position Margin minus Unrealized PnL of the position is equal to the Liquidation Margin.
     
@@ -30,11 +28,12 @@ Liquidation mechanism on Delta Exchange is comprised of the following steps:
 -   In case the position is not fully liquidated (for example due to lack of liquidity), the remainder of the position is terminated at Bankruptcy Price and ADL is triggered.
     
 
-**Liquidation Examples**
+## Liquidation Examples
+
 You have an open long position of $$1000$$ contracts in Bitcoin-Dollar Futures with an Average Entry Price of $$10000$$. The Liquidation Price for this position is $$9500$$ and the Bankruptcy Price is $$9200$$.
 
 As soon as the Mark prices reaches $$9500$$ or below, your position will enter Liquidation. An immediate-or-cancel sell order is submitted on your behalf at $$9200$$. The limit price of this order assures that if the order is matched, the portfolio value of the margin account will not be less than zero.
 
 **Case 1:** Liquidation order gets filled at $$9400$$. At this price since your margin is not fully eroded, the remaining margin is released.
 
-**Case 2:** The Liquidation order at gets only partially filled and say 300 contracts are left over. This will trigger [ADL](#auto-deleveraging). The system will find counterparties on the short side and a trade between you and these counterparties for $$300$$ contracts at $$9200$$  (i.e. the Bankruptcy Price) is made to happen.
+**Case 2:** The Liquidation order at gets only partially filled and say 300 contracts are left over. This will trigger [ADL]({{site.baseurl}}/docs/trading-guide/ADL/#auto-deleveraging). The system will find counterparties on the short side and a trade between you and these counterparties for $$300$$ contracts at $$9200$$  (i.e. the Bankruptcy Price) is made to happen.
