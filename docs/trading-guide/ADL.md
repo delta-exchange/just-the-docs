@@ -3,7 +3,7 @@ layout: default
 title: Auto-Deleveraging
 has_children: false
 parent: Margin Trading Guide
-nav_order: 5
+nav_order: 6
 ---
 
 # Auto-Deleveraging

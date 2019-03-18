@@ -3,7 +3,7 @@ layout: default
 title: Liquidation
 has_children: false
 parent: Margin Trading Guide
-nav_order: 4
+nav_order: 5
 ---
 
 # Liquidtion
