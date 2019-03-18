@@ -9,6 +9,9 @@ permalink: /docs/trading-guide/fair-price-marking
 
 # Fair Price Marking
 
+1. TOC
+{:toc}
+
 Leverage is inherent in derivative contracts, combined with high volatility of crypto-currencies can lead to unwarranted liquidations. Lack of liquidity could further exacerbate this situation as price swings in a derivatives contract relative to the underlying index could widen even further.
 
 To ensure a great trader experience, Delta marks all open position at Fair Price instead of Last Traded Price. The Fair Price has lesser volatility and is more resilient against attempts to manipulate market.
