@@ -37,9 +37,9 @@ A new order is allowed to be submitted to the exchange only if the trader has su
     
 -   Trader has an existing position in the contract: in this case, the system computes the margin required for the updated overall position after the placed order has been executed. The difference between this computed margin requirement and the current position margin is what is additionally needed for this order. This is the amount that is block as order margin.
     
-Details on the various types of margins and their calculations are available [here](#margining-explainer).
+Details on the various types of margins and their calculations are available [here]({{site.baseurl}}/docs/trading-guide/margin-explainer/#margining-explainer).
 
-Existing positions on Delta are marked at [fair Price](#fair-price-marking). This means that your unrealised PnL and hence the current value of margin allocated to a particular position are a function of the marked price. PnL calculations are illustrated with example in the [PnL Math](#pnl-math) section.
+Existing positions on Delta are marked at [fair Price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking). This means that your unrealised PnL and hence the current value of margin allocated to a particular position are a function of the marked price. PnL calculations are illustrated with example in the [PnL Math]({{site.baseurl}}/docs/trading-guide/PnL-Math/#profit-loss-math) section.
 
 ## Settlement
 
