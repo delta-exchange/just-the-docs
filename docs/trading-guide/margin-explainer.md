@@ -14,7 +14,7 @@ nav_order: 2
 ## What is Margin
 Margin is the collateral that you need to post when entering into a leveraged derivatives contract. The amount required to enter into a new position is referred to as Initial Margin, which is dependent on the leverage offered in the derivatives contract.
 
-If the trade against you, the unrealised loss in your position is adjusted against the initially posted margin. When the remaining margin (Initial Margin - Unrealised Loss) goes below Liquidation Margin, [liquidation process](#liquidation) is triggered.
+If the trade against you, the unrealised loss in your position is adjusted against the initially posted margin. When the remaining margin (Initial Margin - Unrealised Loss) goes below Liquidation Margin, [liquidation process]({{site.baseurl}}/docs/trading-guide/Liquidation/#Liquidation) is triggered.
 
  Delta Exchange follows a **Segregated Margin approach**, in which margin is explicitly assigned to each position and is not shared across positions. A position is specific to a particular contract. Thus, for each contract, two margin sub-accounts are maintained:
 
