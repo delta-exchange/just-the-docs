@@ -6,12 +6,12 @@ nav_order: 3
 permalink: /docs/trading-guide
 ---
 
-# Margin Trading Guide
+# Trade Lifecycle
 
 1. TOC
 {:toc}
 
-## Trade lifecycle
+## Trade lifecycle2
 
 ### Funding exchange wallet
 

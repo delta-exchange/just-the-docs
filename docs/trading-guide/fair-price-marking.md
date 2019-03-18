@@ -15,7 +15,7 @@ To ensure a great trader experience, Delta marks all open position at Fair Price
 
 It is worth noting that Fair Price marking is relevant only computation of Unrealized PnL and Liquidation price. Realized PnL is computed using actual trading prices and is thus not impacted by Fair Price.
 
-### Calculation of Fair Price of a Futures Contract
+## Calculation of Fair Price of a Futures Contract
 
 The price of a futures contract converges to the underlying index price at the time of contract maturity, i.e.
 
@@ -31,7 +31,7 @@ $$Futures\_Fair\_Price = Underlying\_Index\_Price + Fair\_Basis$$
 
 The $$Underlying\_Index\_Price$$ is obviously independent of the trading happening on Delta Exchange and is sourced in real-time from leading spot exchanges.
 
-### Impact Price
+## Impact Price
 
 To understand the computation of $$Fair\_Basis$$, we first need to introduce the notion of Impact Price. This price tries to estimate the price at which a typical long or short position (called Impact Position) in the futures contract can be entered at any given time.
 
@@ -45,7 +45,7 @@ $$Impact\_Mid\_Price = \text{Average of } Impact\_Bid\_Price \text{ and } Impact
  
 
   
-### Fair Basis Calculation
+## Fair Basis Calculation
 
 We first compute an annualised fair value basis rate, $$\%Fair\_Basis$$:
 
