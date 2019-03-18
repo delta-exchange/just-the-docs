@@ -1,11 +1,8 @@
 ---
 layout: default
-title: Tutorials
-# parent: UI Components
+title: Futures Guide
 nav_order: 2
 ---
-
-# Tutorials
 
 1. Table of Contents
 {:toc}
@@ -123,9 +120,7 @@ Buy $$0.01$$ BTC using your $$$100$$. If after a week, BTC rises by $$10%$$ to $
 
 $$= \$10/\$100 = 10\%$$
 
-  
-
-**With Leverage (trade the Futures contract)**
+ **With Leverage (trade the Futures contract)**
 
 Long USD - BTC Futures contract using $100 as the margin money. Let’s assume that the contract size is $$0.01$$ BTC and Margin% is $$10%$$. This means that $100 as margin is sufficient for $$10$$ contracts.
 
