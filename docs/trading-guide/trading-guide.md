@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Trading Guides
-has_childred: true
+title: Margin Trading Guide
+has_children: true
 nav_order: 3
 permalink: /docs/trading-guide
 ---
 
-# Trading Guide
+# Margin Trading Guide
 
 1. TOC
 {:toc}
