@@ -4,10 +4,12 @@ title: Futures Guide
 nav_order: 2
 ---
 
+# Futures Guide
+
 1. Table of Contents
 {:toc}
 
-## Futures
+## Futures: Motivation & Use Cases
 
 A derivative is a financial security which derives its value from an underlying asset or group of assets. The derivative itself is a contract between two parties and its price is driven by fluctuations in the underlying asset.
 
@@ -62,7 +64,7 @@ This also means that maximum position size that you can afford is $$1/Margin\%$$
 
 $$^1/(Margin\%) = Financial\ leverage$$
 
-### PnL Computation
+## PnL Computation
 
  **Unrealised PnL**
 For a **long** position in a Futures contract:
@@ -108,7 +110,7 @@ $$PnL = n*m*(1/ Fut\_EntryPrice - 1/ Fut\_CurrentPrice) \ (in \ BTC) $$
 
 $$PnL = - n*m*(1/ Fut\_EntryPrice - 1/ Fut\_CurrentPrice) \ (in \  BTC)$$
 
-## Leverage
+## Understanding Leverage
 
 Leverage has a multiplier effect on your trading returns. This is best illustrated with an example. Let’s say you have $$$100$$, and you think BTC price is likely to go up. Currently, $$1$$ BTC = $$$10,000$$
 

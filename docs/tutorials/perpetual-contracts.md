@@ -4,6 +4,8 @@ title: Perpetual Contracts Guide
 nav_order: 3
 ---
 
+# Perpetual Contracts Guide
+
 1. Table of Contents
 {:toc}
 
