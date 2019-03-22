@@ -13,15 +13,15 @@ nav_order: 1
 
 Leverage is inherent in derivative contracts, combined with high volatility of crypto-currencies can lead to unwarranted liquidations. Lack of liquidity could further exacerbate this situation as price swings in a derivatives contract relative to the underlying index could widen even further.
 
-To ensure a great trader experience, Delta marks all open position at Fair Price instead of Last Traded Price. The Fair Price has lesser volatility and is more resilient against attempts to manipulate market.
+To ensure a great trader experience, Delta Exchange marks all open position at Fair Price instead of Last Traded Price. The Fair Price has lesser volatility and is more resilient against attempts to manipulate market.
 
-It is worth noting that Fair Price marking is relevant only computation of Unrealized PnL and Liquidation price. Realized PnL is computed using actual trading prices and is thus not impacted by Fair Price.
+It is worth noting that Fair Price marking is relevant only computation of Unrealized PnL and Liquidation price. Realized PnL is computed using actual trading prices and is thus not impacted by the Fair Price.
 
 ## Calculation of Fair Price of a Futures Contract
 
 The price of a futures contract converges to the underlying index price at the time of contract maturity, i.e.
 
-$$Futures\_Price = Underlying\_Index Price$$
+$$Futures\_Price = Underlying\_Index\_Price$$
 
 At all other times, the price of a futures contract broadly moves in tandem with the price of the Underlying Index, with the difference between the two referred to as basis, i.e.
 
@@ -35,9 +35,9 @@ The $$Underlying\_Index\_Price$$ is obviously independent of the trading happeni
 
 ## Impact Price
 
-To understand the computation of $$Fair\_Basis$$, we first need to introduce the notion of Impact Price. This price tries to estimate the price at which a typical long or short position (called Impact Position) in the futures contract can be entered at any given time.
+To understand the computation of $$Fair Basis$$, we first need to introduce the notion of $$Impact Price$$. This price tries to estimate the price at which a typical long or short position (called Impact Position) in the futures contract can be entered at any given time.
 
-Impact Position, in terms of number is contracts to be traded, is provided in the specifications for each futures contract. It is easy to see that Impact Price is a function of: (a) Impact Position and (b) current state of the order book.
+Impact Position, in terms of number is contracts to be traded, is provided in the [specifications](https://www.delta.exchange/contracts/) for each futures contract. It is easy to see that Impact Price is a function of: (a) Impact Position and (b) current state of the order book.
 
 $$Impact\_Bid\_Price = \text{Average fill price to execute a typical short trade}$$
 
@@ -49,17 +49,17 @@ $$Impact\_Mid\_Price = \text{Average of } Impact\_Bid\_Price \text{ and } Impact
   
 ## Fair Basis Calculation
 
-We first compute an annualised fair value basis rate, $$\%Fair\_Basis$$:
+We first compute an annualised fair value basis rate, $$\%Annualised\_Basis$$:
 
-$$\%Fair\_Basis = (Impact\_Mid\_Price/ Underlying\_Index\_Price - 1) * (365*86400/ time\_to\_expiry\_in\_sec)$$
+$$\%Annualised\_Basis = (Impact\_Mid\_Price/ Underlying\_Index\_Price - 1) * (365*86400/ time\_to\_expiry\_in\_sec)$$
 
-$$\%Fair\_Basis$$ is computed only once every minute. Further, in case at any time of update, market is illiquid, i.e. 
+$$\%Annualised\_Basis$$ is computed only once 5 seconds. Further, in case at any time of update, market is illiquid, i.e. 
 
 $$(Impact\_Ask\_Price - Impact\_Bid\_Price) > Maintenance\_Margin$$ 
 
-$$\%Fair\_Basis$$ is not updated.
+$$\%Annualised\_Basis$$ is not updated. Next, $$\%Fair\_Basis$$ is computed as the moving average of the 12 most recent values of $$\%Annualised\_Basis$$. To avoid anomolous values, the $$\%Fair\_Basis$$ is bounded by certain hard limits, which can vary from contract to contract. $$\%Fair\_Basis$$ is used to compute the $$Fair Basis$$.
 
-$$\text{Now, } Fair\_Basis = Underlying\_Index\_Price * \%Fair\_Basis * (time\_to\_expiry\_in\_sec/ (365* 86400))$$
+$$Fair\_Basis = Underlying\_Index\_Price * \%Fair\_Basis * (time\_to\_expiry\_in\_sec/ (365* 86400))$$
 
 Now, that we have the $$Fair\_Basis$$, the fair price of the futures (i.e. the mark price) can be easily computed:
 
