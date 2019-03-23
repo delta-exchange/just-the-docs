@@ -23,7 +23,7 @@ Quantity = 50 contracts
 Limit price = 4000
 Direction = Buy
  ```
- > A buy order for 50 contracts with a limit price of 40000 will be sent to the order book
+ _A buy order for 50 contracts with a limit price of 40000 will be sent to the order book_
 
 ## Market Orders
 A market is an order to buy or sell a specified number of futures contracts at the best available price available in the order book. There is no guarantee that a market order will fill at any particular price. A market order may fill at a number of different prices, based on the quantity of the market order and the quantities of the existing orders on the order book at the time. Market orders are used when immediate execution is more important than trading costs. 
@@ -47,19 +47,36 @@ It is important to note that currently only **Mark Price** can be used to specif
 
 Delta Exchange currently offers three types of stop orders:
 
-- {**Stop market order** - When the stop order is triggered, a market order is sent to the order book.
+- **Stop market order** - When the stop order is triggered, a market order is sent to the order book.
 
-User inputs: Stop Price, Quantity}
-
+	```
+	User inputs: Stop Price, Quantity
+	Stop market order example
+	Quantity = 50 contracts
+	Stop price = 3800
+	Direction = Buy
+	```
+	_A buy order for 50 contracts will be sent to the order book_
 - **Stop limit order** - When the stop order is triggered, a limit order is sent to the order book. 
 
-User inputs: Stop Price, Limit Price and Quantity
+	```
+	User inputs: Stop Price, Limit Price, Quantity
+	Stop limit order example
+	Quantity = 50 contracts
+	Stop price = 3800
+	Limit price = 3900
+	Direction = Buy
+	```
 
 - **Trailing stop order** - In this order type, the stop price follows the market at a fixed distance (known as the Trail Amount) when the market is moving in favour of the trader. Stop price reamins unchanged when the market is moving against the trader. This feature of trailing stop orders enables a trader to specify a limit on the maximum possible loss, without setting a limit on the maximum possible gain. When the market reaches the trigger price, a market order is sent to the other book.
 
-User inputs: Stop Price, Trail Amount, Quantity
+	```
+	User inputs: Stop Price, Trail Amount, Quantity
+	Trailing stop order example
+	Quantity = 50 contracts
+	Trail Amount = 40
+	Direction = Buy
+	```
 
 
 
-
-is an order which is triggered at a stop price provided by the user.
