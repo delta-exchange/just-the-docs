@@ -38,12 +38,14 @@ Direction = Buy
 
 ## Stop Orders
 
-Stop orders are conditional orders which become active only after the market reaches a certain Trigger Price (also known as Stop Price). A stop order thus has three states:
+Stop orders are conditional orders which become active only after the market reaches a certain Trigger Price (also known as Stop Price). Stop orders serve as key risk management tools for traders, enabling them to limit losses on open trades. In addition to that, stop orders can also provide conditional entry into new positions. 
+
+It is important to note that currently only **Mark Price** can be used to specify the Trigger Price of a stop order. In the case of a Buy stop order, the stop price must be below the current Mark Price. Correspondingly, for a Sell stop order, the stop price must be above the current Mark Price.
+
+A stop order thus has three states:
 - _Untriggered_- Market has not reached the Trigger Price. 
 - _Triggered_ - Market has reached the Trigger Price. The stop order has become active and has entered the order book.
 - _Filled_ - After getting activated, the stop order has been filled.
-
-It is important to note that currently only **Mark Price** can be used to specify the Trigger Price of stop order.
 
 Delta Exchange currently offers three types of stop orders:
 
@@ -56,7 +58,7 @@ Delta Exchange currently offers three types of stop orders:
 	Stop price = 3800
 	Direction = Buy
 	```
-	_A buy order for 50 contracts will be sent to the order book_
+	_A buy market order for 50 contracts will be sent to the order book when Mark Price goes above 3800_
 - **Stop limit order** - When the stop order is triggered, a limit order is sent to the order book. 
 
 	```
@@ -64,19 +66,24 @@ Delta Exchange currently offers three types of stop orders:
 	Stop limit order example
 	Quantity = 50 contracts
 	Stop price = 3800
-	Limit price = 3900
+	Limit price = 3750
 	Direction = Buy
 	```
+	_A buy limit order for 50 contracts with a limit price of 3750 will be sent to the order book when Mark Price goes above 3800_
 
-- **Trailing stop order** - In this order type, the stop price follows the market at a fixed distance (known as the Trail Amount) when the market is moving in favour of the trader. Stop price reamins unchanged when the market is moving against the trader. This feature of trailing stop orders enables a trader to specify a limit on the maximum possible loss, without setting a limit on the maximum possible gain. When the market reaches the trigger price, a market order is sent to the other book.
+- **Trailing stop order** - In this order type, the stop price follows the market at a fixed distance (known as the Trail Amount) when the market is moving in favour of the trader. However, stop price reamins unchanged when the market is moving against the trader. This feature of trailing stop orders enables a trader to specify a limit on the maximum possible loss, without setting a limit on the maximum possible gain. When the market reaches the trigger price, a market order is sent to the other book.
 
 	```
 	User inputs: Stop Price, Trail Amount, Quantity
 	Trailing stop order example
 	Quantity = 50 contracts
-	Trail Amount = 40
+	Trail Amount = 40 (Trail Amount would be negative for Sell orders)
 	Direction = Buy
 	```
+	_For this order, the Trigger Price will follow the Mark Price at a distance of 40 when the Mark Price is going down. And, a Buy market order of 50 contracts will be sent to the order book when Mark Price rises by 40.
+
+# Advanced Qualified for Orders
+
 
 
 
