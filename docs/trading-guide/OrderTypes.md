@@ -17,7 +17,7 @@ We currently support the following types of orders
 A limit ordder is an order to buy or sell a specified number of futures contracts at a specified price. A limit order will only ever fill at the specified price or better price. Limit orders trade-off guaranteed execution for lower trading costs. 
 
 ```
-User inputs: Quantity & Limit Price
+User inputs: Quantity, Limit Price
 Limit order example
 Quantity = 50 contracts
 Limit price = 4000
