@@ -80,9 +80,27 @@ Delta Exchange currently offers three types of stop orders:
 	Trail Amount = 40 (Trail Amount would be negative for Sell orders)
 	Direction = Buy
 	```
-	_For this order, the Trigger Price will follow the Mark Price at a distance of 40 when the Mark Price is going down. And, a Buy market order of 50 contracts will be sent to the order book when Mark Price rises by 40.
+	_For this order, the Trigger Price will follow the Mark Price at a distance of 40 when the Mark Price is going down. And, a Buy market order of 50 contracts will be sent to the order book when Mark Price rises by 40._
 
-# Advanced Qualified for Orders
+# Advanced Attributes for Orders
+
+## Order Validity Attributes
+
+- **Immediate or cancel (IOC)**
+	An order which is marked as IOC is executed immediately and any unfilled portion of the order is cancelled. All market orders are by default marked as IOC. Limit orders can be marked as IOC to guarantee immediate execution at the specified price or better. However, if the order cannot be filled completely, the unfilled portion will be cancelled. 
+
+- **Fill or Kill (FOK)**
+	An order which is markeed as FOK is excuted immediately and completely or not all at. This implies that the order must be filled in its entirety or cancelled. 
+
+- **Good till cancelled (GTC)**
+	An order which is marked as GTC remains in effect until it is executed or cancelled by the trader. All limit orders are by default marked as GTC.
+
+## Order Execution Attributes
+
+- **Post-only**
+	A limit order that is marked as post-only is accepted into the order book only it would not be immediately match with an existing order in the order book. Marking a limit order post-only ensures that: (a) the order adds to the liquidity rather than takes liquidity from the order book, and (b) the traders will earn a marker rebate when the order is executed.  
+
+
 
 
 
