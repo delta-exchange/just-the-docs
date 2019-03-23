@@ -6,11 +6,10 @@ parent: Margin Trading Guide
 nav_order: 3
 ---
 
-# Order Types
-
 1. TOC
 {:toc}
 
+# Order Types
 We currently support the following types of orders
 
 ## Limit Orders
