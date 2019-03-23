@@ -82,22 +82,42 @@ Delta Exchange currently offers three types of stop orders:
 	```
 	_For this order, the Trigger Price will follow the Mark Price at a distance of 40 when the Mark Price is going down. And, a Buy market order of 50 contracts will be sent to the order book when Mark Price rises by 40._
 
+## Bracket Orders
+A bracket order lets a trader to 'bracket' any given order with two opposite-side orders, i.e. take-proft and stoploss order. The take-proft order is a limit order to lock in profits. And, the stoploss order is a stop market order to limit losses. When one of these two orders (take-proft or stoploss) gets executed, the other order will automatically get cancelled.
+
+A bracket order can be placed along with a buy or sell order. In this case, the take-profit and stoploss orders are placed in the order book as soon as the main order is executed. Alternatively, a bracket order can be placed for a position that is already open. In either case, bracket orders are inextricably linked to an opeion position. As the position sizes changes, the quantity specified in the take-profit and stoploos orders changes in tendem. 
+
+```
+User inputs: Quantity, Limit Price, Take-Profit Level, Stoploss Level
+Bracket order example
+Quantity = 50 contracts
+Limit price = 4000
+Take-profit Level = 4500
+Stoploss level = 3800
+Direction = Buy
+ ```
+_First a limit order to buy 50 contracts at a limit price of 4000 would be sent to the order book. Once this order is executed, two new orders would be created: (a) a limit order to sell 50 contracts at a limit price of 4500 and (b) a stop market order with a Trigger Price of 3800._
+
 # Advanced Attributes for Orders
 
 ## Order Validity Attributes
 
 - **Immediate or cancel (IOC)**
+	
 	An order which is marked as IOC is executed immediately and any unfilled portion of the order is cancelled. All market orders are by default marked as IOC. Limit orders can be marked as IOC to guarantee immediate execution at the specified price or better. However, if the order cannot be filled completely, the unfilled portion will be cancelled. 
 
 - **Fill or Kill (FOK)**
+	
 	An order which is markeed as FOK is excuted immediately and completely or not all at. This implies that the order must be filled in its entirety or cancelled. 
 
 - **Good till cancelled (GTC)**
+	
 	An order which is marked as GTC remains in effect until it is executed or cancelled by the trader. All limit orders are by default marked as GTC.
 
 ## Order Execution Attributes
 
 - **Post-only**
+	
 	A limit order that is marked as post-only is accepted into the order book only it would not be immediately match with an existing order in the order book. Marking a limit order post-only ensures that: (a) the order adds to the liquidity rather than takes liquidity from the order book, and (b) the traders will earn a marker rebate when the order is executed.  
 
 
