@@ -17,14 +17,14 @@ We currently support the following types of orders
 A limit ordder is an order to buy or sell a specified number of futures contracts at a specified price. A limit order will only ever fill at the specified price or better price. Limit orders trade-off guaranteed execution for lower trading costs. 
 
 ```
-User inputs: Quantity & Limit Price
+**User inputs**: Quantity & Limit Price
 
-Limit order example**
+Limit order example
 Quantity = 50 contracts
 Limit price = 4000
 Direction = Buy
  ```
- *A buy order for 50 contracts with a limit price of 40000 will be sent to the order book*
+ > A buy order for 50 contracts with a limit price of 40000 will be sent to the order book
 
 ## Market Orders
 A market is an order to buy or sell a specified number of futures contracts at the best available price available in the order book. There is no guarantee that a market order will fill at any particular price. A market order may fill at a number of different prices, based on the quantity of the market order and the quantities of the existing orders on the order book at the time. Market orders are used when immediate execution is more important than trading costs. 
