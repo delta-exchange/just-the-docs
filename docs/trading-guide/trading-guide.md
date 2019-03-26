@@ -24,12 +24,7 @@ It is worth noting that the exchange rate offered in the currency conversion is 
 
 ## Placing an order
 
-Orders can be placed in Place Order Panel in the trading dashboard. We currently support three types of order:
-
-  -   **Limit order:** is an order to buy or sell a specified number of derivative contracts at a specified price. A limit order will only ever fill at the specified price or better price.
-    
--   **Market order:** is an order to buy or sell a specified number of derivative contracts at the best available price available in the order book. There is no guarantee that a market order will fill at the price specified. A market order may fill at a number of different prices, based on the quantity of the market order and the quantities of the existing orders on the order book at the time.
-- **Stop order:** is an order which is triggered at a stop price provided by the user.
+Orders can be placed in Place Order Panel in the trading dashboard. We support both basic order types (e.g. limit order and market orders) as well as several advanced order types (e.g. Stop orders and bracket orders). Details of the all the supported order types are availabe [here](https://www.delta.exchange/user-guide/docs/trading-guide/OrderTypes/)
     
 ## Margin & PnL Calculations
 
@@ -41,8 +36,9 @@ A new order is allowed to be submitted to the exchange only if the trader has su
     
 Details on the various types of margins and their calculations are available [here]({{site.baseurl}}/docs/trading-guide/margin-explainer/#margining-explainer).
 
-Existing positions on Delta are marked at [fair Price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking). This means that your unrealised PnL and hence the current value of margin allocated to a particular position are a function of the marked price. PnL calculations are illustrated with example in the [PnL Math]({{site.baseurl}}/docs/trading-guide/PnL-Math/#profit-loss-math) section.
+## Fair Price Marking
+Existing positions on Delta are marked at [fair Price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking). This means that your unrealised PnL and hence the current value of margin allocated to a particular position are a function of the marked price. PnL calculations are illustrated with examples in the [PnL Math]({{site.baseurl}}/docs/trading-guide/PnL-Math/#profit-loss-math) section.
 
 ## Settlement
 
-You can square off a position in a derivatives contract in the exchange. Position that are held till maturity are cash settled at a price that is computed using the settlement method described in the [contract specifications](https://wwww.exchange/contracts).
+You can square off a position in a derivatives contract in the exchange. Position that are held till maturity are cash settled at a price that is computed using the settlement method described in the [contract specifications](https://wwww.delta.exchange/contracts).

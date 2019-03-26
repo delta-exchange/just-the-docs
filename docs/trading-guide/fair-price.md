@@ -37,7 +37,7 @@ The $$Underlying\_Index\_Price$$ is obviously independent of the trading happeni
 
 To understand the computation of $$Fair Basis$$, we first need to introduce the notion of $$Impact Price$$. This price tries to estimate the price at which a typical long or short position (called Impact Position) in the futures contract can be entered at any given time.
 
-Impact Position, in terms of number is contracts to be traded, is provided in the [specifications](https://www.delta.exchange/contracts/) for each futures contract. It is easy to see that Impact Price is a function of: (a) Impact Position and (b) current state of the order book.
+Impact Size, in terms of number is contracts to be traded, is provided in the [specifications](https://www.delta.exchange/contracts/) for each futures contract. It is easy to see that Impact Price is a function of: (a) Impact Size and (b) current state of the order book.
 
 $$Impact\_Bid\_Price = \text{Average fill price to execute a typical short trade}$$
 
@@ -46,7 +46,6 @@ $$Impact\_Ask\_Price = \text{Average fill price to execute a typical long trade}
 $$Impact\_Mid\_Price = \text{Average of } Impact\_Bid\_Price \text{ and } Impact\_Ask\_Price$$
  
 
-  
 ## Fair Basis Calculation
 
 We first compute an annualised fair value basis, $$\%Annualised\_Basis$$:
@@ -70,3 +69,9 @@ Now, that we have the $$Fair\_Basis$$, the fair price of the futures (i.e. the m
 $$Futures\_Fair\_Price = Underlying\_Index\_Price + Fair\_Basis$$
 
 It is worth noting that only live positions are marked using the Fair Price. Thus, unrealised PnL may swing with the Mark Price, realised PnL is determined using actual traded price and is unimpacted by Mark Price.
+
+## Fair Price Marking Leading into Settlement
+
+A Futures contract on Delta Exchange are settled on the 30 minute TWAP (time-weighted average price) of its Underlying Index. To ensure that at the time of settlement there are no under-margined positions, the transition from using $$Underlying\_Index\_Price$$ to $$TWAP\_Underlying\_Index\_Price$$ in the calculation of Mark Price is done gradually. 
+
+When the settlement time of a contract is one hour away, we switch to a weighted average of $$Underlying\_Index\_Price$$ amd $$TWAP\_Underlying\_Index\_Price$$ in Mark Price computation. At the time of switch, weight of $$Underlying\_Index\_Price$$ is 100% and weight of $$TWAP\_Underlying\_Index\_Price$$ is 0%. Over the next 30 minutes, these weights are changed every minute such that weights converge to 0% and 100% respectively. This means that in the last 30 minutes leading into contract settlement, it is $$TWAP\_Underlying\_Index\_Price$$ that is used in the computation of the Mark Price. At contract settlemment, $$Fair Basis$$ is 0 and Mark Price converges to $$TWAP\_Underlying\_Index\_Price$$.

@@ -36,7 +36,7 @@ Everytime a new order is placed, the system does three things:
 
   
 
-## Reservation Margin Computation
+## Reserved Margin Computation
 
 Initial Margin (IM) requirements for a standalone order are as follows:
 -   Buy limit order
@@ -58,7 +58,7 @@ $$IM = (InitialMargin\% * \#Contracts * Multiplier * Max (MarkPrice, BestBid)$$
 
 Now, if there are existing positions/ open orders in the contract, then the Initial Margin requirement for the new combination of position and open orderss is recomputed. For this computation, positions or orders on opposite side are netted in such a manner that for two offsetting orders, margin is reserved only once.
 
-Reservation  Margin is then the difference of the Initial Margin requirement for the combined position (existing + new order) and the Position Margin and Order Margin currently allocated to the derivative contract.
+Reserved  Margin is then the difference of the Initial Margin requirement for the combined position (existing + new order) and the Position Margin and Order Margin currently allocated to the derivative contract.
 
 ## Impact of order cancellations on margins
 
