@@ -42,7 +42,7 @@ The details on how the Mark Price is calculated are available [here](https://www
 
 **Funding Rate**
 
-$$Funding Rate = Max (0.05%, Premium Rate) + Min (-0.05%, Premium Rate)$$
+$$Funding\ Rate = Max(0.05%, Premium\ Rate) + Min(-0.05%, Premium\ Rate)$$
 
 The above equation results in the following outputs:
 - when Premium Rate lies between -0.05% and 0.05%, Funding Rate = 0%
@@ -55,7 +55,7 @@ Funding Rate is considered to be an 8-hourly interest rate and is computed every
 
 Funding is exchanged between longs and shorts every minute. Funding payments are completely peer-to-peer and Delta Exchange does not charge any fees on funding. Funding paid or received is computed as:
 
-$$Funding Payment = Current\_Position\_Value * Funding Rate * 1/ (8 * 60)$$
+$$Funding\ Payment = Current\_Position\_Value * Funding\ Rate * 1/ (8 * 60)$$
 
 
 
