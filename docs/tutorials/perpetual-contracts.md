@@ -42,7 +42,7 @@ The details on how the Mark Price is calculated are available [here](https://www
 
 **Funding Rate**
 
-$$Funding\ Rate = Max(0.05%, Premium\ Rate) + Min(-0.05%, Premium\ Rate)$$
+$$Funding\ Rate = Max(0.05\%, Premium\ Rate) + Min(-0.05\%, Premium\ Rate)$$
 
 The above equation results in the following outputs:
 - when Premium Rate lies between -0.05% and 0.05%, Funding Rate = 0%
