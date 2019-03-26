@@ -27,9 +27,11 @@ Perpetual contracts are a type of derivatives that are similar to a [futures con
 Funding is the primary mechanism which tethers price of a perpetual contract to spot. Funding is a series of continuous payments that are exchanged between longs and shorts in a perpetual contract. Let's understand how funding helps keep price of the perpetual contract close to the spot price.
 
 **Perpetual contract price > Spot price**
+
 When a perpetual contract trades at a premium to spot, funding is positive, i.e longs pay funding to shorts. This creates disincentive to stay long or enter into a new long position. Conversely, it creates incentive to stay short or enter into a new short position. These dynamics will serve to push the price of the perpetual contract down towards the spot price.
 
 **Perpetual contract price < Spot price**
+
 When a perpetual contract trades at a discount to spot, funding is negative, i.e. shorts pay funding to longs. This creates disincentive to stay short or enter into a new short position. Conversely, it creates incentive to stay long or enter into a new long position. These dynamics will serve to push the price of the perpetual contract up towards the spot price.
 
 ## Funding Rate Calculation
