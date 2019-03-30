@@ -62,6 +62,7 @@ $$Funding\ Payment = Current\_Position\_Value * Funding\ Rate * 1/ (8 * 60)$$
 where Current Position Value is value of a the position at the current Underlying Index Price.
 
 **Funding Limits**
+
 A perpetualc contract can be thought as an 8-hour futures contract that is being rolled into the next 8-hour futures every minute. Thus, at any time, the [fair basis]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-basis-calculation) of a perpetual swap should be similar to a futures contract. With this in mind, we cap the fair basis for perpetual swap at -/+0.5%. This limit on fair basis results in the same constraint being applied to the Funding Rate. Consequently, the Funding rate must always stay between -0.45% and 0.45%.
 
 **Funding Example**
