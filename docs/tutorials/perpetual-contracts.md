@@ -63,7 +63,7 @@ where Current Position Value is value of a the position at the current Underlyin
 
 **Funding Limits**
 
-A perpetualc contract can be thought as an 8-hour futures contract that is being rolled into the next 8-hour futures every minute. Thus, at any time, the [fair basis]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-basis-calculation) of a perpetual swap should be similar to a futures contract. With this in mind, we cap the fair basis for perpetual swap at -/+0.5%. This limit on fair basis results in the same constraint being applied to the Funding Rate. Consequently, the Funding rate must always stay between -0.45% and 0.45%.
+A perpetualc contract can be thought as an 8-hour futures contract that is being rolled into the next 8-hour futures every minute. Thus, at any time, the [fair basis]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-basis-calculation) of a perpetual contract should be similar to a futures contract. With this in mind, we cap the fair basis for perpetual swap at -/+0.5%. This limit on fair basis results in the same constraint being applied to the Funding Rate. Consequently, the Funding rate must always stay between -0.45% and 0.45%.
 
 **Funding Example**
 
@@ -77,8 +77,9 @@ $$Underlying Index Price = $4000$$
 
 $$Premium\ Rate = (4015-4000)/4000 = 0.375\%$$
 
-$$Funding\ Rate = Max (0.05\%,0.375\%) + Min (-0.05\%,0.375\%)
-               = 0.375\% - 0.05\% = 0.325\%$$
+$$Funding\ Rate = Max (0.05\%,0.375\%) + Min (-0.05\%,0.375\%)$$
+
+$$= 0.375\% - 0.05\% = 0.325\%$$
 
 Since you are long and Funding Rate is positive, you'd be paying funding.               
 
