@@ -59,5 +59,30 @@ Funding is exchanged between longs and shorts every minute. Funding payments are
 
 $$Funding\ Payment = Current\_Position\_Value * Funding\ Rate * 1/ (8 * 60)$$
 
+where Current Position Value is value of a the position at the current Underlying Index Price.
+
+**Funding Limits**
+A perpetualc contract can be thought as an 8-hour futures contract that is being rolled into the next 8-hour futures every minute. Thus, at any time, the [fair basis]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-basis-calculation) of a perpetual swap should be similar to a futures contract. With this in mind, we cap the fair basis for perpetual swap at -/+0.5%. This limit on fair basis results in the same constraint being applied to the Funding Rate. Consequently, the Funding rate must always stay between -0.45% and 0.45%.
+
+**Funding Examples**
+Lets say you have a long position of 10000 contracts in the BTCUSD Perpetual contract on Delta Exchange.
+
+Between time: T and T+30 mins, Mark Price = $4015 and Underlying Index Price = $4000.
+
+$$Premium\ Rate = (4015-4000)/4000 = 0.375\%$$
+
+$$Funding\ Rate = Max (0.05\%,0.375\%) + Min (-0.05\%,0.375\%)
+               = 0.375\% - 0.05\% = 0.325\%$$
+
+Since you are long and Funding Rate is positive, you'd be paying funding.               
+
+$$ Funding\ Paid\ per\ min = 10000 * (1/4000) * 0.325\% * 1/(8*60) =  0.00001693  BTC
+
+Since both Underlying Index Price and Mark Price remain unchanged for this 30 min window, the funding paid by you in 30 mins can be computed as:
+
+$$ Funding\ Paid\ for\ 30\ mins = 30 * 0.00001693 = 0.000508 BTC$$
+
+
+
 
 
