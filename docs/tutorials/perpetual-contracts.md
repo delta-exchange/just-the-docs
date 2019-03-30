@@ -69,11 +69,7 @@ A perpetualc contract can be thought as an 8-hour futures contract that is being
 
 Lets say you have a long position of 10000 contracts in the BTCUSD Perpetual contract on Delta Exchange. Recall that 1 BTCUSD contract is 1 USD.
 
-Between time $$T$$ and $$T+30\ mins$$, 
-
-$$Mark Price = $4015,$$
-
-$$Underlying Index Price = $4000$$
+Between time $$T$$ and $$T+30\ mins$$, $$Mark Price = $4015,$$ \text{and} $$Underlying\ Index\ Price = $4000$$
 
 $$Premium\ Rate = (4015-4000)/4000 = 0.375\%$$
 
