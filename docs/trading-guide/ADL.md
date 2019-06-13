@@ -8,7 +8,7 @@ nav_order: 6
 
 # Auto-Deleveraging
 
-Auto deleveraging (ADL) is initiated if liquidation of a position is doesn’t get completed before the Mark  Price reaches the Bankruptcy Price of the position. This means that the Liquidation order (which is an immediate-or-cancel order at Bankruptcy Price) is either completely or partially unfilled. In this situation, the left over contracts from the position under liquidation are forcefully matched (at the Bankruptcy Price) with counterparties on the opposite side.
+Auto deleveraging (ADL) is initiated if liquidation of a position doesn’t get completed before the Mark  Price reaches the Bankruptcy Price of the position. This means that the Liquidation order (which is an immediate-or-cancel order at Bankruptcy Price) is either completely or partially unfilled. In this situation, the left over contracts from the position under liquidation are forcefully matched (at the Bankruptcy Price) with counterparties on the opposite side.
 
  It is worth noting that all the open orders of the deleveraged counterparties in the same contract are also cancelled. Those deleveraged are notified via email and can choose to re-enter their positions.
 
@@ -45,4 +45,4 @@ Let’s assume a short position is to be closed via ADL. We will start with the 
 
  **Case 1:** The short position has $$15$$ contracts. In this case, Account 5 will have $$15$$ of its $$20$$ contracts matched against this short position at the Bankruptcy Price of the short position. No other accounts will be impacted.
 
-**Case 2:** The short position has $$40$$ contracts. In this case, $$20$$ contracts of Account 5, $$10$$ contracts of Account 5 and $$10$$ contracts of Account 3 will be deleveraged.
+**Case 2:** The short position has $$40$$ contracts. In this case, $$20$$ contracts of Account 5, $$10$$ contracts of Account 2 and $$10$$ contracts of Account 3 will be deleveraged.
