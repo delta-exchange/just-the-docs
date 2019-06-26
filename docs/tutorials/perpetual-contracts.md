@@ -44,14 +44,9 @@ The details on how the Mark Price is calculated are available [here](https://www
 
 **Funding Rate**
 
-$$Funding\ Rate = Max(0.05\%, Premium\ Rate) + Min(-0.05\%, Premium\ Rate)$$
+$$Funding\ Rate = Premium\ Rate$$
 
-The above equation results in the following outputs:
-- when Premium Rate lies between -0.05% and 0.05%, Funding Rate = 0%
-- when Premium Rate is greater than 0.05%, Funding Rate = Premium Rate - 0.05%
-- when Premium Rate is less than -0.05%, Funding Rate = Premium Rate + 0.05%
-
-Funding Rate is considered to be an 8-hourly interest rate and is computed every minute. 
+Funding Rate is considered to be an 8-hourly interest rate and is computed every minute. The magnitude of Funding Rate is capped. Funding caps could vary from contract to contract and are availabe in the [contract specifications](https://www.delta.exchange/contracts/)
 
 **Funding Payment** 
 
