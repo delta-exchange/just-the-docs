@@ -37,7 +37,7 @@ Direction = Buy
 
 ## Stop Orders
 
-Stop orders are conditional orders which become active only after the market reaches a certain Trigger Price (also known as Stop Price). Stop orders serve as key risk management tools for traders, enabling them to limit losses on open trades. In addition to that, stop orders can also provide conditional entry into new positions. 
+Stop orders are conditional orders which become active only after the market reaches a certain Trigger Price (also known as Stop Price). Stop orders serve as key risk management tools for traders, enabling them to limit losses on open trades. In addition to that, stop orders can also provide conditional entry into new positions. To enable users to place multiple stop orders with ease, margin for a stop order is blocked only when it is triggered. This means that if there isn't sufficient margin available when a stop order is triggered, it will be cancelled.  
 
 It is important to note that currently only **Mark Price** can be used to specify the Trigger Price of a stop order. In the case of a Buy stop order, the stop price must be below the current Mark Price. Correspondingly, for a Sell stop order, the stop price must be above the current Mark Price.
 
