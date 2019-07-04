@@ -50,7 +50,7 @@ Funding Rate is considered to be an 8-hourly interest rate and is computed every
 
 **Funding Payment** 
 
-Funding is exchanged between longs and shorts every minute. Funding payments are completely peer-to-peer and Delta Exchange does not charge any fees on funding. Funding paid or received is computed as:
+Funding is exchanged between longs and shorts every minute. It is impportant to note that while accruals for funding paid or received accruals happen every minute, entries for funding payments are made in the transaction log once every 2 hours or when a position is closed. Funding payments are completely peer-to-peer and Delta Exchange does not charge any fees on funding. Funding paid or received is computed as:
 
 $$Funding\ Payment = Current\_Position\_Value * Funding\ Rate * 1/ (8 * 60)$$
 
