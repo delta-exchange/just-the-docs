@@ -3,7 +3,7 @@ layout: default
 title: Market Disruption
 has_children: false
 parent: Margin Trading Guide
-nav_order: 8
+nav_order: 9
 ---
 
 # Market Disruption
