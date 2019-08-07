@@ -26,9 +26,7 @@ Margin requirement remains flat till a certain position size (Position Threshold
 
 $$ Initial\ Margin = Initial\ Margin_{min} + Slope_{IM} * (Position\ Size - Position\ Threshold )$$
 
-\documentclass{article}
-\usepackage{amsmath}
-\begin{document}
+
 \begin{equation}
   D_{it} =
     \begin{cases}
@@ -37,7 +35,7 @@ $$ Initial\ Margin = Initial\ Margin_{min} + Slope_{IM} * (Position\ Size - Posi
       0 & \text{otherwise}
     \end{cases}       
 \end{equation}
-\end{document}
+
 
 
 ## Isolated Margin
