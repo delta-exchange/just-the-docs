@@ -24,26 +24,17 @@ The Initial Margin and Maintenance margin requirements for any contract are incr
 
 Margin requirement remains flat till a certain position size (Position Threshold). Once position size crosses this threshold, margin requirement increases linearly with position size. 
 
-$$ Initial\ Margin = Initial\ Margin_{Min} + Slope_{IM} * (Position\ Size - Position\ Threshold )$$
+When Position size is less than or equal to Position Threshold:
 
-\[f(x) = \begin{cases} x & \text{si $x > 0$,} \\
-                      -x & \text{sinon} \end{cases}\]
+$$ Initial\ Margin = Initial\ Margin_{MIN} $$
 
+$$ Maintenance\ Margin = Maintenance\ Margin_{MIN} $$
 
-\begin{multline}
- F =  \left\{   abc \right.\nonumber\\
- \left. {}  +  def \right\},
-\end{multline}
+and, When Position size is greater than Position Threshold:
 
+$$ Initial\ Margin = Initial\ Margin_{MIN} + Slope_{IM} * (Position\ Size - Position\ Threshold )$$
 
-\begin{equation}
-  D_{it} =
-    \begin{cases}
-      1 & \text{if bank $i$ issues ABs at time $t$}\\
-      2 & \text{if bank $i$ issues CBs at time $t$}\\
-      0 & \text{otherwise}
-    \end{cases}       
-\end{equation}
+$$ Maintenance\ Margin = Maintenance\ Margin_{MIN} + Slope_{MM} * (Position\ Size - Position\ Threshold )$$
 
 
 
