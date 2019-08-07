@@ -88,6 +88,6 @@ Now, if there are existing positions/ open orders in the contract, then the Init
 
 Reserved  Margin is then the difference of the Initial Margin requirement for the combined position (existing + new order) and the Position Margin and Order Margin currently allocated to the derivative contract.
 
-## Impact of order cancellations on margins
+## Impact of order cancellations on margin
 
 In a given contract, Order Margin account contains margin blocked for all the current open orders. If one or more of these open orders is cancelled, the Initial Margin requirement for the remaining open orders and existing orders is recomputed. The new Initial Margin requirement will either be same as earlier or lower. If case of latter, excess margin is released.
