@@ -36,6 +36,8 @@ $$ Initial\ Margin = Initial\ Margin_{MIN} + Slope_{IM} * (Position\ Size - Posi
 
 $$ Maintenance\ Margin = Maintenance\ Margin_{MIN} + Slope_{MM} * (Position\ Size - Position\ Threshold )$$
 
+The values of minimum Initial Margin, Maintenance Margin, Position Threshold and Slope vary from contract to contract and are available in the [contract specifications](https://www.delta.exchange/contracts). 
+
 
 
 ## Isolated Margin
