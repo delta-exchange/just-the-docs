@@ -19,7 +19,7 @@ When Liquidation Price of a position is hit, liquidation of this position is ini
 
 Liquidation mechanism on Delta Exchange is comprised of the following steps:
 
-** When position size < Position Threshold
+** When position size < Position Threshold**
 
 When the size of the position in liquidation is lower than the [Position Threshold]({{site.baseurl}}/docs/trading-guide/margin-explainer/#risk-limits-margin-requirement-vs-position-size) the entire position is liquidated in one shot. The steps involved in liquidated such a position are as follows:
 
@@ -31,7 +31,7 @@ When the size of the position in liquidation is lower than the [Position Thresho
     
 -   In case the position is not fully liquidated (for example due to lack of liquidity), an off market trade is executed at bankruptcy price betweent the trader and the Liquidation Engine. This essentially results in the Liquidation Engine taking over the remaining position. 
 
-** When position size > Position Threshold
+** When position size > Position Threshold**
 
 When the size of the position in liquidation is greater than the [Position Threshold]({{site.baseurl}}/docs/trading-guide/margin-explainer/#risk-limits-margin-requirement-vs-position-size) liquidation happens in incremental fashion. Reduction in position size leads to reduction in Maintenance Margin and thus makes incremental liquidation possible. The steps involved in incremental liquidation are as follows:
 
