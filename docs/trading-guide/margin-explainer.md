@@ -26,6 +26,9 @@ Margin requirement remains flat till a certain position size (Position Threshold
 
 $$ Initial\ Margin = Initial\ Margin_{min} + Slope_{IM} * (Position\ Size - Position\ Threshold )$$
 
+\[f(x) = \begin{cases} x & \text{si $x > 0$,} \\
+                      -x & \text{sinon} \end{cases}\]
+
 
 \begin{equation}
   D_{it} =
