@@ -24,7 +24,7 @@ The Initial Margin and Maintenance margin requirements for any contract are incr
 
 Margin requirement remains flat till a certain position size (Position Threshold). Once position size crosses this threshold, margin requirement increases linearly with position size. 
 
-$$ Initial Margin = Minimum Initial Margin + slope_IM * (Position Size - Position Threshold )$$
+$$ Initial\ Margin = Minimum\ Initial\ Margin + Slope_{IM} * (Position\ Size - Position\ Threshold )$$
 
 
 ## Isolated Margin
