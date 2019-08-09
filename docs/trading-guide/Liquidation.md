@@ -56,7 +56,6 @@ For illustrative purposes, lets assume that the maintenance margin requirement f
 
 ```
 When position size < 5 BTC, MM% = 0.5%
-
 When position size > 5 BTC, MM% = 0.5% + 0.075% * (position size - 5) 
 ```
 **Case 1**
@@ -70,7 +69,7 @@ When Mark Price goes below 9950, this position will go into liquidation and it w
 
 **Case 2**
 ```
-A trade is long 200000 contracts at an entry price of USD 10000 at maximum allowed leverage. 
+A trade is long 200000 contracts at an entry price of USD 10000 at maximum allowed leverage
 Position  size = 2 BTC => MM% = 1.63% & IM% = 3.25%
 liquidation price = 9940.5 & bankruptcy price = 9685.5
 ```
