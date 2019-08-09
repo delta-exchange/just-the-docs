@@ -22,15 +22,18 @@ If the trade against you, the unrealised loss in your position is adjusted again
 The Initial Margin and Maintenance margin requirements for any contract are increased as the position size increases. Increasing the margin requirement helps to ensure orderly liquidation of large positions and reduce the incidences of [auto-deleveraging]({{site.baseurl}}/docs/trading-guide/ADL). 
 
 
+![image]({{site.baseurl}}/assets/images/margin_chart.jpg "Change in margin requirement with position size")
+
+
 Margin requirement remains flat till a certain position size (Position Threshold). Once position size crosses this threshold, margin requirement increases linearly with position size. 
 
-When Position size is less than or equal to Position Threshold:
+When **Position size is less than or equal to Position Threshold**:
 
 $$ Initial\ Margin = Initial\ Margin_{MIN} $$
 
 $$ Maintenance\ Margin = Maintenance\ Margin_{MIN} $$
 
-and, When Position size is greater than Position Threshold:
+and, when **Position size is greater than Position Threshold**:
 
 $$ Initial\ Margin = Initial\ Margin_{MIN} + Slope_{IM} * (Position\ Size - Position\ Threshold )$$
 
