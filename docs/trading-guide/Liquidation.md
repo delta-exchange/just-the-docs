@@ -61,14 +61,18 @@ When position size > 5 BTC, MM% = 0.5% + 0.075% * (position size - 5)
 ```
 **Case 1**
 ```
-A trader is long 20000 contracts at an entry price of USD 10000 at maximum allowed leverage. The notional size of this position is less than 5 BTC and thus the maintenance margin is 0.5%. The liquidation price and bankruptcy price for the position are 9950 and 9901 respectively.
+A trader is long 20000 contracts at an entry price of USD 10000 at maximum allowed leverage
+Position  size = 2 BTC => MM% = 0.5%
+liquidation price = 9950 & bankruptcy price = 9901
 ```
 
 When Mark Price goes below 9950, this position will go into liquidation and it will be liquidated in a single shot by placing a limit IOC order to sell 20000 contracts with a limit price of 9901. In case, some part of the limit IOC order remains unfilled, the Liquidation Engine takes over the remaining position through an off market trade at 9901.
 
 **Case 2**
 ```
-A trade is long 200000 contracts at an entry price of USD 10000 at maximum allowed leverage. The notional size of this position is greater than 5 BTC. The minimum maintenance marging and minimum initial margin requirements for the position are 1.63% and 3.25% respectively. The liquidation price and bankruptcy price for the position are 9840.5 and 9685.5 respectively.
+A trade is long 200000 contracts at an entry price of USD 10000 at maximum allowed leverage. 
+Position  size = 2 BTC => MM% = 1.63% & IM% = 3.25%
+liquidation price = 9940.5 & bankruptcy price = 9685.5
 ```
 
 Lets assume current Mark Price is 9840. In this situation, incremental liquidation will apply. Because of adverse price movement, the remaining position margin is sufficient to support a position of only 62611 contracts. The system will thus attempt to liquidate a long position of 137389. This is the Partial Position in Liquidation or PPL. The maintenance margin required for a position of PPL's size is 1.16%. Therefore, the liquidation price of PPL is set to 9728, i.e. 1% away from the current Mark Price of 9840. This means a sell limit IOC order with price of 9728 is sent to the order book to close PPL. 
