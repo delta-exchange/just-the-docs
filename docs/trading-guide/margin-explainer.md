@@ -19,25 +19,24 @@ If the trade against you, the unrealised loss in your position is adjusted again
 
 ## Risk Limits: Margin Requirement vs. Position Size
 
-The Initial Margin and Maintenance margin requirements for any contract are increased as the position size increases. Increasing the margin requirement helps to ensure orderly liquidation of large positions and reduce the incidences of [auto-deleveraging]({{site.baseurl}}/docs/trading-guide/ADL). 
-
-
-![image]({{site.baseurl}}/assets/images/margin_chart.jpg "Change in margin requirement with position size")
+The Initial Margin and Maintenance margin requirements for any contract are increased as the position size increases. Increasing the margin requirement helps to ensure orderly liquidation of large positions and reduces the incidences of [auto-deleveraging]({{site.baseurl}}/docs/trading-guide/ADL). 
 
 
 Margin requirement remains flat till a certain position size (Position Threshold). Once position size crosses this threshold, margin requirement increases linearly with position size. 
 
+![image]({{site.baseurl}}/assets/images/margin_chart.jpg "Change in margin requirement with position size")
+
 When **Position size is less than or equal to Position Threshold**:
 
-$$ Initial\ Margin = Initial\ Margin_{MIN} $$
+$$ Initial\ Margin\% = Initial\ Margin\%_{MIN} $$
 
-$$ Maintenance\ Margin = Maintenance\ Margin_{MIN} $$
+$$ Maintenance\ Margin\% = Maintenance\ Margin\%_{MIN} $$
 
 and, when **Position size is greater than Position Threshold**:
 
-$$ Initial\ Margin = Initial\ Margin_{MIN} + Slope_{IM} * (Position\ Size - Position\ Threshold )$$
+$$ Initial\ Margin\% = Initial\ Margin\%_{MIN} + Slope_{IM} * (Position\ Size - Position\ Threshold )$$
 
-$$ Maintenance\ Margin = Maintenance\ Margin_{MIN} + Slope_{MM} * (Position\ Size - Position\ Threshold )$$
+$$ Maintenance\ Margin\% = Maintenance\ Margin\%_{MIN} + Slope_{MM} * (Position\ Size - Position\ Threshold )$$
 
 The values of minimum Initial Margin, Maintenance Margin, Position Threshold and Slope vary from contract to contract and are available in the [contract specifications](https://www.delta.exchange/contracts). 
 
@@ -93,4 +92,4 @@ Reserved  Margin is then the difference of the Initial Margin requirement for th
 
 ## Impact of order cancellations on margin
 
-In a given contract, Order Margin account contains margin blocked for all the current open orders. If one or more of these open orders is cancelled, the Initial Margin requirement for the remaining open orders and existing orders is recomputed. The new Initial Margin requirement will either be same as earlier or lower. If case of latter, excess margin is released.
+In a given contract, Order Margin account contains margin blocked for all the current open orders. If one or more of these open orders is cancelled, the Initial Margin requirement for the remaining open orders and existing orders is recomputed. The new Initial Margin requirement will either be same as earlier or lower. In the latter case, excess margin is released.
