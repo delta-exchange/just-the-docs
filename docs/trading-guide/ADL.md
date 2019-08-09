@@ -8,8 +8,9 @@ nav_order: 7
 
 # Auto-Deleveraging
 
-In derivatives trading, you are trading against counter-parties who are also trading on leverage. All outstanding longs offset against shorts and vice versa such that net open interest remains zero at all times. This is the principle that all derivatives exchanges follow globally to ensure fair and balanced trading between counter-parties. 
-Whenever any party goes into liquidation their position is taken over by liquidation engine. Liquidation engine will try to close this position at the bankruptcy price or better price. Though rarely, but it is possible that the liquidation engine is not able to close the position, which is in liquidation, in the open order-book. This can happen when the market has moved too fast and beyond the bankruptcy price of the position in liquidation. In such cases counter-parties on the opposite side can get ADL i.e. their position will also be closed in order to keep the net OI balanced. Parties who get ADL are selected based on the criteria mentioned below.
+In derivatives trading, you are trading against counter-parties who are also trading on leverage. All outstanding longs offset against shorts and vice versa such that net open interest remains zero at all times. This is the principle that all derivatives exchanges follow globally to ensure fair and balanced trading between counterparties. 
+
+Whenever a position in liquidation is taken over by the Liquidation Enginer, it tries to close this position at the bankruptcy price or better price. Though rarely, but it is possible that the liquidation engine is not able to close the position, which is in liquidation, in the open order-book. This can happen when the market has moved too fast and beyond the bankruptcy price of the position in liquidation. In such cases counterparties on the opposite side can get auto-delevered (ADL-ed) i.e. their position will also be closed in order to keep the net OI balanced. Parties who get ADL are selected based on the criteria mentioned below.
 
  It is worth noting that all the open orders of the deleveraged counterparties in the same contract are also cancelled. Those deleveraged are notified via email and can choose to re-enter their positions.
 

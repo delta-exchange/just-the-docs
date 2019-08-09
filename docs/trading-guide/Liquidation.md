@@ -48,7 +48,36 @@ When the size of the position in liquidation is greater than the [Position Thres
 
 ## Liquidation Engine
 
-The Liquidation Engine always aims to close any position it acquires at a price that is equal to or better than the price at which it acquired the position. This is done by placing a limit order to close the position. Generally, the price of this limit order will be away from the current Mark Price  Liquidation Engine has acquired the position. Generally, this limit price would be away from Mark Price and would provide an opportunity to traders attractive entry point. However, if the Mark Price breaches the limit price, then the Liquidation Engine cancels the limit order and triggers [auto-deleveraging]({{site.baseurl}}/docs/trading-guide/ADL). 
+As is evident from the discussion above, the Liquidation Engine always takes over a position at its bankruptcy price. The goal of the Liquidation Engine is to close positions it acquires at price which is equal to or better than the acquisition price. To this end, as soon as the Liquidation Engine takes over a position, it places a limit order to close the position. Generally, the price of this limit order will be away from the current Mark Price  Liquidation Engine has acquired the position. Generally, this limit price would be away from Mark Price and would provide an opportunity to traders attractive entry point. However, if the Mark Price breaches the limit price, then the Liquidation Engine cancels the limit order and triggers [auto-deleveraging]({{site.baseurl}}/docs/trading-guide/ADL). 
+
+## Liquidation Examples
+
+For illustrative purposes, lets assume that the maintenance margin requirement for the BTCUSD perpetual contract is given by the following equation:
+
+```
+When position size < 5 BTC, MM% = 0.5%
+
+When position size > 5 BTC, MM% = 0.5% + 0.075% * (position size - 5) 
+```
+**Case 1**
+```
+A trader is long 20000 contracts at an entry price of USD 10000 at maximum allowed leverage. The notional size of this position is less than 5 BTC and thus the maintenance margin is 0.5%. The liquidation price and bankruptcy price for the position are 9950 and 9901 respectively.
+```
+
+When Mark Price goes below 9950, this position will go into liquidation and it will be liquidated in a single shot by placing a limit IOC order to sell 20000 contracts with a limit price of 9901. In case, some part of the limit IOC order remains unfilled, the Liquidation Engine takes over the remaining position through an off market trade at 9901.
+
+**Case 2**
+```
+A trade is long 200000 contracts at an entry price of USD 10000 at maximum allowed leverage. The notional size of this position is greater than 5 BTC. The minimum maintenance marging and minimum initial margin requirements for the position are 1.63% and 3.25% respectively. The liquidation price and bankruptcy price for the position are 9840.5 and 9685.5 respectively.
+```
+
+Lets assume current Mark Price is 9840. In this situation, incremental liquidation will apply. Because of adverse price movement, the remaining position margin is sufficient to support a position of only 62611 contracts. The system will thus attempt to liquidate a long position of 137389. This is the Partial Position in Liquidation or PPL. The maintenance margin required for a position of PPL's size is 1.16%. Therefore, the liquidation price of PPL is set to 9728, i.e. 1% away from the current Mark Price of 9840. This means a sell limit IOC order with price of 9728 is sent to the order book to close PPL. 
+
+Lets further assume that the order book currently does not have sufficient depth to fill this limit IOC order and 50000 contracts remain unfilled. In this case, the Liquidation Engine would take over the unfiled part and would acquire a long position of 50000 contracts at 9728. Recall that the Mark Price is still at 9840. Now, the Liquidation Engine will place a sell limit order at 9728 to close this recently acquired position.
+
+With his position partially liquidated, the trader is now left with a long position of 62611 contracts. Because the position size is smaller, so is the margin requirement for it. The new liquidation price and bankruptcy price for the remaining position are 9648 and 9593 respectively. 
+
+
 
 
 
