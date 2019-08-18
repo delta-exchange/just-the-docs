@@ -82,7 +82,7 @@ $$ Funding\ Paid\ for\ 30\ mins = 30 * 0.00001693 = 0.000508 BTC$$
 
 ## Funding for OTC Contracts
 
-For OTC contracts, funding rate is not computed using the order book. Instead, funding rate is charged by the party providing liquidity to the part that demands liquidity. While the funding rate generally stays constant, it can change with the lqiudity situation in the market. All other dynamics of funding remain unchanged, i.e. in OTC contracts too: (a) funding is peer to peer, (b) if funding rate is positive: longs pay shorts and if funding rate is negative: shorts pay longs, and (c) funding is exchanged between longs and shorts every minute.
+For OTC contracts, funding rate is not computed using the order book. Instead, funding rate is charged by the party providing liquidity to the party that demands liquidity. While the funding rate generally stays constant, it can change with the lqiudity situation in the market or with sharp price moves. All other dynamics of funding remain unchanged, i.e. in OTC contracts too: (a) funding is peer to peer, (b) if funding rate is positive: longs pay shorts and if funding rate is negative: shorts pay longs, and (c) funding is exchanged between longs and shorts every minute.
 
 
 

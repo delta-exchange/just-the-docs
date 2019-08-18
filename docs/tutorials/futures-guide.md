@@ -130,7 +130,7 @@ Long USD - BTC Futures contract using $100 as the margin money. Let’s assume t
 
  $$PnL = 10 * 0.01 * (11000 - 10000) = \$100$$
 
-  So, in this case, we have generated a PnL of $$$100$$ with the an equity of $$$100$$.
+  So, in this case, we have generated a PnL of $$$100$$ with an equity of $$$100$$.
 
 $$RoE_{Leverage} = \$100/ \$100 = 100\%$$
 
