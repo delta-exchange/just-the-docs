@@ -8,9 +8,6 @@ nav_order: 5
 
 # Auto Margin Top-up
 
-1. TOC
-{:toc}
-
 [Segregated Margin]({{site.baseurl}}/docs/trading-guide/margin-explainer/#margining-explainer) is the default margining mode on Delta Exchange. This means that an open position has access to only the margin assigned to that position. Consequently, an open position may go into liquidation if the position margin erodes, even if there is sufficient balance available in a user's account. This behaviour can be modified through the use of **Auto Margin Top-up**. 
 
 Auto Margin top-up is a feature that enables traders to automatically add margin to open positions in order to avoid liquidation. If Auto Margin Top-up is enabled for a position, whenever the position is about to go into liquidation Position Margin is replenished. 
