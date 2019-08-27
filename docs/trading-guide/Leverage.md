@@ -23,9 +23,9 @@ For Order Leverage, it is important to note the following:
 - All open orders in a given contract are margined at the same leverage. This means that if you change the selected leverage from the leverage slider, leverage of all your open orders in that contract will be updated.
 - When you change your Order Leverage, the leverage of your open positions remains unimpacted
 
-**Position Leverage** is the leverage of your position at the current[Mark Price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking). It is also sometimes referred to as the 'effective leverage', and is computed using the following equation:
+**Position Leverage** is the leverage of your position at the current [Mark Price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking). It is also sometimes referred to as the **'Effective Leverage'**, and is computed using the following equation:
 
-$$Position Leverage = Position Value at current Mark Price/ (Position Margin + Unrealised PnL$$
+$$Position Leverage = Position Value at current Mark Price/ (Position Margin + Unrealised PnL)$$
 
 As is evident from the formula above, Position Leverage can be changed by changing Position Margin. If you increase Position Margin, Position Leverage goes down. Conversely, if you reduce Position Margin, Position Leverage goes up. The pencil icon next to the Position Leverage number opens a pop-up which lets you add/ remove margin to/ from an open position.
 
