@@ -38,4 +38,6 @@ For Position Leverage, it is important to note the following:
 - When price moves against you: Unrealised PnL is negative and thus, Position Leverage moves up
 - Changing Order Leverage has no bearing on the margin assigned to a Position (i.e. the Position Margin). 
 
+You can also read this [blog post](https://www.delta.exchange/blog/order-leverage-position-leverage-efficient-margin-utilisation/) which explains through examples how to effectively set Order Leverage and Position Leverage to utilise margin efficiently. 
+
 
