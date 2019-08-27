@@ -12,7 +12,7 @@ Leverage is the feature which enables a trader to open and control positions muc
 
 In futures, leverage is intrinsic to the contract. Maximum leverage allowed in provided in the contract specifications, and it can be used to compute the minimum amount of capital required (Initial Margin) to open a position of a given size. 
 
-# Order Leverage vs. Position Leverage
+## Order Leverage vs. Position Leverage
 
 In Delta Exchange, Order Leverage and Position Leverage are two indepenednt but related quantities. **Order Leverage** is the leverage at which all open orders are margined. Order leverage for any contract can be set using the leverage slider in the order placement tab.
 
