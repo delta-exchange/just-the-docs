@@ -46,7 +46,7 @@ The details on how the Mark Price is calculated are available [here](https://www
 
 $$Funding\ Rate = Premium\ Rate$$
 
-Funding Rate is considered to be an 8-hourly interest rate and is computed every minute. The magnitude of Funding Rate is capped. Funding caps could vary from contract to contract and are availabe in the [contract specifications](https://www.delta.exchange/contracts/)
+Funding Rate is considered to be an 8-hourly interest rate and is computed every minute. The magnitude of Funding Rate is capped. Funding caps could vary from contract to contract and are availabe in the [contract specifications](https://www.delta.exchange/contracts/).
 
 **Funding Payment** 
 
@@ -58,7 +58,7 @@ where Current Position Value is value of a the position at the current Underlyin
 
 **Funding Limits**
 
-A perpetualc contract can be thought as an 8-hour futures contract that is being rolled into the next 8-hour futures every minute. Thus, at any time, the [fair basis]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-basis-calculation) of a perpetual contract should be similar to a futures contract. With this in mind, we cap the fair basis for perpetual swap at -/+0.5%. This limit on fair basis results in the same constraint being applied to the Funding Rate. Consequently, the Funding rate must always stay between -0.45% and 0.45%.
+A perpetual contract can be thought as an 8-hour futures contract that is being rolled into the next 8-hour futures every minute. Thus, at any time, the [fair basis]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-basis-calculation) of a perpetual contract should be similar to a futures contract which will expire in 8 hours. With this in mind, we enforce pretty tight caps on the fair basis for perpetual contracts. As of now, most perpetual contracts have funding capped at 0.5%. But these caps are subject to change and are availabe in the [contract specifications](https://www.delta.exchange/contracts/).
 
 **Funding Example**
 
