@@ -68,17 +68,15 @@ Between time $$T$$ and $$T+30\ mins$$, $$Mark Price = $4015,$$ and $$Underlying\
 
 $$Premium\ Rate = (4015-4000)/4000 = 0.375\%$$
 
-$$Funding\ Rate = Max (0.05\%,0.375\%) + Min (-0.05\%,0.375\%)$$
-
-$$= 0.375\% - 0.05\% = 0.325\%$$
+$$Funding\ Rate = Premium\ Rate = 0.375\%$$
 
 Since you are long and Funding Rate is positive, you'd be paying funding.               
 
-$$ Funding\ Paid\ per\ min = 10000 * (1/ 4000) * 0.325\% * 1/ (8*60) =  0.00001693  BTC$$
+$$ Funding\ Paid\ per\ min = 10000 * (1/ 4000) * 0.375\% * 1/ (8*60) =  0.00001953  BTC$$
 
 Since both Underlying Index Price and Mark Price remain unchanged for this 30 min window, the funding paid by you in 30 mins can be computed as:
 
-$$ Funding\ Paid\ for\ 30\ mins = 30 * 0.00001693 = 0.000508 BTC$$
+$$ Funding\ Paid\ for\ 30\ mins = 30 * 0.00001693 = 0.000585938 BTC$$
 
 ## Funding for OTC Contracts
 
