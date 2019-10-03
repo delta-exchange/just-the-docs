@@ -3,7 +3,7 @@ layout: default
 title: Allowed Trading Bands
 has_children: false
 parent: Margin Trading Guide
-nav_order: 8
+nav_order: 9
 ---
 
 # Allowed Trading Band
