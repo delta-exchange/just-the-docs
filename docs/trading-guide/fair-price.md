@@ -39,11 +39,11 @@ To understand the computation of $$Fair Basis$$, we first need to introduce the 
 
 Impact Size, in terms of number is contracts to be traded, is provided in the [specifications](https://www.delta.exchange/contracts/) for each futures contract. It is easy to see that Impact Price is a function of: (a) Impact Size and (b) current state of the order book.
 
-$$Impact\_Bid\_Price = \text{Average fill price to execute a typical short trade}$$
+$$Impact\_Bid\_Price = Average\ fill\ price\ to\ execute\ a\ typical\ short\ trade$$
 
-$$Impact\_Ask\_Price = \text{Average fill price to execute a typical long trade}$$
+$$Impact\_Ask\_Price = Average\ fill\ price\ to\ execute\ a\ typical\ long\ trade$$
 
-$$Impact\_Mid\_Price = \text{Average of } Impact\_Bid\_Price \text{ and } Impact\_Ask\_Price$$
+$$Impact\_Mid\_Price = Average\ of\ Impact\_Bid\_Price\ and\ Impact\_Ask\_Price$$
  
 
 ## Fair Basis Calculation
@@ -51,6 +51,8 @@ $$Impact\_Mid\_Price = \text{Average of } Impact\_Bid\_Price \text{ and } Impact
 We first compute an annualised fair value basis, $$\%Annualised\_Basis$$:
 
 $$\%Annualised\_Basis = (Impact\_Mid\_Price/ Underlying\_Index\_Price - 1) * (365*86400/ time\_to\_expiry\_in\_sec)$$
+
+For perpetual contracts $$time\_to\_expiry$$ is always 8 hours.
 
 $$\%Annualised\_Basis$$ is computed only once 5 seconds. Further, in case at any time of update, market is illiquid, i.e. 
 
