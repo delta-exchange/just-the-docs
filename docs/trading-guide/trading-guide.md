@@ -13,7 +13,7 @@ permalink: /docs/margin-trading-guide
 
 ## Funding exchange wallet
 
-Bitcoin is the only funding currency on Delta Exchange. This means that you can deposit bitcoins to your Delta wallet and withdraw only bitcoins from your Delta wallet. After logging on to Delta Exchange, you need to go to your [Account Page](https://www.delta.exchange/app/account) to get your bitcoin deposit address and to learn how to withdrawl bitcoin from Delta Exchange.
+Bitcoin is the only funding currency on Delta Exchange. This means that you can deposit bitcoins to your Delta wallet and withdraw only bitcoins from your Delta wallet. After logging on to Delta Exchange, you need to go to your [Account Page](https://www.delta.exchange/app/account) to get your bitcoin deposit address and to learn how to withdraw bitcoin from Delta Exchange.
 
 ## Currency conversion
 Even though bitcoin is the only funding currency on Delta Exchange, not all futures contracts are settled in bitcoin. For example, we have stablecoin-settled contracts where the margining and settlement happens in USDC. Therefore, you'd need USDC for trading these futures contracts. Since we currently don't support deposit/ withdrawal of USDC (or for that matter any other crypto apart from bitcoin), we have provided a **currency converter tool** that enables users to change bitcoin to the desired cryptocurrency.
@@ -24,7 +24,7 @@ It is worth noting that the exchange rate offered in the currency conversion is 
 
 ## Placing an order
 
-Orders can be placed in Place Order Panel in the trading dashboard. We support both basic order types (e.g. limit order and market orders) as well as several advanced order types (e.g. Stop orders and bracket orders). Details of the all the supported order types are availabe [here](https://www.delta.exchange/user-guide/docs/trading-guide/OrderTypes/)
+Orders can be placed in Place Order Panel in the trading dashboard. We support both basic order types (e.g. limit order and market orders) as well as several advanced order types (e.g. Stop orders and bracket orders). Details of the all the supported order types are available [here](https://www.delta.exchange/user-guide/docs/trading-guide/OrderTypes/)
     
 ## Margin & PnL Calculations
 

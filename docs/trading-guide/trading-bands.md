@@ -7,7 +7,7 @@ nav_order: 9
 ---
 
 # Allowed Trading Band
-To prevent market manipulation as well as idiosyncratic price moves trading on Delta Exchange can take place only within the allowed trading band. This band is defined as 2.5% range around the current [Mark Price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking) and is applicable depending up on the direction of a trade. For buy trades, the uper bound (Max Price) of the trading band is applicable. This means any buy order cannot execute at a price greater than Max Price. Similarly, for sell orders, the lower bound (Min Price) of the trading band is applicable. This implies that the execution price of a sell order cannot be less than Min Sell.
+To prevent market manipulation as well as idiosyncratic price moves trading on Delta Exchange can take place only within the allowed trading band. This band is defined as 2.5% range around the current [Mark Price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking) and is applicable depending up on the direction of a trade. For buy trades, the upper bound (Max Price) of the trading band is applicable. This means any buy order cannot execute at a price greater than Max Price. Similarly, for sell orders, the lower bound (Min Price) of the trading band is applicable. This implies that the execution price of a sell order cannot be less than Min Sell.
 
 Please do note that trading bands are not applicable to liquidation orders.
 

@@ -37,13 +37,13 @@ When the size of the position in liquidation is greater than the [Position Thres
 
 -   All open orders on the contract are cancelled. This may or may not free up some margin blocked for these order.
     
-- The liquidatin Engine computes the minimum position size (the Liquidation Size) required to be liquidated such that the liquidation price of the remaining position is 1% away from the Mark Price. Please note that if the Liquidation Size turns our to be equal to the position size, then the entire position will be liquidated.
+- The liquidation Engine computes the minimum position size (the Liquidation Size) required to be liquidated such that the liquidation price of the remaining position is 1% away from the Mark Price. Please note that if the Liquidation Size turns our to be equal to the position size, then the entire position will be liquidated.
 
-- The Partial Position in Liquidation (PPL) is treated as a separate position and is assumed to have pro-rata share of the position margin. The Maintenence Margin percent (MM%) for the PPL is computed Using the Liquidation Size. The Implied Bankruptcy Price of the PPL is assumed to be MM% away from the current Mark Price. An Immediate-or-Cancel order of size equal to Liquidation Size with limit price equal to the Implied Bankruptcy Price is submitted to the market. 
+- The Partial Position in Liquidation (PPL) is treated as a separate position and is assumed to have pro-rata share of the position margin. The Maintenance Margin percent (MM%) for the PPL is computed Using the Liquidation Size. The Implied Bankruptcy Price of the PPL is assumed to be MM% away from the current Mark Price. An Immediate-or-Cancel order of size equal to Liquidation Size with limit price equal to the Implied Bankruptcy Price is submitted to the market. 
 
-- If the IOC order is filled at a price better than the Implied Bankruptcy Price, a liquidation charge (equalling $$Maintenance\ Margin_{min}$$) is deducted from the position margin assigned to the PPL. Any leftover margin after this deduction is added to the position margin of the still open position.
+- If the IOC order is filled at a price better than the Implied Bankruptcy Price, a liquidation charge (equaling $$Maintenance\ Margin_{min}$$) is deducted from the position margin assigned to the PPL. Any leftover margin after this deduction is added to the position margin of the still open position.
 
--   In case the ICO order is not fully filled, an off market trade at the Implied Bankruptcy Price of the PPL is executed betweent the trader and the Liquidation Engine. This essentially results in the Liquidation Engine taking over the part of the PPL that could not be liquidated.
+-   In case the ICO order is not fully filled, an off market trade at the Implied Bankruptcy Price of the PPL is executed between the trader and the Liquidation Engine. This essentially results in the Liquidation Engine taking over the part of the PPL that could not be liquidated.
 
 
 ## Liquidation Engine
@@ -52,7 +52,7 @@ As is evident from the discussion above, the Liquidation Engine always takes ove
 
 ## Liquidation Examples
 
-For illustrative purposes, lets assume that the maintenance margin requirement for the BTCUSD perpetual contract is given by the following equation:
+For illustrative purposes, let's assume that the maintenance margin requirement for the BTCUSD perpetual contract is given by the following equation:
 
 ```
 When position size < 5 BTC, MM% = 0.5%
@@ -76,7 +76,7 @@ liquidation price = 9940.5 & bankruptcy price = 9685.5
 
 Lets assume current Mark Price is 9840. In this situation, incremental liquidation will apply. Because of adverse price movement, the remaining position margin is sufficient to support a position of only 62611 contracts. The system will thus attempt to liquidate a long position of 137389. This is the Partial Position in Liquidation or PPL. The maintenance margin required for a position of PPL's size is 1.16%. Therefore, the liquidation price of PPL is set to 9728, i.e. 1% away from the current Mark Price of 9840. This means a sell limit IOC order with price of 9728 is sent to the order book to close PPL. 
 
-Lets further assume that the order book currently does not have sufficient depth to fill this limit IOC order and 50000 contracts remain unfilled. In this case, the Liquidation Engine would take over the unfiled part and would acquire a long position of 50000 contracts at 9728. Recall that the Mark Price is still at 9840. Now, the Liquidation Engine will place a sell limit order at 9728 to close this recently acquired position.
+Let's further assume that the order book currently does not have sufficient depth to fill this limit IOC order and 50000 contracts remain unfilled. In this case, the Liquidation Engine would take over the unfiled part and would acquire a long position of 50000 contracts at 9728. Recall that the Mark Price is still at 9840. Now, the Liquidation Engine will place a sell limit order at 9728 to close this recently acquired position.
 
 With his position partially liquidated, the trader is now left with a long position of 62611 contracts. Because the position size is smaller, so is the margin requirement for it. The new liquidation price and bankruptcy price for the remaining position are 9648 and 9593 respectively. 
 

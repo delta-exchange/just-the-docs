@@ -8,7 +8,7 @@ nav_order: 5
 
 # Profit Loss Math
 
-All open positions on Delta are marked at the [fair price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking) of the Futures contract. Thus, Unrealized PnL and Liquidiation Prices are computed using Fair Prices, while Realized PnL is based on actual entry and exit prices.
+All open positions on Delta are marked at the [fair price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking) of the Futures contract. Thus, Unrealized PnL and Liquidation Prices are computed using Fair Prices, while Realized PnL is based on actual entry and exit prices.
 
 PnL for a long/ short position in a Vanilla Futures
 

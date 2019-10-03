@@ -14,13 +14,13 @@ nav_order: 3
 Perpetual contracts are a type of derivatives that are similar to a [futures contract](https://www.delta.exchange/user-guide/docs/tutorials/futures-guide/), but with some key differentiating properties:
 
 - Unlike futures, perpetual contracts do not have an expiry date
-- The price of a futures contract and its underlying can be quite different, with these two prices being guaranteed to converge at the contract expiry. Perpetual contracts by design trade close to the price of the underlying (spot). The closeness of perpetual price and spot price is acheived through funding which is explained below.
+- The price of a futures contract and its underlying can be quite different, with these two prices being guaranteed to converge at the contract expiry. Perpetual contracts by design trade close to the price of the underlying (spot). The closeness of perpetual price and spot price is achieved through funding which is explained below.
 - The above property makes trading perpetual contracts akin to trading spot markets on leverage, i.e. margin trading.
 
 **Benefits of a perpetual contracts vs. futures**
 
 - Since a futures contract has an expiry date, a trader looking to maintain his position will need to periodically roll to a next contract as the previous one expires. Perpetual contracts obviate the need to roll positions.
-- The difference between price of a futures and its underlying (i.e. the basis) can vary quite a bit. This exposes futures traders to basis risk. Since perpetual contract alaways trades close to spot market, the basis risk is minimal and bounded.
+- The difference between price of a futures and its underlying (i.e. the basis) can vary quite a bit. This exposes futures traders to basis risk. Since perpetual contract always trades close to spot market, the basis risk is minimal and bounded.
 
 ## Funding Rate Explanation
 
@@ -28,7 +28,7 @@ Funding is the primary mechanism which tethers price of a perpetual contract to 
 
 **Perpetual contract price > Spot price**
 
-When a perpetual contract trades at a **premium** to spot, funding is **positive**, i.e longs pay funding to shorts. This creates disincentive to stay long or enter into a new long position. Conversely, it creates incentive to stay short or enter into a new short position. These dynamics will serve to push the price of the perpetual contract down towards the spot price.
+When a perpetual contract trades at a **premium** to spot, funding is **positive**, i.e. longs pay funding to shorts. This creates disincentive to stay long or enter into a new long position. Conversely, it creates incentive to stay short or enter into a new short position. These dynamics will serve to push the price of the perpetual contract down towards the spot price.
 
 **Perpetual contract price < Spot price**
 
@@ -38,7 +38,7 @@ When a perpetual contract trades at a **discount** to spot, funding is **negativ
 
 **Premium Rate**
 
-$$Premium Rate = (Mark Price - Underlying\_Index\_Price)/ Underlying\_Index\_Price$$
+$$Premium\  Rate = (Mark\  Price - Underlying\_Index\_Price)/ Underlying\_Index\_Price$$
 
 The details on how the Mark Price is calculated are available [here](https://www.delta.exchange/user-guide/docs/trading-guide/fair-price/)
 
@@ -46,11 +46,11 @@ The details on how the Mark Price is calculated are available [here](https://www
 
 $$Funding\ Rate = Premium\ Rate$$
 
-Funding Rate is considered to be an 8-hourly interest rate and is computed every minute. The magnitude of Funding Rate is capped. Funding caps could vary from contract to contract and are availabe in the [contract specifications](https://www.delta.exchange/contracts/).
+Funding Rate is considered to be an 8-hourly interest rate and is computed every minute. The magnitude of Funding Rate is capped. Funding caps could vary from contract to contract and are available in the [contract specifications](https://www.delta.exchange/contracts/).
 
 **Funding Payment** 
 
-Funding is exchanged between longs and shorts every minute. It is impportant to note that while accruals for funding paid or received happen every minute, entries for funding payments are made in the transaction log once every 2 hours or when a position is closed. Funding payments are completely peer-to-peer and Delta Exchange does not charge any fees on funding. Funding paid or received is computed as:
+Funding is exchanged between longs and shorts every minute. It is important to note that while accruals for funding paid or received happen every minute, entries for funding payments are made in the transaction log once every 2 hours or when a position is closed. Funding payments are completely peer-to-peer and Delta Exchange does not charge any fees on funding. Funding paid or received is computed as:
 
 $$Funding\ Payment = Current\_Position\_Value * Funding\ Rate * 1/ (8 * 60)$$
 
@@ -58,7 +58,7 @@ where Current Position Value is value of a the position at the current Underlyin
 
 **Funding Limits**
 
-A perpetual contract can be thought as an 8-hour futures contract that is being rolled into the next 8-hour futures every minute. Thus, at any time, the [fair basis]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-basis-calculation) of a perpetual contract should be similar to a futures contract which will expire in 8 hours. With this in mind, we enforce pretty tight caps on the fair basis for perpetual contracts. As of now, most perpetual contracts have funding capped at 0.5%. But these caps are subject to change and are availabe in the [contract specifications](https://www.delta.exchange/contracts/).
+A perpetual contract can be thought as an 8-hour futures contract that is being rolled into the next 8-hour futures every minute. Thus, at any time, the [fair basis]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-basis-calculation) of a perpetual contract should be similar to a futures contract which will expire in 8 hours. With this in mind, we enforce pretty tight caps on the fair basis for perpetual contracts. As of now, most perpetual contracts have funding capped at 0.5%. But these caps are subject to change and are available in the [contract specifications](https://www.delta.exchange/contracts/).
 
 **Funding Example**
 
@@ -80,7 +80,7 @@ $$ Funding\ Paid\ for\ 30\ mins = 30 * 0.00001693 = 0.000585938 BTC$$
 
 ## Funding for OTC Contracts
 
-For OTC contracts, funding rate is not computed using the order book. Instead, funding rate is charged by the party providing liquidity to the party that demands liquidity. While the funding rate generally stays constant, it can change with the lqiudity situation in the market or with sharp price moves. All other dynamics of funding remain unchanged, i.e. in OTC contracts too: (a) funding is peer to peer, (b) if funding rate is positive: longs pay shorts and if funding rate is negative: shorts pay longs, and (c) funding is exchanged between longs and shorts every minute.
+For OTC contracts, funding rate is not computed using the order book. Instead, funding rate is charged by the party providing liquidity to the party that demands liquidity. While the funding rate generally stays constant, it can change with the liquidity situation in the market or with sharp price moves. All other dynamics of funding remain unchanged, i.e. in OTC contracts too: (a) funding is peer to peer, (b) if funding rate is positive: longs pay shorts and if funding rate is negative: shorts pay longs, and (c) funding is exchanged between longs and shorts every minute.
 
 
 

@@ -58,7 +58,7 @@ $$(Impact\_Ask\_Price - Impact\_Bid\_Price) > Maintenance\_Margin$$
 
 $$\%Annualised\_Basis$$ is not updated. 
 
-Next, $$\%Fair\_Basis$$ is computed as the moving average of the 12 most recent values of $$\%Annualised\_Basis$$. To avoid anomolous values, the $$\%Fair\_Basis$$ is bounded by certain hard limits, which can vary from contract to contract. 
+Next, $$\%Fair\_Basis$$ is computed as the moving average of the 12 most recent values of $$\%Annualised\_Basis$$. To avoid anomalous values, the $$\%Fair\_Basis$$ is bounded by certain hard limits, which can vary from contract to contract. 
 
 $$\%Fair\_Basis$$ is used to compute the $$Fair Basis$$.
 
@@ -74,4 +74,4 @@ It is worth noting that only live positions are marked using the Fair Price. Thu
 
 A Futures contract on Delta Exchange are settled on the $$30$$ minute TWAP (time-weighted average price) of its Underlying Index. To ensure that at the time of settlement there are no under-margined positions, the transition from using $$Underlying\_Index\_Price$$ to $$TWAP\_Underlying\_Index\_Price$$ in the calculation of Mark Price is done gradually. 
 
-When the settlement time of a contract is one hour away, we switch to a weighted average of $$Underlying\_Index\_Price$$ and $$TWAP\_Underlying\_Index\_Price$$ in Mark Price computation. At the time of switch, weight of $$Underlying\_Index\_Price$$ is $$100%$$ and weight of $$TWAP\_Underlying\_Index\_Price$$ is $$0%$$. Over the next $$30$$ minutes, these weights are changed every minute such that weights converge to 0% and 100% respectively. This means that in the last 30 minutes leading into contract settlement, it is $$TWAP\_Underlying\_Index\_Price$$ that is used in the computation of the Mark Price. At contract settlemment, $$Fair Basis$$ is $$0$$ and Mark Price converges to $$TWAP\_Underlying\_Index\_Price$$.
+When the settlement time of a contract is one hour away, we switch to a weighted average of $$Underlying\_Index\_Price$$ and $$TWAP\_Underlying\_Index\_Price$$ in Mark Price computation. At the time of switch, weight of $$Underlying\_Index\_Price$$ is $$100%$$ and weight of $$TWAP\_Underlying\_Index\_Price$$ is $$0%$$. Over the next $$30$$ minutes, these weights are changed every minute such that weights converge to 0% and 100% respectively. This means that in the last 30 minutes leading into contract settlement, it is $$TWAP\_Underlying\_Index\_Price$$ that is used in the computation of the Mark Price. At contract settlement, $$Fair Basis$$ is $$0$$ and Mark Price converges to $$TWAP\_Underlying\_Index\_Price$$.
