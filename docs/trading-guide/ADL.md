@@ -25,8 +25,10 @@ $$ADL\  Rank = PnL\% * Position\  Leverage$$
 and, when $$PnL\% <0$$
 
 $$ ADL\  Rank = PnL\% / Position\  Leverage$$
+
 where,
-$$PnL\% = (Current\_Position\_Value - Entry\_Position\_Value)/Abs(Entry\_Position\_Value)$$
+
+$$PnL\% = (Current\ Position\ Value - Entry\ Position\ Value)/Abs(Entry\ Position\ Value)$$
 
 and
 
