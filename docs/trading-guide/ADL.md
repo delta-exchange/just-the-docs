@@ -32,7 +32,7 @@ $$PnL\% = (Current\ Position\ Value - Entry\ Position\ Value)/Abs(Entry\ Positio
 
 and
 
-$$Position\  Leverage = Mark\  Price/ Abs(Mark\  Price - Bankruptcy\  Price)$$
+$$Position\  Leverage = Current\ Position\ Value/ Abs(Current\ Position\ Value - Position\ Value\ at\ Bankruptcy)$$
 
 All open positions are ranked according to their ADL Ranking, with the position with the highest ADL Rank on top. Deleveraging starts from the top position and continues to deleverage the subsequent positions until all the leftover contracts from the Liquidation order which led to ADL are matched.
 
