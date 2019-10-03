@@ -8,9 +8,9 @@ nav_order: 8
 
 # Auto-Deleveraging
 
-In derivatives trading, you are trading against counter-parties who are also trading on leverage. All outstanding longs offset against shorts and vice versa such that net open interest remains zero at all times. This is the principle that all derivatives exchanges follow globally to ensure fair and balanced trading between counterparties. 
+In derivatives trading, you are trading against counterparties who are also trading on leverage. All outstanding longs offset against shorts and vice versa such that net open interest remains zero at all times. This is the principle that all derivatives exchanges follow globally to ensure fair and balanced trading between counterparties. 
 
-Whenever a position in liquidation is taken over by the Liquidation Enginer, it tries to close this position at the bankruptcy price or better price. Though rarely, but it is possible that the liquidation engine is not able to close the position, which is in liquidation, in the open order-book. This can happen when the market has moved too fast and beyond the bankruptcy price of the position in liquidation. In such cases counterparties on the opposite side can get auto-delevered (ADL-ed) i.e. their position will also be closed in order to keep the net OI balanced. Parties who get ADL are selected based on the criteria mentioned below.
+Whenever a position in liquidation is taken over by the Liquidation Engine, it tries to close this position at the bankruptcy price or better price. Though rarely, but it is possible that the liquidation engine is not able to close the position, which is in liquidation, in the open order-book. This can happen when the market has moved too fast and beyond the bankruptcy price of the position in liquidation. In such cases counterparties on the opposite side can get auto-delevered (ADL-ed) i.e. their position will also be closed in order to keep the net OI balanced. Parties who get ADL are selected based on the criteria mentioned below.
 
  It is worth noting that all the open orders of the deleveraged counterparties in the same contract are also cancelled. Those deleveraged are notified via email and can choose to re-enter their positions.
 
@@ -32,11 +32,11 @@ $$PnL\% = (Current\ Position\ Value - Entry\ Position\ Value)/Abs(Entry\ Positio
 
 and
 
-$$Position\  Leverage = Abs (Mark\  Price)/ (Mark\  Price - Bankruptcy\  Price)$$
+$$Position\  Leverage = Mark\  Price/ Abs(Mark\  Price - Bankruptcy\  Price)$$
 
 All open positions are ranked according to their ADL Ranking, with the position with the highest ADL Rank on top. Deleveraging starts from the top position and continues to deleverage the subsequent positions until all the leftover contracts from the Liquidation order which led to ADL are matched.
 
- You can gauge the likelihood of your position being selected as an ADL counterparty using the ADL Indicator. This indicator informs in which quintile your position falls when all open positions in your side (long or short) are sorted by $$Profit\%$$. Obviously, positions in the top (bottom) quintile are most (least) likely to get deleveraged.
+You can gauge the likelihood of your position being selected as an ADL counterparty using the ADL Indicator. This indicator informs in which quintile your position falls when all open positions in your side (long or short) are sorted by their ADL Ranks. Obviously, positions in the top (bottom) quintile are most (least) likely to get deleveraged.
 
  **ADL Example**
 
