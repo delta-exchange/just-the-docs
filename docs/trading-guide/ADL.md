@@ -18,12 +18,12 @@ Whenever a position in liquidation is taken over by the Liquidation Enginer, it 
 
 ADL counterparties are selected on the basis of profit and leverage of their positions. ADL rank is computed using the following equations:
 
-$$ADL Rank = PnL% * Position Leverage; if PnL% >0
-              = PnL% / Position Leverage; if PnL% <0
+$$ADL Rank = PnL\% * Position Leverage; if PnL\% >0
+              = PnL\% / Position Leverage; if PnL\% <0 $$
 where,
-PnL% = (Current_Position_Value - Entry_Position_Value)/abs(Entry_Position_Value)
-Position Leverage = abs (Mark Price)/ (Mark Price - Bankruptcy Pirce)
-$$
+$$PnL\% = (Current_Position_Value - Entry_Position_Value)/abs(Entry_Position_Value)$$
+and
+$$Position Leverage = abs (Mark Price)/ (Mark Price - Bankruptcy Pirce)$$
 
 All open positions are ranked according to their ADL Ranking, with the position with the highest ADL Rank on top. Deleveraging starts from the top position and continues to deleverage the subsequent positions until all the leftover contracts from the Liquidation order which led to ADL are matched.
 
