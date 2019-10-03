@@ -29,11 +29,11 @@ When the size of the position in liquidation is lower than the [Position Thresho
     
 -   If the liquidation results in being filled at a price better than the Bankruptcy Price, the remaining Position Margin is used to offset the liquidation charge. 
     
--   In case the position is not fully liquidated (for example due to lack of liquidity), an off market trade for the remaining position is executed at the Bankruptcy Price betweent the trader and the Liquidation Engine. This essentially results in the Liquidation Engine taking over the remaining position. 
+-   In case the position is not fully liquidated (for example due to lack of liquidity), an off market trade for the remaining position is executed at the Bankruptcy Price between the trader and the Liquidation Engine. This essentially results in the Liquidation Engine taking over the remaining position. 
 
 **When position size > Position Threshold**
 
-When the size of the position in liquidation is greater than the [Position Threshold]({{site.baseurl}}/docs/trading-guide/margin-explainer/#risk-limits-margin-requirement-vs-position-size) Incremental Liquidation is used. Since reducing the position size lowers the margin reqiurement, it is possible to liquidate part of a position and ensure that the remainder of the position has sufficiently margined. Thus, Incremental Liquidation helps to avoid full liquidation of a trader's position. The steps involved in this are listed below:
+When the size of the position in liquidation is greater than the [Position Threshold]({{site.baseurl}}/docs/trading-guide/margin-explainer/#risk-limits-margin-requirement-vs-position-size) Incremental Liquidation is used. Since reducing the position size lowers the margin requirement, it is possible to liquidate part of a position and ensure that the remainder of the position has sufficiently margined. Thus, Incremental Liquidation helps to avoid full liquidation of a trader's position. The steps involved in this are listed below:
 
 -   All open orders on the contract are cancelled. This may or may not free up some margin blocked for these order.
     
@@ -41,7 +41,7 @@ When the size of the position in liquidation is greater than the [Position Thres
 
 - The Partial Position in Liquidation (PPL) is treated as a separate position and is assumed to have pro-rata share of the position margin. The Maintenence Margin percent (MM%) for the PPL is computed Using the Liquidation Size. The Implied Bankruptcy Price of the PPL is assumed to be MM% away from the current Mark Price. An Immediate-or-Cancel order of size equal to Liquidation Size with limit price equal to the Implied Bankruptcy Price is submitted to the market. 
 
-- If the IOC order is filled at a price better than the Implied Bankruptcy Price, a liquidation charge (eqalling $$Maintenance\ Margin_{min}$$) is deducted from the position margin assigned to the PPL. Any leftover margin after this deduction is added to the position margin of the still open position.
+- If the IOC order is filled at a price better than the Implied Bankruptcy Price, a liquidation charge (equalling $$Maintenance\ Margin_{min}$$) is deducted from the position margin assigned to the PPL. Any leftover margin after this deduction is added to the position margin of the still open position.
 
 -   In case the ICO order is not fully filled, an off market trade at the Implied Bankruptcy Price of the PPL is executed betweent the trader and the Liquidation Engine. This essentially results in the Liquidation Engine taking over the part of the PPL that could not be liquidated.
 

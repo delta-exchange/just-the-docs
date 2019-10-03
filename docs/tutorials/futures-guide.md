@@ -42,7 +42,7 @@ The math behind Futures is better illustrated with an example. Let’s say, we w
 
  **Underlying:** This is the asset over which a Futures contract is defined. In our example the underlying is Ether.
 
- **Quote currency:** This is the currency in which the price of the underlying in quoted. In our example, price of Ether is quoted in Bitcoin terms. Hence, quote currency is BTC.
+ **Quote currency:** This is the currency in which the price of the underlying is quoted. In our example, price of Ether is quoted in Bitcoin terms. Hence, quote currency is BTC.
 
  **Base currency:** This is the currency in which the PnL of a Futures position is calculated. In our example, the base currency is same as the quote currency, i.e. Bitcoin. However, this need not always be true.
 

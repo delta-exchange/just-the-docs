@@ -30,7 +30,7 @@ Auto Margin Top-up can be enabled/ disabled by toggling a switch which is availa
 In Cross Margin approach, margin is shared between open positions. At any time, the margin assigned to a position is equal to the minimum maintenance margin (i.e. position leverage is always the highest allowed). Whenever needed, a position draws more margin from the Available Balance to avoid liquidation. 
 
 Segregated Margin plus Auto Margin Top-up has similar properties as well but with two key differences:
-- Unlike Cross Margin, you have the flexibility to open and maintain your position at a leverage fo your choice
+- Unlike Cross Margin, you have the flexibility to open and maintain your position at a leverage of your choice
 - In Cross Margin, margin drawn by a position to avoid liquidation will be released automatically if the position swings into profit. The same however will not happen automatically in the case of Segregated Margin plus Auto Margin Top-up. Once margin is added to a position, it can only be withdrawn manually.
 
 

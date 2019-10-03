@@ -119,7 +119,7 @@ _First a limit order to buy 50 contracts at a limit price of 4000 would be sent 
 
 - **Post-only**
 	
-	A limit order that is marked as post-only is accepted into the order book only it would not be immediately match with an existing order in the order book. Marking a limit order post-only ensures that: (a) the order adds to the liquidity rather than takes liquidity from the order book, and (b) the traders will earn a marker rebate when the order is executed.  
+	A limit order that is marked as post-only is accepted into the order book only it would not be immediately match with an existing order in the order book. Marking a limit order post-only ensures that: (a) the order adds to the liquidity rather than takes liquidity from the order book, and (b) the traders will earn a maker rebate when the order is executed.  
 
 
 

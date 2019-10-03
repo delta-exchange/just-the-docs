@@ -14,7 +14,7 @@ In futures, leverage is intrinsic to the contract. Maximum leverage allowed in p
 
 ## Order Leverage vs. Position Leverage
 
-In Delta Exchange, Order Leverage and Position Leverage are two indepenednt but related quantities. **Order Leverage** is the leverage at which all open orders are margined. Order leverage for any contract can be set using the leverage slider in the order placement tab.
+In Delta Exchange, Order Leverage and Position Leverage are two independent but related quantities. **Order Leverage** is the leverage at which all open orders are margined. Order leverage for any contract can be set using the leverage slider in the order placement tab.
 
 ![image]({{site.baseurl}}/assets/images/order_leverage.jpg "How to change order leverage")
 
