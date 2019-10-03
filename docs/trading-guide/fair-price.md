@@ -52,7 +52,7 @@ We first compute an annualised fair value basis, $$\%Annualised\_Basis$$:
 
 $$\%Annualised\_Basis = (Impact\_Mid\_Price/ Underlying\_Index\_Price - 1) * (365*86400/ time\_to\_expiry\_in\_sec)$$
 
-For perpetual contracts $$time\_to\_expiry$$ is always 8 hours.
+**Note that For perpetual contracts $$time\_to\_expiry$$ is always 8 hours.**
 
 $$\%Annualised\_Basis$$ is computed only once 5 seconds. Further, in case at any time of update, market is illiquid, i.e. 
 
@@ -62,7 +62,7 @@ $$\%Annualised\_Basis$$ is not updated.
 
 Next, $$\%Fair\_Basis$$ is computed as the moving average of the 12 most recent values of $$\%Annualised\_Basis$$. To avoid anomalous values, the $$\%Fair\_Basis$$ is bounded by certain hard limits, which can vary from contract to contract. 
 
-$$\%Fair\_Basis$$ is used to compute the $$Fair Basis$$.
+$$Fair Basis$$ is computed using $$\%Fair\_Basis$$ 
 
 $$Fair\_Basis = Underlying\_Index\_Price * \%Fair\_Basis * (time\_to\_expiry\_in\_sec/ (365* 86400))$$
 
