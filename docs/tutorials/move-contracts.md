@@ -110,9 +110,9 @@ where Position Margin is greater than or equal to Initial Margin.
 
 The liquidation mechanism is exactly the same as for futures contracts. Any given position is liquidated in a step-wise manner to reduce the market impact of liquidations. Details of the liquidation process are available here.
 
-Traders that are short MOVE contracts have the option of enabling [Auto Margin Top-up]({{site.baseurl}}/docs/trading-guide/ADL) to prevent their positions from getting liquidated.
+Traders that are short MOVE contracts have the option of enabling [Auto Margin Top-up]({{site.baseurl}}/docs/trading-guide/automargin) to prevent their positions from getting liquidated.
 
 
 ## Expired MOVE Contracts
-The Settlement Prices of expired MOVE and futures contracts are availble on this [page](https://www.delta.exchange/app/account/preferences).
+The Settlement Prices of expired MOVE and futures contracts are availble on this [page](https://www.delta.exchange/app/expired_futures).
 
