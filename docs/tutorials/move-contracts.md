@@ -72,17 +72,17 @@ Computation of Fair Implied Volatility entails the following steps:
 
 The Premium of a MOVE contract is directly added to/ subtracted from the Available Balance of shorts/ longs. The cashflow that occurs when a position in a MOVE contract is closed is referred to as **Pay-off**. The Profit/ Loss of a position thus can be computed as 
 
-$$ Profit/\ Loss = Pay\-off +/- Premium $$
+$$ Profit/\ Loss = Pay-off +/- Premium $$
 
 For longs
 
-$$Pay\-off = Num\_of\_contracts * Mark\ Price$$
+$$Pay-off = Num\_of\_contracts * Mark\ Price$$
 
 $$Profit/\ Loss = - Premium + Num\_of\_contracts * Mark\ Price$$
 
 For shorts
 
-$$Pay\-off = - Num\_of\_contracts * Mark\ Price$$
+$$Pay-off = - Num\_of\_contracts * Mark\ Price$$
 
 $$ Profit/\ Loss = Premium - Num\_of\_contracts * Mark\ Price $$
 
@@ -110,9 +110,9 @@ where Position Margin is greater than or equal to Initial Margin.
 
 The liquidation mechanism is exactly the same as for futures contracts. Any given position is liquidated in a step-wise manner to reduce the market impact of liquidations. Details of the liquidation process are available here.
 
-Traders that are short MOVE contracts have the option of enabling [Auto Margin Top-up]() to prevent their positions from getting liquidated.
+Traders that are short MOVE contracts have the option of enabling [Auto Margin Top-up]({{site.baseurl}}/docs/trading-guide/ADL) to prevent their positions from getting liquidated.
 
 
 ## Expired MOVE Contracts
-The Settlement Prices of expired MOVE and futures contracts are availble on this page. 
+The Settlement Prices of expired MOVE and futures contracts are availble on this [page](https://www.delta.exchange/app/account/preferences).
 
