@@ -117,9 +117,14 @@ _First a limit order to buy 50 contracts at a limit price of 4000 would be sent 
 
 ## Order Execution Attributes
 
-- **Post-only**
+- **Post only**
 	
-	A limit order that is marked as post-only is accepted into the order book only it would not be immediately match with an existing order in the order book. Marking a limit order post-only ensures that: (a) the order adds to the liquidity rather than takes liquidity from the order book, and (b) the traders will earn a maker rebate when the order is executed.  
+	A limit order that is marked as post only is accepted into the order book only it would not be immediately match with an existing order in the order book. Marking a limit order post-only ensures that: (a) the order adds to the liquidity rather than takes liquidity from the order book, and (b) the traders will earn a maker rebate when the order is executed.  
+
+
+- **Reduce only**
+	
+	An order that is marked as reduce only can only reduce a position and would be cancelled if it would result in increasing the position. While the reduce only flag can be used with any order type, it is most useful when combined with stop orders. A reduce only stop order will only close an existing position and thus can serve as stop loss order for a position.
 
 
 

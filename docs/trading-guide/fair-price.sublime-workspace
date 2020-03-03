@@ -1,0 +1,225 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"previe",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Install Package Control"
+			],
+			[
+				"isnt",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 136.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jt/Desktop/main.rb",
+		"/Users/jt/workspace/just-the-docs/docs/trading-guide/trade-annulment.md",
+		"/Users/jt/workspace/just-the-docs/docs/trading-guide/market-disruption.md",
+		"/Users/jt/Downloads/-.coffee",
+		"/Users/jt/workspace/just-the-docs/docs/tutorials/perpetual-contracts.md",
+		"/Users/jt/workspace/just-the-docs/docs/trading-guide/ADL.md",
+		"/Users/jt/workspace/just-the-docs/docs/trading-guide/Liquidation.md",
+		"/Users/jt/workspace/just-the-docs/docs/trading-guide/OrderTypes.md",
+		"/Users/jt/workspace/just-the-docs/docs/trading-guide/fair-price.md",
+		"/Users/jt/workspace/just-the-docs/docs/tutorials/futures-guide.md",
+		"/Users/jt/Desktop/temp",
+		"/Users/jt/Downloads/data.txt",
+		"/Users/jt/workspace/just-the-docs/index.md",
+		"/Users/jt/workspace/just-the-docs/docs/trading-guide/PnL-Math.md",
+		"/Users/jt/workspace/just-the-docs/docs/trading-guide/margin-explainer.md",
+		"/Users/jt/workspace/just-the-docs/docs/tutorials/perpetuals-guide",
+		"/Users/jt/workspace/just-the-docs/docs/trading-guide/fair-price-marking.md",
+		"/Users/jt/workspace/just-the-docs/docs/tutorials/tutorials.md",
+		"/Users/jt/workspace/just-the-docs/_config.yml",
+		"/Users/jt/workspace/just-the-docs/_layouts/default.html",
+		"/Users/jt/workspace/just-the-docs/docs/trading-guide/trade-lifecycle.md",
+		"/Users/jt/Downloads/FirstTry.md",
+		"/Users/jt/Downloads/trading_guide.md",
+		"/Users/jt/Downloads/tutorials.md",
+		"/Users/jt/Downloads/getting_started.md",
+		"/Users/jt/Downloads/undraw_crypto_flowers_6bgv.svg",
+		"/Users/jt/Documents/Delta Branding Stuff/Logo/Delta.Exchange_Final_Logo-01.svg",
+		"/Users/jt/deltadocs/Tutorials.rst",
+		"/Users/jt/deltadocs/ContractSpecs.rst",
+		"/Users/jt/Downloads/Delta.Exchange_Final_Logo-01.svg",
+		"/Users/jt/deltadocs/index.rst",
+		"/Users/jt/Downloads/DeltaCoin3d-01.svg",
+		"/Users/jt/Desktop/hello.py"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "fair-price.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 270.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
