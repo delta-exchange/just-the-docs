@@ -40,7 +40,7 @@ We offfer two types of MOVE contracts:
 
  $$Settlement Price = abs (Ending\ Price - Starting\ Price)$$ 
 
-**Starting Price:** is referred to as the Strike Price. This is the 30 min TWAP of the underlying's price when the measurement interval starts. The measurement interval for a daily/ weekly MOVE contract is 24 hours/7 days. 
+**Starting Price:** is referred to as the Strike Price. This is the 30 min TWAP of the underlying's price when the measurement interval starts. The measurement interval for a daily/ weekly MOVE contract is 24 hours/ 7 days. 
 
 It is important to note that a MOVE contract could be listed before its Strike Price is established. MOVE contracts where Strike Price is yet to be determined stay in auction mode. In this mode, traders can place/ edit/ cancel their orders but no matching takes place. Normal trading starts only when the measurement interval has begun and Strike Price is known.
 
@@ -50,7 +50,7 @@ It is important to note that a MOVE contract could be listed before its Strike P
 
 In a futures contract trade, no cashflow exchange occurs when a position is opened. In the case of MOVE contracts, the party buying the contracts (longs) is required to pay the cost of the contracts to the party selling it. This cost is referred to as Premium.
 
-$$ Premium = Num_of_contracts * Entry\ Price $$
+$$ Premium = Num\_of\_contracts * Entry\ Price $$
 
 - **For Longs:** Longs are required to pay Premium upfront. Premium is immediately deducted from the Available Balance as soon as a long trade is executed. 
 
@@ -64,7 +64,7 @@ Like our futures contracts, open positions in MOVE contracts are marked using Fa
 
 Computation of Fair Implied Volatility entails the following steps:
 1. Impact Mid Price is computed from the orderbook. Impact Prices are explained in detail here. 
-2. Impact Mid Price, Strike Price and Time to Settlement is plugged into the Black Scholes formula to get the Impact Implied Volatility. This computation is done once every 5 seconds. Impact Implied Volatility is bounded between 50% and 135%. 
+2. Impact Mid Price, Strike Price and Time to Settlement is plugged into the Black Scholes formula to get the Impact Implied Volatility. This computation is done once every 5 seconds. Impact Implied Volatility is bounded between 40% and 130% for BTC and 70% and 200% for ETH.
 3. Fair Implied Volatility is defined as the moving average of 12 latest values of Impact Implied Volatility.
 4. Fair Price of the contract is obtained by plugging Fair Implied Volatility, Strike Price and Time to Settlement in the Black Scholes model.
 
@@ -72,19 +72,19 @@ Computation of Fair Implied Volatility entails the following steps:
 
 The Premium of a MOVE contract is directly added to/ subtracted from the Available Balance of shorts/ longs. The cashflow that occurs when a position in a MOVE contract is closed is referred to as **Pay-off**. The Profit/ Loss of a position thus can be computed as 
 
-$$ Profit// Loss = Pay/-off +/- Premium $$
+$$ Profit/\ Loss = Pay\-off +/- Premium $$
 
 For longs
 
-$$Pay/-off = Num/_of/_contracts * Mark/ Price$$
+$$Pay\-off = Num\_of\_contracts * Mark\ Price$$
 
-$$Profit// Loss = - Premium + Num/_of/_contracts * Mark/ Price$$
+$$Profit/\ Loss = - Premium + Num\_of\_contracts * Mark\ Price$$
 
 For shorts
 
-$$Pay/-off = - Num_of_contracts * Mark/ Price$$
+$$Pay\-off = - Num\_of\_contracts * Mark\ Price$$
 
-$$ Profit// Loss = Premium - Num_of_contracts * Mark/ Price $$
+$$ Profit/\ Loss = Premium - Num\_of\_contracts * Mark\ Price $$
 
 ### Margin Requirement
 
@@ -92,11 +92,11 @@ $$ Profit// Loss = Premium - Num_of_contracts * Mark/ Price $$
 
 **Shorts:** Becauses losses from a short MOVE position can theoretically be unlimited, shorts are required to post margin. We use Isolated Margin approach for MOVE contracts. This means that every position has a dedicated amount of margin assigned to it. The minimum amount of margin to open a position is referred to as Initial Margin.
 
-$$Initial/ Margin = Initial/ Margin/% * Underlying/ Index/ Price + Mark/ Price$$
+$$Initial\ Margin = Initial\ Margin\% * Underlying\ Index\ Price + Mark\ Price$$
 
 The minimum amount of margin, after factoring in losses, to keep a position open is reffered to as Maintenance Margin.
 
-$$Maintenance/ Margin = Maintenance/ Margin/% * Underlying/ Index/ Price$$
+$$Maintenance\ Margin = Maintenance\ Margin\% * Underlying\ Index\ Price$$
 
 Just like in futures, margin requirement scales up with position size. Details of Margin Scaling are available [here]({{site.baseurl}}/docs/trading-guide/margin-explainer). 
 
@@ -104,7 +104,7 @@ Just like in futures, margin requirement scales up with position size. Details o
 
 As explained above, long MOVE positions can never get liquidated. Short positions go into liquidation, when Position Margin after factoring in unrealised losses is less than Maintenance Margin, i.e. 
 
-$$ Position/ Margin - Num/_of/_contracts * Liquidation/ Price = Maintenance/ Margin$$
+$$ Position\ Margin - Num\_of\_contracts * Liquidation\ Price = Maintenance\ Margin$$
 
 where Position Margin is greater than or equal to Initial Margin. 
 
