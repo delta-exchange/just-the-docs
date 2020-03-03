@@ -76,41 +76,41 @@ $$ Profit// Loss = Pay/-off +/- Premium $$
 
 For longs
 
-$$Pay/-off = Num_of_contracts * Mark Price$$
+$$Pay/-off = Num/_of/_contracts * Mark/ Price$$
 
-$$Profit/ loss = - Premium + Num_of_contracts * Mark Price$$
+$$Profit// Loss = - Premium + Num/_of/_contracts * Mark/ Price$$
 
 For shorts
 
-$$Pay-off = - Num_of_contracts * Mark Price$$
+$$Pay/-off = - Num_of_contracts * Mark/ Price$$
 
-$$ Profit/ loss = Premium - Num_of_contracts * Mark Price $$
+$$ Profit// Loss = Premium - Num_of_contracts * Mark/ Price $$
 
 ### Margin Requirement
 
-Longs: The loss from a long position in a MOVE contract can never exceed the Premium paid. Due to this: (a) there is no other margin requirement for them and (b) longs can never get liquidated.
+**Longs:** The loss from a long position in a MOVE contract can never exceed the Premium paid. Due to this: (a) there is no other margin requirement for them and (b) longs can never get liquidated.
 
-Shorts: Becauses losses from a short MOVE position can theoretically be unlimited, shorts are required to post margin. We use Isolated Margin approach for MOVE contracts. This means that every position has a dedicated amount of margin assigned to it. The minimum amount of margin to open a position is referred to as Initial Margin.
+**Shorts:** Becauses losses from a short MOVE position can theoretically be unlimited, shorts are required to post margin. We use Isolated Margin approach for MOVE contracts. This means that every position has a dedicated amount of margin assigned to it. The minimum amount of margin to open a position is referred to as Initial Margin.
 
-$$Initial Margin = Initial Margin% * Underlying Index Price + Mark Price$$
+$$Initial/ Margin = Initial/ Margin/% * Underlying/ Index/ Price + Mark/ Price$$
 
 The minimum amount of margin, after factoring in losses, to keep a position open is reffered to as Maintenance Margin.
 
-$$Maintenance Margin = Maintenance Margin% * Underlying Index Price$$
+$$Maintenance/ Margin = Maintenance/ Margin/% * Underlying/ Index/ Price$$
 
-Just like in futures, margin requirement scales up with position size. Details of Margin Scaling are available here. 
+Just like in futures, margin requirement scales up with position size. Details of Margin Scaling are available [here]({{site.baseurl}}/docs/trading-guide/margin-explainer). 
 
 ### Liquidations
 
 As explained above, long MOVE positions can never get liquidated. Short positions go into liquidation, when Position Margin after factoring in unrealised losses is less than Maintenance Margin, i.e. 
 
-$$ Position Margin - Num_of_contracts * Liquidation Price = Maintenance Margin$$
+$$ Position/ Margin - Num/_of/_contracts * Liquidation/ Price = Maintenance/ Margin$$
 
 where Position Margin is greater than or equal to Initial Margin. 
 
 The liquidation mechanism is exactly the same as for futures contracts. Any given position is liquidated in a step-wise manner to reduce the market impact of liquidations. Details of the liquidation process are available here.
 
-Traders that are short MOVE contracts have the option of enabling Auto Margin Top-up to prevent their positions from getting liquidated.
+Traders that are short MOVE contracts have the option of enabling [Auto Margin Top-up]() to prevent their positions from getting liquidated.
 
 
 ## Expired MOVE Contracts
