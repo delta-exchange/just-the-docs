@@ -1,6 +1,6 @@
 ---
 layout: default
-title: MOVE Guide
+title: MOVE Contracts Guide
 nav_order: 4
 ---
 
@@ -34,28 +34,28 @@ We offfer two types of MOVE contracts:
 
 ## Mechanics of MOVE Contracts
 
-### **Price movement measurement**
+### Price movement measurement
 
  A MOVE contract settles to the absolute value of movement in price of the underlying. This means to find the settlement price of a MOVE contract, we need starting and ending prices.
 
- $$Settlement Price = abs (Ending Price - Starting Price)$$ 
+ $$Settlement Price = abs (Ending\ Price - Starting\ Price)$$ 
 
-Starting Price: is referred to as the Strike Price. This is the 30 min TWAP of the underlying's price when the measurement interval starts. The measurement interval for a daily/ weekly MOVE contract is 24 hours/ 7 days. 
+**Starting Price:** is referred to as the Strike Price. This is the 30 min TWAP of the underlying's price when the measurement interval starts. The measurement interval for a daily/ weekly MOVE contract is 24 hours/7 days. 
 
 It is important to note that a MOVE contract could be listed before its Strike Price is established. MOVE contracts where Strike Price is yet to be determined stay in auction mode. In this mode, traders can place/ edit/ cancel their orders but no matching takes place. Normal trading starts only when the measurement interval has begun and Strike Price is known.
 
-Ending Price: is the 30 minute TWAP of the underlying's price at Settlement Time. 
+**Ending Price:** is the 30 minute TWAP of the underlying's price at Settlement Time. 
 
 ### Cost of trading MOVE Contracts
 
-In a futures contract trade, no cashflow exchange occurs when a position is opened. In the case of MOVE contracts, the party buying the contracts (longs) are required to pay the cost of the contracts to the party selling it. This cost is referred to as Premium.
+In a futures contract trade, no cashflow exchange occurs when a position is opened. In the case of MOVE contracts, the party buying the contracts (longs) is required to pay the cost of the contracts to the party selling it. This cost is referred to as Premium.
 
-$$ Premium = Num_of_contracts * Entry Price $$
+$$ Premium = Num_of_contracts * Entry\ Price $$
 
-- For Longs: Longs are required to pay Premium upfront. Premium is immediately deducted from the Available Balance as soon as a long trade is executed. 
+- **For Longs:** Longs are required to pay Premium upfront. Premium is immediately deducted from the Available Balance as soon as a long trade is executed. 
 
 
-- For Shorts: Shorts receive Premium paid by longs. Premium received is added to the Available Balance. 
+- **For Shorts:** Shorts receive Premium paid by longs. Premium received is added to the Available Balance. 
  
 
 ### Mark Price
@@ -68,15 +68,15 @@ Computation of Fair Implied Volatility entails the following steps:
 3. Fair Implied Volatility is defined as the moving average of 12 latest values of Impact Implied Volatility.
 4. Fair Price of the contract is obtained by plugging Fair Implied Volatility, Strike Price and Time to Settlement in the Black Scholes model.
 
-### Profit/ loss equation
+### Profit/ Loss Equation
 
-The Premium of a MOVE contract is directly added to/ subtracted from the Available Balance of shorts/ longs. The cashflow that occurs when a position in a MOVE contract is closed is referred to as Pay-off. The Profit/ loss of a position thus can be computed as 
+The Premium of a MOVE contract is directly added to/ subtracted from the Available Balance of shorts/ longs. The cashflow that occurs when a position in a MOVE contract is closed is referred to as **Pay-off**. The Profit/ Loss of a position thus can be computed as 
 
-$$ Profit/ loss = Pay-off +/- Premium $$
+$$ Profit// Loss = Pay/-off +/- Premium $$
 
 For longs
 
-$$Pay-off = Num_of_contracts * Mark Price$$
+$$Pay/-off = Num_of_contracts * Mark Price$$
 
 $$Profit/ loss = - Premium + Num_of_contracts * Mark Price$$
 
