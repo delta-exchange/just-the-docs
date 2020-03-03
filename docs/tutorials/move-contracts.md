@@ -12,7 +12,7 @@ nav_order: 4
 ## MOVE Contracts: Motivation & Use Cases
 MOVE are a new class of derivative contracts whose price is proportional to the absolute value of movement in the price of the underlying asset of the contract over a period of time. This means that direction of movement (up or down) in the underlying asset's price is not relevant. 
 
-The price of a MOVE contract reflects expectations about the expected movement or volatility in the underlying of the contract. If your expectations about the movement are different from the priced-in expectations, you have a tade. 
+The price of a MOVE contract reflects expectations about the future movement or volatility in the underlying of the contract. If your expectations about the movement are different from the priced-in expectations, you have a tade. 
 
 If you believe that the price of the underlying asset of the MOVE contract will go up/ down a lot, you can long the contract. In this trade, you are long volatility. Conversely, if you believe that the underlying asset price will be relatively stable, you can short the MOVE contract. In this trade, you are short volatility. Therefore, MOVE contracts enable you to speculate on volatility. 
 
@@ -28,13 +28,13 @@ It is evident from the above chart that profitability of a trade depends on the 
 
 We offfer two types of MOVE contracts:
 
-- Daily MOVE contracts: These MOVE contracts track the movement of the underlying in a 24 hour period. The ticker for daily MOVE contract has the following format: MV-[Underlying_Asset]-D-[Settlement Date], where Settlement Date is in ddmmyy format. For example, MV-BTC-D-050320 is the ticker of a daily MOVE contract on BTC that will settle on 5th March 2020.
+- **Daily MOVE contracts:** These MOVE contracts track the movement of the underlying in a 24 hour period. The ticker for daily MOVE contract has the following format: MV-[Underlying_Asset]-D-[Settlement Date], where Settlement Date is in ddmmyy format. For example, MV-BTC-D-050320 is the ticker of a daily MOVE contract on BTC that will settle on 5th March 2020.
 
-- Weekly MOVE contracts: These MOVE contracts track the movement of the underlying in a 7 day period. The ticker for weekly MOVE contract has the following format: MV-[Underlying_Asset]-W-[Settlement Date], where Settlement Date is in ddmmyy format. For example, MV-ETH-W-130320 is the ticker of a weekly MOVE contract on ETH that will settle on 13th March 2020.
+- **Weekly MOVE contracts:** These MOVE contracts track the movement of the underlying in a 7 day period. The ticker for weekly MOVE contract has the following format: MV-[Underlying_Asset]-W-[Settlement Date], where Settlement Date is in ddmmyy format. For example, MV-ETH-W-130320 is the ticker of a weekly MOVE contract on ETH that will settle on 13th March 2020.
 
 ## Mechanics of MOVE Contracts
 
-### Price movement measurement
+### **Price movement measurement**
 
  A MOVE contract settles to the absolute value of movement in price of the underlying. This means to find the settlement price of a MOVE contract, we need starting and ending prices.
 
