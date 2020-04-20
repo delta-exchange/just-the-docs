@@ -64,7 +64,7 @@ Like our futures contracts, open positions in MOVE contracts are marked using Fa
 
 Computation of Fair Implied Volatility entails the following steps:
 1. Impact Mid Price is computed from the orderbook. Impact Prices are explained in detail here. 
-2. Impact Mid Price, Strike Price and Time to Settlement is plugged into the Black Scholes formula to get the Impact Implied Volatility. This computation is done once every 5 seconds. Impact Implied Volatility is bounded between 40% and 130% for BTC and 70% and 200% for ETH.
+2. Impact Mid Price, Strike Price and Time to Settlement is plugged into the Black Scholes formula to get the Impact Implied Volatility. This computation is done once every 5 seconds. Impact Implied Volatility is bounded between 40% and 3000% for BTC and 70% and 300% for ETH.
 3. Fair Implied Volatility is defined as the moving average of 12 latest values of Impact Implied Volatility.
 4. Fair Price of the contract is obtained by plugging Fair Implied Volatility, Strike Price and Time to Settlement in the Black Scholes model.
 
