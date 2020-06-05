@@ -12,7 +12,7 @@ nav_order: 5
 ## Interest Rate Swaps: Motivation & Use Cases
 Interest Rate Swaps (IRS) are a class of derivative contracts in which two parties agree to exchange one stream of interest rate payments for another, over a set period of time. Typically, one of the interest rate streams varies with time and is known as as the 'floating rate'. And, the other interest rate stream stays constant and is referred to as the 'fixed rate'. Thus, a typical IRS entails swap of floating interest rate payments with fixed interest payments. 
 
-![image]({{site.baseurl}}/assets/images/swap.jpg "An Interest Rate Swap")
+![image]({{site.baseurl}}/assets/images/IRS.jpg "An Interest Rate Swap")
 
 
 **Floating rate:**  is typically an easily observable/ benchmark rate that changes periodically and is of interest to a lot of people. 
@@ -32,7 +32,7 @@ In traditional financial markets, the market-implied future values of benchmark 
 **Using IRS for hedging**
 You can get into an IRS trade to convert floating-rate exposure/ liability into a fixed rate one. By buying floating-for-fixed, you can eliminate the uncertainty of the floating-rate liability. 
 
-![image]({{site.baseurl}}/assets/images/IRS_hedge.jpg "Hedging a floating rate liability with IRS")
+![image]({{site.baseurl}}/assets/images/irs_hedging.jpg "Hedging a floating rate liability with IRS")
 
 **Using IRS to speculate**
 You can use IRS to speculate on the future values of the floating rate. 
