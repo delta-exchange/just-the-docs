@@ -17,7 +17,7 @@ Interest Rate Swaps (IRS) are a class of derivative contracts in which two parti
 
 **Floating rate:**  is typically an easily observable/ benchmark rate that changes periodically and is of interest to a lot of people. 
 
-From the traditional finance world, a good example of such a rate is LIBOR. LIBOR is short for London InterBank Offer Rate. This is the rate at which banks are willing to offer uncollateralised loans to each other. LIBOR is published everyday and is used as the floating leg on a multitude of interest rate swaps and other interest rates based derivatives. In the domain of cryptocurrencies, widely accepted benchamrk interest rates like LIBOR are yet to emerge. However, interest rates on de-fi platforms (that typically change with every block on the ETH blockchain) and funding rates on perpetual contracts (that typically change every 8 hours). 
+From the traditional finance world, a good example of such a rate is LIBOR. LIBOR is short for London InterBank Offer Rate. This is the rate at which banks are willing to offer uncollateralised loans to each other. LIBOR is published everyday and is used as the floating leg on a multitude of interest rate swaps and other interest rates based derivatives. In the domain of cryptocurrencies, widely accepted benchmark interest rates like LIBOR are yet to emerge. However, interest rates on de-fi platforms (that typically change with every block on the ETH blockchain) and funding rates on perpetual contracts (that typically change every 8 hours). 
 
 
 **Fixed rate:**,also known as the swap rate, is the rate which a party demands in exchange of assuming the uncertainty of paying floating rate over the duration of the IRS. It is logical to deduce that the fixed rate in an IRS will reflect the expected values of the floating rate in the future. 
@@ -45,7 +45,7 @@ If you believe that the floating rate is likely to go up, you can choose to rece
 
 **Sell floating-for-fixed: Pay floating rate, Receive fixed rate**
 
-If you beleive that floating rate is likely to do gown, you can choose to pay the floating rate and receive the fixed rate. Since you have locked in a higher fixed rate, your trade will be profitable if your expectation about floating rate going lower comes true. 
+If you believe that floating rate is likely to do gown, you can choose to pay the floating rate and receive the fixed rate. Since you have locked in a higher fixed rate, your trade will be profitable if your expectation about floating rate going lower comes true. 
 
 ![image]({{site.baseurl}}/assets/images/irs_trade1.jpg "IRS Trade when you expect floating rate to go down")
 
@@ -75,7 +75,7 @@ It is worth noting the following:
 
 **Profit/ loss Calculations**
 
-To be able to understand the profit/ loss calcuations for an IRS, it is important for you to appreciate the fact that the profit/ loss from an IRS trade is path dependent. What this means is that it is not just your entry and exit levels but also the path the floating rate takes during the trade that determines your profit/ loss. To put this in context, Profit/ loss for futures is path independent as is evident from the futures PNL equation:
+To be able to understand the profit/ loss calculations for an IRS, it is important for you to appreciate the fact that the profit/ loss from an IRS trade is path dependent. What this means is that it is not just your entry and exit levels but also the path the floating rate takes during the trade that determines your profit/ loss. To put this in context, Profit/ loss for futures is path independent as is evident from the futures PNL equation:
 
 $$PNL = P_{exit} - P_{entry}$$. 
 
@@ -93,7 +93,7 @@ $$PNL = Cashflow\ at\ incepetion + Net fixed/ floating\ payments + Cashflow\ at\
 
 ## BitMex Funding Rate Swap
 
-The BitMex Funding swap is defined over the BitMex Bitcoin Perpetual Swap (XBTUSD) funding rate. For a perpetual contract, funding is the mechansim which tethers the price of the contract to the spot price. Broadly speaking, when the perpetual contract is trading at a premium to spot, i.e. more buying pressure, longs are required to pay funding to shorts. Conversely, when the perpetual contract is trading at a discount to shorts, shorts are required to pay funding to longs.
+The BitMex Funding swap is defined over the BitMex Bitcoin Perpetual Swap (XBTUSD) funding rate. For a perpetual contract, funding is the mechanism which tethers the price of the contract to the spot price. Broadly speaking, when the perpetual contract is trading at a premium to spot, i.e. more buying pressure, longs are required to pay funding to shorts. Conversely, when the perpetual contract is trading at a discount to shorts, shorts are required to pay funding to longs.
 
 On BitMex, funding rate is comprised of two parts: premium of orderbook derived price over spot price and (b) differential of USD and BTC lending rate. The lending rates have been set to fixed numbers. Thus, funding rate largely depends on premium. Over an 8-hour period premium is measured and averaged to get the funding rate, which is then exchanged at the end of the next 8-hour period. Everyday funding is exchanged at 4am UTC, 12pm UTC and 8pm UTC, between traders who have a position in the contract at that time.
 
@@ -125,11 +125,13 @@ You can trade the BitMex funding rate swap without having a position in XBTUSD. 
 
 BitMex's XBTUSD perpetual is an inverse contract. The contract's underlying is BTC; it is quoted in USD and is margined and settled in BTC. To ensure that the funding rate swap can be used to hedge funding incurred on XBTUSD positions, we have followed the same convention.
 
-The notional value of the funding rate swap is in USD. This means that the fixed/ floating payments too should be denominated in USD. However, margining and all cashflows happen in BTC. This is achieved by converting USD to BTC using the prevailaing spot rate at the time a cashflow takes place.
+The notional value of the funding rate swap is in USD. This means that the fixed/ floating payments too should be denominated in USD. However, margining and all cashflows happen in BTC. This is achieved by converting USD to BTC using the prevailing spot rate at the time a cashflow takes place.
 
 ### **Orderbook**
 
 The BitMex funding rate swap orderbook has bids and offers in terms of annualised fixed rate. Bid represent the fixed rate a party is willing to offer to buy the stream of funding rates over the period of the swap contract. Similarly, offers represent the fixed rate a party is demand to sell the stream of funding rates over the swap tenure. 
+
+![image]({{site.baseurl}}/assets/images/irs_orderbook.jpg "BitMex Funding Rate Swap Orderbook")
 
 Since, funding is quoted as an 8hour rate on BitMex, we give an option to see the orderbook in terms of 8hour rates. However, all trading happens in annualised rates.
 
@@ -147,7 +149,7 @@ $$Premium = (Notional\ Value/ BTC\ spot\ price) * Fixed\ Rate * (Time\_to\_Matur
 
 Premium is negative for buyers of floating (i.e. cash outflow) and positive for sellers of floating (i.e. cash inflow).
 
-Additionally, both buey and seller are also required to post margin for the variable funding exchanges that will take place while the parties are holding their positions.
+Additionally, both buyer and seller are also required to post margin for the variable funding exchanges that will take place while the parties are holding their positions.
 
 **Margin for buyers of floating rate**
 
@@ -164,7 +166,7 @@ Just like in futures, margin requirement scales up with position size. Details o
 
 ### **Mark Rate**
 
-Like our futures contracts, open positions in BitMex funding rate swap contracts are marked using Fair Price Marking. The fair price, rather fair rate, for the funding rate swap is derived by leveraging the fact that cashflows of a position in funding rate swap can be approximated by taking positions of the same size but opposite directions in the XBTUSD perpetual and a BTC futures expriring at the same time as the funding rate swap. This means the annualised rate imputed from the basis of the BTC futures can be considered as the market's expectation of the funding rates from now till the time of futures/ swap expiration. 
+Like our futures contracts, open positions in BitMex funding rate swap contracts are marked using Fair Price Marking. The fair price, rather fair rate, for the funding rate swap is derived by leveraging the fact that cashflows of a position in funding rate swap can be approximated by taking positions of the same size but opposite directions in the XBTUSD perpetual and a BTC futures expiring at the same time as the funding rate swap. This means the annualised rate imputed from the basis of the BTC futures can be considered as the market's expectation of the funding rates from now till the time of futures/ swap expiration. 
 
 We therefore use the annualised implied rate from BTC futures basis as fair rate. 
 
@@ -180,7 +182,7 @@ $$Funding\ for\ buyers\ of\ floating\ rate = (Notional\ Value/ BTCUSD) * Funding
 
 $$Funding\ for\ sellers\ of\ floating\ rate = - (Notional\ Value/ BTCUSD) * Funding\_Rate * (1/1095)$$
 
-**Pay-off:** The cashflow that occurs when a position in an IRS contract is closed is referred to as Pay-off. As explained earlier in this guide, closing an IRS position is akin to doing a trade in the opposite direction of your existing position. This menas, Pay-off can be computed using the same formuala as for Premium.
+**Pay-off:** The cashflow that occurs when a position in an IRS contract is closed is referred to as Pay-off. As explained earlier in this guide, closing an IRS position is akin to doing a trade in the opposite direction of your existing position. This means, Pay-off can be computed using the same formula as for Premium.
 
 The PNL from a position in BitMex funding rate swap is the sum of the cashflows, i.e. 
 
