@@ -66,7 +66,7 @@ $$Value\ of\ Fixed\ Payments\ = Value\ of\ Floating\ Payments$$
 
 Using the above equation, we can find the fair value of the fixed rate as:
 
-$$fixed\ rate = \sum (floating rate_i * T_i) / \sum T_i$$
+$$fixed\ rate = \sum (floating\ rate_i * T_i) / \sum T_i$$
 
 It is worth noting the following:
 
@@ -77,7 +77,7 @@ It is worth noting the following:
 
 To be able to understand the profit/ loss calcuations for an IRS, it is important for you to appreciate the fact that the profit/ loss from an IRS trade is path dependent. What this means is that it is not just your entry and exit levels but also the path the floating rate takes during the trade that determines your profit/ loss. To put this in context, Profit/ loss for futures is path independent as is evident from the futures PNL equation:
 
-$$Profit/ loss = P_exit - P_entry$$. 
+$$PNL = P_{exit} - P_{entry}$$. 
 
 The path dependency of profit/ loss is due to the fixed-floating payment exchanges that happen while you are in an IRS trade. In fact, thinking in terms of cashflows is a good starting point for computing profit/ loss from an IRS trade. Cashflows can occur: (a) at the trade inception, (b) while the trade is open and fixed/ floating payments are being exchanged periodically and (c) at the time of exit from the trade. You make profit in a trade when the cumulative net cashflow (i.e. total incoming cashflow - total outgoing cashflow) is positive. 
 
@@ -89,7 +89,7 @@ As the above diagrams illustrate, on closing an IRS position, you end up paying 
 
 
 Therefore, the profit/ loss from an IRS contract trade can be written as:
-$$Profit/ loss = Cashflow at incepetion + Net fixed/ floating payments + Cashflow at Exit$$ 
+$$PNL = Cashflow\ at\ incepetion + Net fixed/ floating\ payments + Cashflow\ at\ Exit$$ 
 
 ## BitMex Funding Rate Swap
 
@@ -101,6 +101,7 @@ On BitMex, funding rate is comprised of two parts: premium of orderbook derived 
 The XBTUSD funding rate can thought of as an interest rate that can vary from -493% to +493% annualised and changes every 8 hours. In this context, we have created an interest rate swap contract with the BitMex XBTUSD funding as the floating rate. We refer to this contract as the BitMex funding rate swap. It can be used by traders for both risk management and speculation.
 
 **BitMex funding rate swap as a risk management tool**
+
 XBTUSD funding rate is generally positive, i.e. more often than not, longs pay shorts, and stays in the 15-20% annualised band. However, it is also prone to violent moves, especially around big run-ups and sharp sell-offs. If you intend to hold a position in XBTUSDT for an extended period of time, funding can potentially eat significant part of your profits from price move. In such situations, you can get into a BitMex funding swap trade to convert the floating funding exposure to a fixed one.
 
 If you are long XBTUSD perpetual, then you can buy floating-for-fixed in the BitMex Funding Swap for the same notional size as your XBTUSD position. By doing this, you'd pay a fixed rate to get the funding paid by longs in XBTUSD perpetual. The net result of these trades is that you have swapped the uncertainty of variable funding into a fixed rate.
@@ -110,23 +111,22 @@ Conversely, if you are short XBTUSD perpetual, then you a sell floatin-for-fixed
 Note that above trades have been explained with an implicit assumption that funding rate is positive. When funding is negative, the direction of floating payments will reverse, but the hedge will stay intact. Let's consider a long XBTUSD position hedged with BitMex funding rate swap (i.e. you have paid a fixed rate to get funding paid by longs). If funding rate goes negative, you'd receive funding on your XBTUSD position. And, you'd need to pay the same funding rate to your counterparty in the funding rate swap. So change in funding rate doesn't impact your PNL.
 
 **BitMex funding rate swap as a speculative trading instrument**
+
 You can trade the BitMex funding rate swap without having a position in XBTUSD. The magnitude and sign of XBTUSD is often a barometer for market sentiment. Funding is high and positive, when market is bullish. Conversely, in bearish times, funding is usually in negative territory. Depending up on your view/ situation, you can get into the following trades to speculate on XBTUSD funding:
 
-- **Pay fixed-for-floating:** In this trade, you are paying a fixed rate for a variable stream of funding rates. You would do well if funding rate increases after you have locked it in a with a fixed rate. This trade would make sense when sentiment is likely to turn from bearish to bullish or from bullish to more bullish.
+- **Buy floating-for-fixed:** In this trade, you are paying a fixed rate for a variable stream of funding rates. You would do well if funding rate increases after you have locked it in a with a fixed rate. This trade would make sense when sentiment is likely to turn from bearish to bullish or from bullish to more bullish.
 
-- **Sell fixed-for-floating:** In this trade, you are getting a fixed rate for paying a variable stream of funding rates. You would do well if funding rate decreases after you have gotten a high fixed rate to swap it. This trade would make sense when sentiment is likely to turn from bullish to bearish or from bearish to more bearish.
-
-fixed floating exchange
+- **Sell floating-for-fixed:** In this trade, you are getting a fixed rate for paying a variable stream of funding rates. You would do well if funding rate decreases after you have gotten a high fixed rate to swap it. This trade would make sense when sentiment is likely to turn from bullish to bearish or from bearish to more bearish.
 
 
 ## Mechanics of BitMex Funding Rate Swap
 
-### The Swap Currency
+###**The Swap Currency**
 BitMex's XBTUSD perpetual is an inverse contract. The contract's underlying is BTC; it is quoted in USD and is margined and settled in BTC. To ensure that the funding rate swap can be used to hedge funding incurred on XBTUSD positions, we have followed the same convention.
 
 The notional value of the funding rate swap is in USD. This means that the fixed/ floating payments too should be denominated in USD. However, margining and all cashflows happen in BTC. This is achieved by converting USD to BTC using the prevailaing spot rate at the time a cashflow takes place.
 
-### Orderbook
+###**Orderbook**
 
 The BitMex funding rate swap orderbook has bids and offers in terms of annualised fixed rate. Bid represent the fixed rate a party is willing to offer to buy the stream of funding rates over the period of the swap contract. Similarly, offers represent the fixed rate a party is demand to sell the stream of funding rates over the swap tenure. 
 
