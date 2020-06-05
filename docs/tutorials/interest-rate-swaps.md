@@ -20,7 +20,7 @@ Interest Rate Swaps (IRS) are a class of derivative contracts in which two parti
 From the traditional finance world, a good example of such a rate is LIBOR. LIBOR is short for London InterBank Offer Rate. This is the rate at which banks are willing to offer uncollateralised loans to each other. LIBOR is published everyday and is used as the floating leg on a multitude of interest rate swaps and other interest rates based derivatives. In the domain of cryptocurrencies, widely accepted benchmark interest rates like LIBOR are yet to emerge. However, interest rates on de-fi platforms (that typically change with every block on the ETH blockchain) and funding rates on perpetual contracts (that typically change every 8 hours). 
 
 
-**Fixed rate:**,also known as the swap rate, is the rate which a party demands in exchange of assuming the uncertainty of paying floating rate over the duration of the IRS. It is logical to deduce that the fixed rate in an IRS will reflect the expected values of the floating rate in the future. 
+**Fixed rate:**  or the swap rate, is the rate which a party demands in exchange of assuming the uncertainty of paying floating rate over the duration of the IRS. It is logical to deduce that the fixed rate in an IRS will reflect the expected values of the floating rate in the future. 
 
 In traditional financial markets, the market-implied future values of benchmark rates like LIBOR can be imputed from a variety of interest rate derivatives. These 'forward rates' help traders in pricing LIBOR-based interest rate swaps. Unfortunately, market-implied forward rates are not available in crypto yet. Thus, traders will need to come up with their own estimates of future values of the floating rate of an IRS.
 
@@ -30,20 +30,22 @@ In traditional financial markets, the market-implied future values of benchmark 
  $$Interest\ Rate\ Payment = Notional\ Amount * Rate * Time$$ 
 
 **Using IRS for hedging**
+
 You can get into an IRS trade to convert floating-rate exposure/ liability into a fixed rate one. By buying floating-for-fixed, you can eliminate the uncertainty of the floating-rate liability. 
 
 ![image]({{site.baseurl}}/assets/images/irs_hedging.jpg "Hedging a floating rate liability with IRS")
 
 **Using IRS to speculate**
+
 You can use IRS to speculate on the future values of the floating rate. 
 
-**Buy floating-for-fixed: Pay fixed rate, Receive floating rate**
+- **Buy floating-for-fixed: Pay fixed rate, Receive floating rate**
 
 If you believe that the floating rate is likely to go up, you can choose to receive the floating rate and pay the fixed rate. This trade will be profitable if the realised value of the floating rate over the is higher than the expected value baked into the fixed rate.
 
 ![image]({{site.baseurl}}/assets/images/irs_trade2.jpg "IRS Trade when you expect floating rate to go up")
 
-**Sell floating-for-fixed: Pay floating rate, Receive fixed rate**
+- **Sell floating-for-fixed: Pay floating rate, Receive fixed rate**
 
 If you believe that floating rate is likely to do gown, you can choose to pay the floating rate and receive the fixed rate. Since you have locked in a higher fixed rate, your trade will be profitable if your expectation about floating rate going lower comes true. 
 
@@ -77,7 +79,7 @@ It is worth noting the following:
 
 To be able to understand the profit/ loss calculations for an IRS, it is important for you to appreciate the fact that the profit/ loss from an IRS trade is path dependent. What this means is that it is not just your entry and exit levels but also the path the floating rate takes during the trade that determines your profit/ loss. To put this in context, Profit/ loss for futures is path independent as is evident from the futures PNL equation:
 
-$$PNL = P_{exit} - P_{entry}$$. 
+$$PNL = P_{exit} - P_{entry}$$
 
 The path dependency of profit/ loss is due to the fixed-floating payment exchanges that happen while you are in an IRS trade. In fact, thinking in terms of cashflows is a good starting point for computing profit/ loss from an IRS trade. Cashflows can occur: (a) at the trade inception, (b) while the trade is open and fixed/ floating payments are being exchanged periodically and (c) at the time of exit from the trade. You make profit in a trade when the cumulative net cashflow (i.e. total incoming cashflow - total outgoing cashflow) is positive. 
 
@@ -89,7 +91,7 @@ As the above diagrams illustrate, on closing an IRS position, you end up paying 
 
 
 Therefore, the profit/ loss from an IRS contract trade can be written as:
-$$PNL = Cashflow\ at\ incepetion + Net fixed/ floating\ payments + Cashflow\ at\ Exit$$ 
+$$PNL = Cashflow\ at\ incepetion + Net/ fixed/ floating\ payments + Cashflow\ at\ Exit$$ 
 
 ## BitMex Funding Rate Swap
 
@@ -145,7 +147,7 @@ The next funding payment in known 8 hours in advance. You would pay/ receive fun
 
 Buyers of floating rate are required to pay the complete fixed rate payments upfront to the sellers. We refer to this as Premium. 
 
-$$Premium = (Notional\ Value/ BTC\ spot\ price) * Fixed\ Rate * (Time\_to\_Maturity\ 31536000)$$
+$$Premium = (Notional\ Value/ BTCUSD) * Fixed\ Rate * (Time\_to\_Maturity\ 31536000)$$
 
 Premium is negative for buyers of floating (i.e. cash outflow) and positive for sellers of floating (i.e. cash inflow).
 
