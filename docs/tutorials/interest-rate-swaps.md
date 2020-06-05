@@ -121,7 +121,8 @@ You can trade the BitMex funding rate swap without having a position in XBTUSD. 
 
 ## Mechanics of BitMex Funding Rate Swap
 
-###**The Swap Currency**
+### **The Swap Currency**
+
 BitMex's XBTUSD perpetual is an inverse contract. The contract's underlying is BTC; it is quoted in USD and is margined and settled in BTC. To ensure that the funding rate swap can be used to hedge funding incurred on XBTUSD positions, we have followed the same convention.
 
 The notional value of the funding rate swap is in USD. This means that the fixed/ floating payments too should be denominated in USD. However, margining and all cashflows happen in BTC. This is achieved by converting USD to BTC using the prevailaing spot rate at the time a cashflow takes place.
@@ -142,7 +143,7 @@ The next funding payment in known 8 hours in advance. You would pay/ receive fun
 
 Buyers of floating rate are required to pay the complete fixed rate payments upfront to the sellers. We refer to this as Premium. 
 
-$$Premium = (Notional\ Value\/ BTC\ spot\ price) * Fixed\ Rate * (Time\_to\_Maturity\/ 31536000)$$
+$$Premium = (Notional\ Value/ BTC\ spot\ price) * Fixed\ Rate * (Time\_to\_Maturity\ 31536000)$$
 
 Premium is negative for buyers of floating (i.e. cash outflow) and positive for sellers of floating (i.e. cash inflow).
 
@@ -150,11 +151,11 @@ Additionally, both buey and seller are also required to post margin for the vari
 
 **Margin for buyers of floating rate**
 
-$$Buyer margin = (Notional\ Value\/ BTC\ spot\ price) * Margin\% * (Fixed\ Rate - min (Min\_Funding\_Rate, 0))* (Time\_to\_Maturity \/ 31536000)$$
+$$Buyer margin = (Notional\ Value/ BTC\ spot\ price) * Margin\% * (Fixed\ Rate - min (Min\_Funding\_Rate, 0))* (Time\_to\_Maturity/31536000)$$
 
 **Margin for sellers of floating rate**
 
-$$Seller margin = (Notional\ Value\/ BTC\ spot\ price) * Margin\% (- Fixed\ Rate - max (Max\_Funding\_Rate, 0) * (Time\_to\_Maturity \/ 31536000)$$
+$$Seller margin = (Notional\ Value/ BTC\ spot\ price) * Margin\% (- Fixed\ Rate - max (Max\_Funding\_Rate, 0) * (Time\_to\_Maturity/ 31536000)$$
 
 Here, Margin% is the required margin ratio. To initiate a position, InitialMargin% is required and to keep it open MaintenanceMargin% is required. 
 
@@ -175,16 +176,16 @@ There are three types of cashflows that happen when you are trading the funding 
 
 **Funding payments:** These occur every 8hours, in sync with funding exchanges between XBTUSD position holders on BitMex. Whether you pay or receive funding payment, depends both on your position and sign of funding rate. 
 
-$$Funding for buyers of floating = (Notional\ Value\/ BTC\ spot\ price) * Funding\_Rate * (1\/1095)
+$$Funding for buyers of floating = (Notional\ Value/ BTC\ spot\ price) * Funding\_Rate * (1/1095)
 
-$$Funding for sellers of floating = - (Notional\ Value\/ BTC\ spot\ price) * Funding\_Rate * (1\/1095)
+$$Funding for sellers of floating = - (Notional\ Value/ BTC\ spot\ price) * Funding\_Rate * (1/1095)
 
 **Pay-off:** The cashflow that occurs when a position in an IRS contract is closed is referred to as Pay-off. As explained earlier in this guide, closing an IRS position is akin to doing a trade in the opposite direction of your existing position. This menas, Pay-off can be computed using the same formuala as for Premium.
 
 The PNL from a position in BitMex funding rate swap is the sum of the cashflows, i.e. 
 
 
-$$ Profit/\ Loss = Premium + Funding\ payments +  Pay-off$$
+$$ PNL = Premium + Funding\ Payments +  Pay-off$$
 
 
 ### Liquidations
