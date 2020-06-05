@@ -25,42 +25,44 @@ From the traditional finance world, a good example of such a rate is LIBOR. LIBO
 In traditional financial markets, the market-implied future values of benchmark rates like LIBOR can be imputed from a variety of interest rate derivatives. These 'forward rates' help traders in pricing LIBOR-based interest rate swaps. Unfortunately, market-implied forward rates are not available in crypto yet. Thus, traders will need to come up with their own estimates of future values of the floating rate of an IRS.
 
 
-**Notional Amount:**can be thought of as the 'Principal Amount' for which fixed or floating interest payments are being exchanged in an IRS. Notional Amount is plugged into the simple interest formula to compute interest rate payments that two parties in an IRS have to make to each other, i.e. 
+**Notional Amount:** can be thought of as the 'Principal Amount' for which fixed or floating interest payments are being exchanged in an IRS. Notional Amount is plugged into the simple interest formula to compute interest rate payments that two parties in an IRS have to make to each other, i.e. 
 
- $$Interest Rate Paymet = Notional Amount * Rate * Time$$ 
+ $$Interest\ Rate\ Payment = Notional\ Amount * Rate * Time$$ 
 
 **Using IRS for hedging**
-You can get into an IRS trade to convert floating-rate exposure/ liability into a fixed-rate one. By selling fixed-for-floating, you can eliminate the uncertainty of the floating-rate liability. 
+You can get into an IRS trade to convert floating-rate exposure/ liability into a fixed rate one. By buying floating-for-fixed, you can eliminate the uncertainty of the floating-rate liability. 
 
 ![image]({{site.baseurl}}/assets/images/IRS_hedge.jpg "Hedging a floating rate liability with IRS")
 
 **Using IRS to speculate**
 You can use IRS to speculate on the future values of the floating rate. 
 
-Buy fixed-for-floating: Pay floating rate, Receive fixed rate
-If you beleive that floating rate is likely to do gown, you can choose to pay the floating rate and receive the fixed rate. Since you have locked in a higher fixed rate, your trade will be profitable if your expectation about floating rate going lower comes true. 
+**Buy floating-for-fixed: Pay fixed rate, Receive floating rate**
 
-![image]({{site.baseurl}}/assets/images/irs_trade1.jpg "IRS Trade when you expect floating rate to go down")
-
-Sell fixed-for-floating: Pay fixed rate, Receive floating rate
 If you believe that the floating rate is likely to go up, you can choose to receive the floating rate and pay the fixed rate. This trade will be profitable if the realised value of the floating rate over the is higher than the expected value baked into the fixed rate.
 
 ![image]({{site.baseurl}}/assets/images/irs_trade2.jpg "IRS Trade when you expect floating rate to go up")
+
+**Sell floating-for-fixed: Pay floating rate, Receive fixed rate**
+
+If you beleive that floating rate is likely to do gown, you can choose to pay the floating rate and receive the fixed rate. Since you have locked in a higher fixed rate, your trade will be profitable if your expectation about floating rate going lower comes true. 
+
+![image]({{site.baseurl}}/assets/images/irs_trade1.jpg "IRS Trade when you expect floating rate to go down")
 
 
 ## Understanding the Math Behind IRS
 
 In an IRS,
 
-$$Value\ of\ floating\ payments\ = Notional\ Amount* \Sum(floating\ rate_i * T_i)$$
+$$Value\ of\ Floating\ Payments\ = Notional\ Amount* \sum(floating\ rate_i * T_i)$$
 
-where, $$floating \rate_i$$ is the value of the floating rate in the i-th time interval. Obviously, these refer to future values of the floating rate and thus need to be estimated by the traders.
+where, $$floating\ rate_i$$ is the value of the floating rate in the i-th time interval. Obviously, these refer to future values of the floating rate and thus need to be estimated by the traders.
 
-$$Value\ of\ fixed\ payments\ = Notional\ Amount* fixed rate \Sum T_i$$
+$$Value\ of\ Fixed\ Payments = Notional\ Amount* fixed\ rate * \sum T_i$$
 
 For a fairly priced IRS, we have must have:
 
-$$Value\ of\ fixed\ payments\ = Value\ of\ floating\ payments$$
+$$Value\ of\ Fixed\ Payments\ = Value\ of\ Floating\ Payments$$
 
 Using the above equation, we can find the fair value of the fixed rate as:
 
@@ -72,7 +74,10 @@ It is worth noting the following:
 2. We have assumed that fixed and floating payment exchanges are synchronized. That need not be the case. In fact, in the IRS contracts listed on Delta Exchange, fixed payment is done in a single shot at the inception of the swap.
 
 **Profit/ loss Calculations**
-To be able to understand the profit/ loss calcuations for an IRS, it is important for you to appreciate the fact that the profit/ loss from an IRS trade is path dependent. What this means is that it is not just your entry and exit levels but also the path the floating rate takes during the trade that determines your profit/ loss. To put this in context, consider the Profit/ loss equation for futures, $$Profit/ loss = P_exit - P_entry$$. Profit/ loss for futures is path independent.
+
+To be able to understand the profit/ loss calcuations for an IRS, it is important for you to appreciate the fact that the profit/ loss from an IRS trade is path dependent. What this means is that it is not just your entry and exit levels but also the path the floating rate takes during the trade that determines your profit/ loss. To put this in context, Profit/ loss for futures is path independent as is evident from the futures PNL equation:
+
+$$Profit/ loss = P_exit - P_entry$$. 
 
 The path dependency of profit/ loss is due to the fixed-floating payment exchanges that happen while you are in an IRS trade. In fact, thinking in terms of cashflows is a good starting point for computing profit/ loss from an IRS trade. Cashflows can occur: (a) at the trade inception, (b) while the trade is open and fixed/ floating payments are being exchanged periodically and (c) at the time of exit from the trade. You make profit in a trade when the cumulative net cashflow (i.e. total incoming cashflow - total outgoing cashflow) is positive. 
 
@@ -174,7 +179,7 @@ $$Funding for buyers of floating = (Notional\ Value\/ BTC\ spot\ price) * Fundin
 
 $$Funding for sellers of floating = - (Notional\ Value\/ BTC\ spot\ price) * Funding\_Rate * (1\/1095)
 
-**Pay-off:** The cashflow that occurs when a position in a MOVE contract is closed is referred to as Pay-off. As explained earlier in this guide, closing an IRS position is akin to doing a trade in the opposite direction of your existing position. This menas, Pay-off can be computed using the same formuala as for Premium.
+**Pay-off:** The cashflow that occurs when a position in an IRS contract is closed is referred to as Pay-off. As explained earlier in this guide, closing an IRS position is akin to doing a trade in the opposite direction of your existing position. This menas, Pay-off can be computed using the same formuala as for Premium.
 
 The PNL from a position in BitMex funding rate swap is the sum of the cashflows, i.e. 
 
