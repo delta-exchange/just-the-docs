@@ -91,7 +91,7 @@ As the above diagrams illustrate, on closing an IRS position, you end up paying 
 
 
 Therefore, the profit/ loss from an IRS contract trade can be written as:
-$$PNL = Cashflow\ at\ incepetion + Net/ fixed/ floating\ payments + Cashflow\ at\ Exit$$ 
+$$PNL = Cashflow\ at\ incepetion + Net\ fixed/ floating\ payments + Cashflow\ at\ Exit$$ 
 
 ## BitMex Funding Rate Swap
 
