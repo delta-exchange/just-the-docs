@@ -99,6 +99,8 @@ The BitMex Funding swap is defined over the BitMex Bitcoin Perpetual Swap (XBTUS
 
 On BitMex, funding rate is comprised of two parts: premium of orderbook derived price over spot price and (b) differential of USD and BTC lending rate. The lending rates have been set to fixed numbers. Thus, funding rate largely depends on premium. Over an 8-hour period premium is measured and averaged to get the funding rate, which is then exchanged at the end of the next 8-hour period. Everyday funding is exchanged at 4am UTC, 12pm UTC and 8pm UTC, between traders who have a position in the contract at that time.
 
+![image]({{site.baseurl}}/assets/images/xbt_funding_infographic.jpg "BitMex XBTUSD Funding Rate Characteristics")
+
 
 The XBTUSD funding rate can thought of as an interest rate that can vary from -493% to +493% annualised and changes every 8 hours. In this context, we have created an interest rate swap contract with the BitMex XBTUSD funding as the floating rate. We refer to this contract as the BitMex funding rate swap. It can be used by traders for both risk management and speculation.
 
