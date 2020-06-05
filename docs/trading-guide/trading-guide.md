@@ -2,7 +2,7 @@
 layout: default
 title: Margin Trading Guide
 has_children: true
-nav_order: 4
+nav_order: 6
 permalink: /docs/margin-trading-guide
 ---
 
