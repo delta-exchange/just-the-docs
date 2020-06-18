@@ -157,11 +157,19 @@ Additionally, both buyer and seller are also required to post margin for the var
 
 **Margin for buyers of floating rate**
 
-$$Buyer's\ margin = (Notional\ Value/ BTCUSD) * Margin\% * (Fixed\ Rate - min (Min\_Funding\_Rate, 0))* (Time\_to\_Maturity/31536000)$$
+$$Buyer's\ margin = (Notional\ Value/ BTCUSD) * Margin\% * Rate\ Term$$
+
+where Rate Term is computed as:
+
+$$Rate\ Term = (Fixed\ Rate - min (Min\_Funding\_Rate, 0))* (Time\_to\_Maturity/31536000)$$
 
 **Margin for sellers of floating rate**
 
-$$Seller's\ margin = (Notional\ Value/ BTCUSD) * Margin\% (- Fixed\ Rate - max (Max\_Funding\_Rate, 0) * (Time\_to\_Maturity/ 31536000)$$
+$$Seller's\ margin = (Notional\ Value/ BTCUSD) * Margin\% * Rate\ Term$$
+
+where Rate Term is computed as:
+
+$$Rate\ Term = (- Fixed\ Rate - max (Max\_Funding\_Rate, 0) * (Time\_to\_Maturity/ 31536000)$$
 
 Here, Margin% is the required margin ratio. To initiate a position, InitialMargin% is required and to keep it open MaintenanceMargin% is required. 
 
