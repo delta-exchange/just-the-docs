@@ -104,7 +104,7 @@ Just like in futures, margin requirement scales up with position size. Details o
 
 As explained above, long MOVE positions can never get liquidated. Short positions go into liquidation, when Position Margin after factoring in unrealised losses is less than Maintenance Margin, i.e. 
 
-$$ Position\ Margin - Num\_of\_contracts * Liquidation\ Price = Maintenance\ Margin$$
+$$ Liquidation\ Price = (Position\ Margin - Maintenance\ Margin)/ Num\_of\_contracts$$
 
 where Position Margin is greater than or equal to Initial Margin. 
 
