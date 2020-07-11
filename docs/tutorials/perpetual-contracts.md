@@ -64,7 +64,7 @@ where Current Position Value is value of a the position at the current Underlyin
 
 **Funding Limits**
 
-A perpetual contract can be thought as an 8-hour futures contract that is being rolled into the next 8-hour futures every minute. Thus, at any time, the [fair basis]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-basis-calculation) of a perpetual contract should be similar to a futures contract which will expire in 8 hours. With this in mind, we enforce pretty tight caps on the fair basis for perpetual contracts. As of now, most perpetual contracts have funding capped at 0.5%. But these caps are subject to change and are available in the [contract specifications](https://www.delta.exchange/contracts/).
+A perpetual contract can be thought as an 8-hour futures contract that is being rolled into the next 8-hour futures every minute. Thus, at any time, the [fair basis]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-basis-calculation) of a perpetual contract should be similar to a futures contract which will expire in 8 hours. With this in mind, we enforce pretty tight caps on the fair basis for perpetual contracts. As of now, most perpetual contracts have funding capped at 0.5% or 0.15% (for alt-btc pairs). But these caps are subject to change and are available in the [contract specifications](https://www.delta.exchange/contracts/).
 
 **Funding Example**
 
