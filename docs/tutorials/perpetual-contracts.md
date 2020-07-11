@@ -42,11 +42,17 @@ $$Premium\  Rate = (Mark\  Price - Underlying\_Index\_Price)/ Underlying\_Index\
 
 The details on how the Mark Price is calculated are available [here](https://www.delta.exchange/user-guide/docs/trading-guide/fair-price/)
 
+Premium rate is measured every minute and its 8-hour TWAP (Average Premium Rate) is used in the computation Funding Rate.
+
 **Funding Rate**
 
-$$Funding\ Rate = Premium\ Rate$$
+Funding Rate is considered to be an 8-hourly interest rate and is computed using the following formula:
 
-Funding Rate is considered to be an 8-hourly interest rate and is computed every minute. The magnitude of Funding Rate is capped. Funding caps could vary from contract to contract and are available in the [contract specifications](https://www.delta.exchange/contracts/).
+$$Funding\ Rate = max (Average\ Premium\ Rate, 0.05%) + min (Average\ Premium\ Rate, -0.05%) +1$$
+
+Funding Rate is computed 3 times in a 24 hour period at: 4am UTC, 12pm UTC and 8pm UTC. At these times, the TWAP of Premium Rate in the preceding 8 hours is used to compute the Funding Rate. This Funding Rate thus obtained remains applicable for the next 8 hours. 
+ 
+It is worth noting that we also apply upper limits on The magnitude of Funding Rate. Funding caps could vary from contract to contract and are available in the [contract specifications](https://www.delta.exchange/contracts/).
 
 **Funding Payment** 
 
@@ -64,19 +70,19 @@ A perpetual contract can be thought as an 8-hour futures contract that is being 
 
 Lets say you have a long position of 10000 contracts in the BTCUSD Perpetual contract on Delta Exchange. Recall that 1 BTCUSD contract is 1 USD.
 
-Between time $$T$$ and $$T+30\ mins$$, $$Mark Price = $4015,$$ and $$Underlying\ Index\ Price = $4000$$
+Between 4am UTC and 12pm UTC, the TWAP of Premium Rate was 0.04%. This means that for the next 8 hours, i.e. between 12pm UTC and 8pm UTC, the applicable Funding Rate will be:
 
-$$Premium\ Rate = (4015-4000)/4000 = 0.375\%$$
+$$Funding\ Rate = max (0.04%, 0.05%) + min (0.04%, -0.05%) + 0.01% = 0.01%$$
 
-$$Funding\ Rate = Premium\ Rate = 0.375\%$$
+Since you are long and Funding Rate is positive, you'd be paying funding.      
 
-Since you are long and Funding Rate is positive, you'd be paying funding.               
+Let's assume that you hold this long position from 3pm UTC through to 3:30pm UTC. During this time, both the Mark Price and Underlying Index Price stay flat at $4015 and $4000 respectively.         
 
-$$ Funding\ Paid\ per\ min = 10000 * (1/ 4000) * 0.375\% * 1/ (8*60) =  0.00001953  BTC$$
+$$ Funding\ Paid\ per\ min = 10000 * (1/ 4000) * 0.01\% * 1/ (8*60) =  0.00000052  BTC$$
 
-Since both Underlying Index Price and Mark Price remain unchanged for this 30 min window, the funding paid by you in 30 mins can be computed as:
+And, the funding paid by you in 30 mins can be computed as:
 
-$$ Funding\ Paid\ for\ 30\ mins = 30 * 0.00001693 = 0.000585938 BTC$$
+$$ Funding\ Paid\ for\ 30\ mins = 30 * 0.00001693 = 0.00001562 BTC$$
 
 ## Funding for OTC Contracts
 
