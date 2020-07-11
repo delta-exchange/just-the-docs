@@ -48,7 +48,7 @@ Premium rate is measured every minute and its 8-hour TWAP (Avg Premium Rate) is 
 
 Funding Rate is considered to be an 8-hourly interest rate and is computed using the following formula:
 
-$$Funding\ Rate = max (Avg\ Premium\ Rate, 0.05%) + min (Avg\ Premium\ Rate, -0.05%) +1$$
+$$Funding\ Rate = max (Avg\ Premium\ Rate, 0.05\%) + min (Avg\ Premium\ Rate, -0.05\%) +0.01\%$$
 
 Funding Rate is computed 3 times in a 24 hour period at: 4am UTC, 12pm UTC and 8pm UTC. At these times, the TWAP of Premium Rate in the preceding 8 hours is used to compute the Funding Rate. This Funding Rate thus obtained remains applicable for the next 8 hours. 
  
@@ -72,7 +72,7 @@ Lets say you have a long position of 10000 contracts in the BTCUSD Perpetual con
 
 Between 4am UTC and 12pm UTC, the TWAP of Premium Rate was 0.04%. This means that for the next 8 hours, i.e. between 12pm UTC and 8pm UTC, the applicable Funding Rate will be:
 
-$$Funding\ Rate = max (0.04%, 0.05%) + min (0.04%, -0.05%) + 0.01% = 0.01%$$
+$$Funding\ Rate = max (0.04\%, 0.05\%) + min (0.04\%, -0.05\%) + 0.01\% = 0.01\%$$
 
 Since you are long and Funding Rate is positive, you'd be paying funding.      
 
