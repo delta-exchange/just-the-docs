@@ -42,13 +42,13 @@ $$Premium\  Rate = (Mark\  Price - Underlying\_Index\_Price)/ Underlying\_Index\
 
 The details on how the Mark Price is calculated are available [here](https://www.delta.exchange/user-guide/docs/trading-guide/fair-price/)
 
-Premium rate is measured every minute and its 8-hour TWAP (Average Premium Rate) is used in the computation Funding Rate.
+Premium rate is measured every minute and its 8-hour TWAP (Avg Premium Rate) is used in the computation Funding Rate.
 
 **Funding Rate**
 
 Funding Rate is considered to be an 8-hourly interest rate and is computed using the following formula:
 
-$$Funding\ Rate = max (Average\ Premium\ Rate, 0.05%) + min (Average\ Premium\ Rate, -0.05%) +1$$
+$$Funding\ Rate = max (Avg\ Premium\ Rate, 0.05%) + min (Avg\ Premium\ Rate, -0.05%) +1$$
 
 Funding Rate is computed 3 times in a 24 hour period at: 4am UTC, 12pm UTC and 8pm UTC. At these times, the TWAP of Premium Rate in the preceding 8 hours is used to compute the Funding Rate. This Funding Rate thus obtained remains applicable for the next 8 hours. 
  
