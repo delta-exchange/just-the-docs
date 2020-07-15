@@ -50,7 +50,7 @@ Funding Rate is considered to be an 8-hourly interest rate and is computed using
 
 $$Funding\ Rate = max (Avg\ Premium\ Rate, 0.05\%) + min (Avg\ Premium\ Rate, -0.05\%) +0.01\%$$
 
-Funding Rate is computed 3 times in a 24 hour period at: 4am UTC, 12pm UTC and 8pm UTC. At these times, the TWAP of Premium Rate in the preceding 8 hours is used to compute the Funding Rate. This Funding Rate thus obtained remains applicable for the next 8 hours. 
+Funding Rate is computed 3 times in a 24 hour period at: 8am UTC, 4pm UTC and 12am UTC. At these times, the TWAP of Premium Rate in the preceding 8 hours is used to compute the Funding Rate. This Funding Rate thus obtained remains applicable for the next 8 hours. 
  
 It is worth noting that we also apply upper limits on The magnitude of Funding Rate. Funding caps could vary from contract to contract and are available in the [contract specifications](https://www.delta.exchange/contracts/).
 
