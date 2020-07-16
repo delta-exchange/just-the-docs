@@ -28,31 +28,53 @@ Funding is the primary mechanism which tethers price of a perpetual contract to 
 
 **Perpetual contract price > Spot price**
 
-When a perpetual contract trades at a **premium** to spot, funding is **positive**, i.e. longs pay funding to shorts. This creates disincentive to stay long or enter into a new long position. Conversely, it creates incentive to stay short or enter into a new short position. These dynamics will serve to push the price of the perpetual contract down towards the spot price.
+When a perpetual contract trades at a **premium** to spot, funding tends to be **positive**, i.e. longs pay funding to shorts. This creates disincentive to stay long or enter into a new long position. Conversely, it creates incentive to stay short or enter into a new short position. These dynamics will serve to push the price of the perpetual contract down towards the spot price.
 
 **Perpetual contract price < Spot price**
 
-When a perpetual contract trades at a **discount** to spot, funding is **negative**, i.e. shorts pay funding to longs. This creates disincentive to stay short or enter into a new short position. Conversely, it creates incentive to stay long or enter into a new long position. These dynamics will serve to push the price of the perpetual contract up towards the spot price.
+When a perpetual contract trades at a **discount** to spot, funding tends to be **negative**, i.e. shorts pay funding to longs. This creates disincentive to stay short or enter into a new short position. Conversely, it creates incentive to stay long or enter into a new long position. These dynamics will serve to push the price of the perpetual contract up towards the spot price.
 
 ## Funding Rate Calculation
 
-**Premium Rate**
+Funding Rate is considered to be an 8-hourly rate and is the sum of two terms: (a) Premium and (b) Interest Rate.
 
-$$Premium\  Rate = (Mark\  Price - Underlying\_Index\_Price)/ Underlying\_Index\_Price$$
+**Premium**
 
-The details on how the Mark Price is calculated are available [here](https://www.delta.exchange/user-guide/docs/trading-guide/fair-price/)
+$$Premium = (Mark\  Price - Underlying\_Index\_Price)/ Underlying\_Index\_Price$$
 
-Premium rate is measured every minute and its 8-hour TWAP (Avg Premium Rate) is used in the computation Funding Rate.
+The details on how the Mark Price is calculated are available [here](https://www.delta.exchange/user-guide/docs/trading-guide/fair-price/). 
+
+Premium is measured every minute and its 8-hour TWAP (Avg Premium) is used in the computation Funding Rate.
+
+**Interest Rate
+The Interest Rate term in Funding calculation is a function of the differential of borrow rates of quote curreny and base currency of the perpetual contract. The Interest Rate thus is a proxy for cost of holding a position in a perpetual contract. 
+
+Since borrow rates for different currencies can vary widely, the Interest Rate used in Funding calculations can vary from contract to contract. However, as of now, Interest Rate of 0.01%/ 8 hours is being used for contracts. 
 
 **Funding Rate**
 
-Funding Rate is considered to be an 8-hourly interest rate and is computed using the following formula:
+Funding Rate is computed using the following formula:
 
-$$Funding\ Rate = max (Avg\ Premium\ Rate, 0.05\%) + min (Avg\ Premium\ Rate, -0.05\%) +0.01\%$$
+$$Funding\ Rate = Avg\ Premium + clamp (Interest\ Rate - Avg\ Premium, 0.05\%, -0.05\%)$$
 
-Funding Rate is computed 3 times in a 24 hour period at: 8am UTC, 4pm UTC and 12am UTC. At these times, the TWAP of Premium Rate in the preceding 8 hours is used to compute the Funding Rate. This Funding Rate thus obtained remains applicable for the next 8 hours. 
- 
-It is worth noting that we also apply upper limits on The magnitude of Funding Rate. Funding caps could vary from contract to contract and are available in the [contract specifications](https://www.delta.exchange/contracts/).
+The clamp function limits the value of (Interest Rate - Avg Premium) to a band of (-0.05%, 0.05%). This means that if (Interest Rate - Avg Premium) is within +/-0.05%, Funding Rate is equal to:
+
+$$Funding\ Rate = Avg\ Premium + (Interest\ Rate - Avg\ Premium) = Interest\ Rate$$
+
+When (Interest Rate - Avg Premium) < -0.05%, then Funding Rate is equal to:
+
+$$Funding\ Rate = Avg\ Premium - 0.05%$$
+
+And, when (Interest Rate - Avg Premium) > 0.05%, then Funding Rate is equal to:
+
+$$Funding\ Rate = Avg\ Premium + 0.05%$$
+
+Funding Rate is computed 3 times in a 24 hour period at: 8am UTC, 4pm UTC and 12am UTC. At these times, the TWAP of Premium in the preceding 8 hours is used to compute the Funding Rate. This Funding Rate thus obtained remains applicable for the next 8 hours. 
+
+At any instant, there are two Funding Rates available: (a) the Funding Rate that is currently applicable and (b) the estimate of the Funding Rate that will be applicable in the next 8 hour interval. Both these rates are available on the price ticker on the top of the trading terminal.
+
+![image]({{site.baseurl}}/assets/images/funding_ticker.jpg "Current and Estimated Next Funding Rates")
+
 
 **Funding Payment** 
 
@@ -70,13 +92,13 @@ A perpetual contract can be thought as an 8-hour futures contract that is being 
 
 Lets say you have a long position of 10000 contracts in the BTCUSD Perpetual contract on Delta Exchange. Recall that 1 BTCUSD contract is 1 USD.
 
-Between 4am UTC and 12pm UTC, the TWAP of Premium Rate was 0.04%. This means that for the next 8 hours, i.e. between 12pm UTC and 8pm UTC, the applicable Funding Rate will be:
+Between 8am UTC and 4pm UTC, the TWAP of Premium was 0.04%. This means that for the next 8 hours, i.e. between 4pm UTC and 12am UTC, the applicable Funding Rate will be:
 
-$$Funding\ Rate = max (0.04\%, 0.05\%) + min (0.04\%, -0.05\%) + 0.01\% = 0.01\%$$
+$$Funding\ Rate = 0.04% + clamp(0.01\% - 0.04\%, 0.05\%, -0.05%) = 0.01\%$$
 
 Since you are long and Funding Rate is positive, you'd be paying funding.      
 
-Let's assume that you hold this long position from 3pm UTC through to 3:30pm UTC. During this time, both the Mark Price and Underlying Index Price stay flat at $4015 and $4000 respectively.         
+Let's assume that you hold this long position from 5pm UTC through to 5:30pm UTC. During this time, both the Mark Price and Underlying Index Price stay flat at $4015 and $4000 respectively.         
 
 $$ Funding\ Paid\ per\ min = 10000 * (1/ 4000) * 0.01\% * 1/ (8*60) =  0.00000052  BTC$$
 
