@@ -94,7 +94,7 @@ A perpetual contract can be thought as an 8-hour futures contract that is being 
 
 Lets say you have a long position of 10000 contracts in the BTCUSD Perpetual contract on Delta Exchange. Recall that 1 BTCUSD contract is 1 USD.
 
-Between 8am UTC and 4pm UTC, the TWAP of Premium was 0.04%. This means that for the next 8 hours, i.e. between 4pm UTC and 12am UTC, the applicable Funding Rate will be:
+Between 8am UTC and 4pm UTC, the TWAP of Premium was 0.04%. Assuming Interest Rate is 0.01%, for the next 8 hours, i.e. between 4pm UTC and 12am UTC, the applicable Funding Rate will be:
 
 $$Funding\ Rate = 0.04\% + clamp(0.01\% - 0.04\%, 0.05\%, -0.05\%) = 0.01\%$$
 
