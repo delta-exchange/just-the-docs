@@ -57,17 +57,19 @@ Funding Rate is computed using the following formula:
 
 $$Funding\ Rate = Avg\ Premium + clamp (Interest\ Rate - Avg\ Premium, 0.05\%, -0.05\%)$$
 
-The clamp function limits the value of (Interest Rate - Avg Premium) to a band of (-0.05%, 0.05%). This means that if (Interest Rate - Avg Premium) is within +/-0.05%, Funding Rate is equal to:
+The clamp function limits the value of (Interest Rate - Avg Premium) to a band of (-0.05%, 0.05%). 
+
+This means that if (Interest Rate - Avg Premium) is within +/-0.05%, Funding Rate is equal to:
 
 $$Funding\ Rate = Avg\ Premium + (Interest\ Rate - Avg\ Premium) = Interest\ Rate$$
 
 When (Interest Rate - Avg Premium) < -0.05%, then Funding Rate is equal to:
 
-$$Funding\ Rate = Avg\ Premium - 0.05%$$
+$$Funding\ Rate = Avg\ Premium - 0.05\%$$
 
 And, when (Interest Rate - Avg Premium) > 0.05%, then Funding Rate is equal to:
 
-$$Funding\ Rate = Avg\ Premium + 0.05%$$
+$$Funding\ Rate = Avg\ Premium + 0.05\%$$
 
 Funding Rate is computed 3 times in a 24 hour period at: 8am UTC, 4pm UTC and 12am UTC. At these times, the TWAP of Premium in the preceding 8 hours is used to compute the Funding Rate. This Funding Rate thus obtained remains applicable for the next 8 hours. 
 
@@ -94,7 +96,7 @@ Lets say you have a long position of 10000 contracts in the BTCUSD Perpetual con
 
 Between 8am UTC and 4pm UTC, the TWAP of Premium was 0.04%. This means that for the next 8 hours, i.e. between 4pm UTC and 12am UTC, the applicable Funding Rate will be:
 
-$$Funding\ Rate = 0.04% + clamp(0.01\% - 0.04\%, 0.05\%, -0.05%) = 0.01\%$$
+$$Funding\ Rate = 0.04\% + clamp(0.01\% - 0.04\%, 0.05\%, -0.05\%) = 0.01\%$$
 
 Since you are long and Funding Rate is positive, you'd be paying funding.      
 
