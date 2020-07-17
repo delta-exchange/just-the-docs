@@ -46,7 +46,7 @@ The details on how the Mark Price is calculated are available [here](https://www
 
 Premium is measured every minute and its 8-hour TWAP (Avg Premium) is used in the computation Funding Rate.
 
-**Interest Rate
+**Interest Rate**
 The Interest Rate term in Funding calculation is a function of the differential of borrow rates of quote curreny and base currency of the perpetual contract. The Interest Rate thus is a proxy for cost of holding a position in a perpetual contract. 
 
 Since borrow rates for different currencies can vary widely, the Interest Rate used in Funding calculations can vary from contract to contract. However, as of now, Interest Rate of 0.01%/ 8 hours is being used for contracts. 
