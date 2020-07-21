@@ -83,9 +83,7 @@ Delta Exchange currently offers three types of stop orders:
 	```
 	_For this order, the Trigger Price will follow the Mark Price at a distance of 40 when the Mark Price is going down. And, a Buy market order of 50 contracts will be sent to the order book when Mark Price rises by 40._
 
-## Bracket Orders (deprecated)
-
-** Please use reduce-only orders to create the functionality offered by bracket orders.**
+## Bracket Orders
 
 A bracket order lets a trader to 'bracket' any given order with two opposite-side orders, i.e. take-profit and stoploss order. The take-profit order is a market order which is triggered at a pre-defined level and aims to lock-in profits. And, the stoploss order is a stop market order to limit losses. When one of these two orders (take-profit or stoploss) gets executed, the other order will automatically get cancelled.
 
