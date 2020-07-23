@@ -94,3 +94,8 @@ As the above diagrams illustrate, on closing an IRS position, you end up paying 
 Therefore, the profit/ loss from an IRS contract trade can be written as:
 $$PNL = Cashflow\ at\ incepetion + Net\ fixed/ floating\ payments + Cashflow\ at\ Exit$$ 
 
+## Interest Rate Swaps Listed on Delta Exchange
+- **BitMex Funding Rate Swap**
+This contracts enables you to swap the funding rate of BitMex's XBTUSD perpetual contract that changes every 8 hours with a rate that stays fix through the duration of the swap. You can use the BitMex funding rate swap either to hedge the risk of variability of funding you are paying on an open position in BitMex's XBTUSD or to speculate on the movement in funding rate. Complete details of this contract are available [here]({{site.baseurl}}/docs/tutorials/bitmex-funding-swap).
+
+
