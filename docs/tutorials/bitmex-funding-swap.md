@@ -131,7 +131,7 @@ The liquidation mechanism is exactly the same as for futures contracts. Any give
 Traders also have the option of enabling [Auto Margin Top-up]({{site.baseurl}}/docs/trading-guide/automargin) to prevent their positions from getting liquidated.
 
 ## Trading Fees
-For the BitMex funding rate swap, both maker and taker fees are 0.15%. Trading fees are charged on the notional value of the swap. 
+For the BitMex funding rate swap, maker and taker fees are 0.05% and 0.10% respectively. Trading fees are charged on the notional value of the swap. 
 
 The trading fees schedule for all the contracts listed on Delta Exchange is a available [here](https://wwww.delta.exchange/fees).
 
