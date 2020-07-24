@@ -65,7 +65,7 @@ The next funding payment in known 8 hours in advance. You would pay/ receive fun
 
 Buyers of floating rate are required to pay the complete fixed rate payments upfront to the sellers. We refer to this as Premium. 
 
-$$Premium = (Notional\ Value/ BTCUSD) * Fixed\ Rate * (Time\_to\_Maturity\ 31536000)$$
+$$Premium = (Notional\ Value/ BTCUSD) * Fixed\ Rate * (Time\_to\_Maturity/ 31536000)$$
 
 Premium is negative for buyers of floating (i.e. cash outflow) and positive for sellers of floating (i.e. cash inflow).
 
@@ -126,7 +126,7 @@ $$ Position\ Margin + Pay-off = Maintenance\ Margin$$
 
 where, (a) Position Margin is greater than or equal to Initial Margin, and (b) Pay-off is computed at the prevailing Mark Rate.
 
-The liquidation mechanism is exactly the same as for futures contracts. Any given position is liquidated in a step-wise manner to reduce the market impact of liquidations. Details of the liquidation process are available here.
+The liquidation mechanism is exactly the same as for futures contracts. Any given position is liquidated in a step-wise manner to reduce the market impact of liquidations. Details of the liquidation process are available [here]({{site.baseurl}}/docs/trading-guide/Liquidation).
 
 Traders also have the option of enabling [Auto Margin Top-up]({{site.baseurl}}/docs/trading-guide/automargin) to prevent their positions from getting liquidated.
 

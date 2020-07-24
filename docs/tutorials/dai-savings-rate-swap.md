@@ -21,6 +21,7 @@ $$Stability Fee = Base Rate + Collateral Rate$$
 Stability Fee is a variable rate that is comprised of two parts: 
 
 (a) Base Rate: which can be considered the benchmark rate that applies to all collateral type and, 
+
 (b) Collateral Rate: which captures the risky-ness of a particular asset. More risky (volatile) assets will have a higher Collateral Rate compared to less risky assets. It is worth noting that Collateral Rates are generally quite stable and almost all the variability in the Stability Fee comes from the Base Rate.
 
 Although there is no direct relationship, a good proxy for the Base Rate is the Dai Savings Rate. If DSR goes up/ down by x%, so does the Base. Therefore, even users that generate Dai are exposed to the DSR through Stability Fee.
@@ -62,7 +63,7 @@ Fixed rate payments are made upfront at the trade inception, while the floating 
 
 Buyers of floating rate are required to pay the complete fixed rate payments upfront to the sellers. We refer to this as Premium. 
 
-$$Premium = Notional\ Value * Fixed\ Rate * (Time\_to\_Maturity\ 31536000)$$
+$$Premium = Notional\ Value * Fixed\ Rate * (Time\_to\_Maturity/ 31536000)$$
 
 Premium is negative for buyers of floating (i.e. cash outflow) and positive for sellers of floating (i.e. cash inflow).
 
