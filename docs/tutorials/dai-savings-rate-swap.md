@@ -53,7 +53,7 @@ The notional value of the funding rate swap is in Dai. This means that the fixed
 
 The DAI savings rate swap orderbook has bids and offers in terms of annualised fixed rate. Bid represent the fixed rate a party is willing to offer to buy the stream of DSR over the period of the swap. Similarly, offers represent the fixed rate a party is demanding to sell the stream of DSR over the swap tenure. 
 
-![image]({{site.baseurl}}/assets/images/irs_orderbook.jpg "DAI Savings Rate Swap Orderbook")
+![image]({{site.baseurl}}/assets/images/daiswap.jpg "DAI Savings Rate Swap Orderbook")
 
 ### **Fixed/ floating exchange frequency**
 
