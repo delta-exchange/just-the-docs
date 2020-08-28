@@ -9,17 +9,24 @@ permalink: /
 
 # Getting Started
 
- Delta Exchange is a cryptocurrency derivatives trading platform. We currently offer Futures contracts on bitcoin ([BTC](https://www.delta.exchange/app/trade/BTC)), ether ([ETH](https://www.delta.exchange/app/trade/ETH)), ripple ([XRP](https://www.delta.exchange/app/trade/XRP)), Binance Coin ([BNB](https://www.delta.exchange/app/trade/BNB)) and stellar lumens ([XLM](https://www.delta.exchange/app/trade/XLM)). The following features stand us apart from other cryptocurrency exchanges:
+ Delta Exchange is a cryptocurrency derivatives trading platform. We currently offer:
+  - **Futures:** Fixed maturity and perpetual contracts on bitcoin ([BTC](https://www.delta.exchange/app/futures/trade/BTC/BTCUSD)) and 35+ altcoins
+  - **Calendar Spreads:** These contract represent a long and short position respectively in near-term quarterly futures and longer-term quarterly futures on the same underlying
+  - **MOVE Options:** These option contracts are used to speculate on the volatility of the underlying cryptocurrencie. The price of these contracts is proportional to the magnitude of price moves of the underlying rather than the direction of the move.
+  - **Interest rate swaps:** These derivative contracts entail swapping of one stream of interest rate payments with another. Interest rate swaps are used to speculate on interest rates or hedge their risk.
 
-- **Leverage:** All derivative contracts traded on Delta Exchange have built in leverage of up to $$100$$x. This means that with say 1 BTC, you can take a position of up to 100 BTC.
+
+  . The following features stand us apart from other cryptocurrency exchanges:
+
+- **Leverage:** All derivative contracts traded on Delta Exchange have built in leverage. The maxmimum allowed leverage varies from contract to contract and can go up to 200x for certain contracts. This means that with say 1 BTC, you can take a position of up to 200 BTC.
     
 - **Speculate or manage risk:** Our futures contracts can be used to trade both rising markets (by going long) and falling markets (by going short) profitably or to hedge price risk.
     
 - **Cryptocurrency settlement:** Fiat currencies (e.g. US Dollar) are not supported on Delta. This means that all the calculations of trade profit/ loss as well as trade settlement in done in cryptocurrency terms. Currently we have two types of contracts: 
-	- **bitcoin settled futures contracts:** these futures contracts are margined and settled in bitcoin. Hence, to trade these contracts you need to have bitcoins.
-	- **stablecoin settled futures contracts:** these futures contract are margined and settled in USDC. USDC is a stablecoin whose value is pegged to the US Dollar. To trade USDC settled futures, you need to have USDC.
+	- **bitcoin settled contracts:** these contracts are margined and settled in bitcoin. Hence, to trade these contracts you need to have bitcoins.
+	- **stablecoin settled futures contracts:** these contracts are margined and settled in USDT. USDT is a stablecoin whose value is pegged to the US Dollar. To trade USDT settled futures, you need to have USDT.
     
-Once you have created your account, you need to fund your Delta Exhange wallet with bitcoins (BTC).
+Once you have created your account, you need to fund your Delta Exhange wallet with either bitcoins (BTC) or USDT. 
 
  
 ### **Making your first trade on Delta**
