@@ -1,7 +1,7 @@
 ---
 layout: default
 title: MOVE Contracts Guide
-nav_order: 4
+nav_order: 5
 ---
 
 # MOVE Contracts Guide
