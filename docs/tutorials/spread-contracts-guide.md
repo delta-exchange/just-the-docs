@@ -15,10 +15,10 @@ Spread contracts are a special class of derivative where the underlying is a spr
 
 **Calendar spread contracts:** These spread contracts are defined over the price difference of two futures contracts having the same underlying, but different maturities. To understand this better, let's consider Bitcoin futures spread contract. This contract is defined as the difference in price of a longer-dated BTC futures (e.g. BTC December futures) and the price of a shorter-dated BTC futures (e.g. BTC September futures). Thefore, a position in the BTC futures spread contract represents a long and short position in the two underlying futures contracts.
 
-Long BTC spread futures contract = Long longer-dated BTC futures + Short shorter-dated BTC futures
+_**Long** BTC spread futures contract = **Long** longer-dated BTC futures + **Short** shorter-dated BTC futures_
 
 
-Short BTC spread futures contract = Short longer-dated BTC futures + Long shorter-dated BTC futures
+_**Short** BTC spread futures contract = **Short** longer-dated BTC futures + **Long** shorter-dated BTC futures_
 
 It is evident from the above equations, calendar spread contracts should not be used for directional trades on the underlying asset (BTC in this case). Instead, these contracts should be used to experess views on the relative pricing of the constituent futures.
 
@@ -39,18 +39,18 @@ This also means that a trade in a calendar spread contract is actually a call on
 
 ## Mechanics of Calendar Spread Contracts
 
-### **The Swap Currency**
+### **Quotation & Settlement Currencies**
 
-BitMex's XBTUSD perpetual is an inverse contract. The contract's underlying is BTC; it is quoted in USD and is margined and settled in BTC. To ensure that the funding rate swap can be used to hedge funding incurred on XBTUSD positions, we have followed the same convention.
+Our BTC futures spread contracts are defined over the differences in prices of our BTC quarterly futures. These futures are inverse contracts, i.e. they are quoted in USD, but their margining and settlement happens in BTC. 
 
-The notional value of the funding rate swap is in USD. This means that the fixed/ floating payments too should be denominated in USD. However, margining and all cashflows happen in BTC. This is achieved by converting USD to BTC using the prevailing spot rate at the time a cashflow takes place.
+Despite the constituent futures contract being inverse, the spread contracts are vanilla or linear. This enables quoting of USD value of spread for a selected bitcoin notional and thus, makes the mechanics of the contract more intuitive for traders. 
+
+Another detail worth noting here is that even though our BTC futures calendar spread contracts are quoted in USD, the margining currency is USDT. The USDT/ USD conversion rate is built into the contract and has been set at 1.
+
 
 ### **Orderbook**
 
 The order-book on calendar spread contracts on Delta represent the price at which traders are willing to buy or sell the difference between futures on two different maturities.
-
-
-![image]({{site.baseurl}}/assets/images/irs_orderbook.jpg "BTC Futures Spread Contract Orderbook")
 
 For the BTC futures calendar spread contract, the spread between the prices of the constituent futures is denominated in USD. Therefore, the price of the spread contract is quoted in USD.
 
@@ -60,14 +60,14 @@ The margin requirement for a spread contract does not depend on the price of the
 
 $$Margin = Margin\% * Num\_of\_Contracts * Contract\_Size * Underlying's\_Spot\_Price$$
 
-where Margin% is a the inverse of the selected leverage. Higher the leverage, lower Margin% and hence, lower the margin requirement.
+where, $$Margin\% = 1 / Leverage$$.
 
-It is also worth noting that even though our BTC futures calendar spread contracts are quoted in USD, the margining currency is USDT. The USDT/ USD conversion rate is built into the contract and has been set at 1.
+That means, higher the leverage, lower Margin% and hence, lower the margin requirement.
 
 A position can be opened at a Margin% that is higher than the Initial Margin% specified the contract's specifications. Also, Just like in futures, margin requirement scales up with position size. Details of Margin Scaling are available [here]({{site.baseurl}}/docs/trading-guide/margin-explainer). 
  
 
-### **Mark Rate**
+### **Mark Price**
 
 Open positions in calendar spread contracts are marked using Fair Price Marking. The fair price of a calendar spread contract is computed as the difference of the mark prices of the constituent futures contracts. 
 
@@ -77,11 +77,11 @@ The profit/ loss (PNL) equation for a position in a spread contract is essential
 
 For long positions:
 
-$$PNL = Num\_of\_Contracts * Contract\_Size * (Current\__Contract\_Price - Entry\_Contract\_Price)$$
+$$PNL = Num\_of\_Contracts * Contract\_Size * (Current\_Contract\_Price - Entry\_Contract\_Price)$$
 
 For short positions:
 
-$$PNL = - Num\_of\_Contracts * Contract\_Size * (Current\__Contract\_Price - Entry\_Contract\_Price)$$
+$$PNL = - Num\_of\_Contracts * Contract\_Size * (Current\_Contract\_Price - Entry\_Contract\_Price)$$
 
 
 Please note that the profit/ loss of our BTC futures spread contract is denominated in USDT.
