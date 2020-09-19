@@ -8,7 +8,7 @@ nav_order: 11
 
 # Trade Annulment & Unfair Trading Practices
 
-On rare occasions, to preserve market integrity, Delta Exchange reserves the right to annul trades that were erroneous or were done on account of fraud or market manipulation, or which occurred in abnormal non-orderly market where there is high likelihood that one side of the trade has been done unwillingly. 
+On rare occasions, to preserve market integrity, Delta Exchange reserves the right to annul trades that were erroneous or were done on account of fraud or market manipulation, or which occurred in abnormal non-orderly market where there is high likelihood that one side of the trade has been done unwillingly. Any trades that were executed using the profits from anulled trades will also be subject to annulment. 
 
 **Mis-trade rules that apply to all contracts**
 1. Trades executed far away from prevailing market price: Trades that are executed at prices far away from the prevailing market price (as measured by the underlying's price and the contract's fair mark price) due to volatile market conditions or intentional market manipulation will be treated as mis-trades and are liable to be annulled. 
