@@ -6,7 +6,7 @@ parent: Margin Trading Guide
 nav_order: 11
 ---
 
-# Trade Annulment
+# Trade Annulment & Unfair Trading Practices
 
 On rare occasions, to preserve market integrity, Delta Exchange reserves the right to annul trades that were erroneous or were done on account of fraud or market manipulation, or which occured in abnormal non-orderly market where there is high likelihood that one side of the trade has been done unwillingly. 
 
