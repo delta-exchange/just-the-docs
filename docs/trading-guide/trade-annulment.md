@@ -8,5 +8,15 @@ nav_order: 11
 
 # Trade Annulment
 
-On very rare occasions, to preserve market integrity, we might need to annul trades that are erroneous or were done on account of fraud or market manipulation. 
-Very rarely, some fills might get executed at prices very far from prevailing market price. If there is a huge difference in the fills from the prevailing price and if the orders, which end up taking poor fills, were not intentional limit orders, we reserve the right to annul those fills by generating counter fills that will reduce the profit generated from any such fills to zero. This is done to deter participants from placing limit orders deep in books at prices which are very far from the prevailing price. This helps parties who were at losing end and who chose not to accept such fills but still received them because of some market or other order which got executed in an illiquid order-book.
+On rare occasions, to preserve market integrity, Delta Exchange reserves the right to annul trades that were erroneous or were done on account of fraud or market manipulation, or which occured in abnormal non-orderly market where there is high likelihood that one side of the trade has been done unwillingly. 
+
+**Mis-trade rules that apply to all contracts**
+1. Trades executed far away from prevailing market price: Trades that are executed at prices far away from the prevailing market price (as measured by the underlying's price and the contract's fair mark price) due to volatile market conditions or intentional market manipulation will be treated as mis-trades and are liable to be annuled. 
+
+2. Trades in which one trader or a group of colluding traders manipulate trading in thinly liquid order boooks to create price action resulting in abnormal profits for the traders will be treated as mis-trades and are liable to be annuled.
+
+
+**Mis-trade rules that apply to options contracts**
+
+Any options trade that happends more than 20% away from the theoretical price of the options contract is liable for being considered as mispriced. If the execution price of your options trade is mispriced, you should send an email to support@delta.exchange as soon as possible. Delta Exchange will conduct an investigation and will annul the trades in questions if it is clearly established that the trades hapened in abnormal and exceptional circumstances and one side of the trade was done unwillingly. In such situations, the profits made by the winning trader will be clawed back to make the losing side whole.
+
