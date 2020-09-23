@@ -18,7 +18,7 @@ On rare occasions, to preserve market integrity, Delta Exchange reserves the rig
 
 **Mis-trade rules that apply to options contracts**
 
-Any options trade that happens more than 20% away from the theoretical price of the options contract is liable for being considered as mispriced. If the execution price of your options trade is mispriced, you should send an email to support@delta.exchange as soon as possible. Delta Exchange will conduct an investigation and will annul the trades in questions if it is clearly established that the trades happened in abnormal and exceptional circumstances. In such situations, the profits made by the winning trader will be clawed back to make the losing side whole.
+Any options trade that happens more than 20% away from the theoretical price of the options contract is liable for being considered as mispriced. If the execution price of your options trade is mispriced, you should send an email to support@delta.exchange as soon as possible. Delta Exchange will conduct an investigation and will annul the trades in question if it is clearly established that the trades happened in abnormal and exceptional circumstances. In such situations, the profits made by the winning trader will be clawed back to make the losing side whole.
 
 ## Unfair trading practices
 
