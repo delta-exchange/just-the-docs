@@ -7,9 +7,119 @@ nav_order: 9
 ---
 
 # Allowed Trading Band
-To prevent market manipulation as well as idiosyncratic price moves trading on Delta Exchange can take place only within the allowed trading band. This band is defined as +/- 2 standard deviation band around the current [Mark Price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking) and is applicable depending up on the direction of a trade. For buy trades, the upper bound (Max Price) of the trading band is applicable. This means any buy order cannot execute at a price greater than Max Price. Similarly, for sell orders, the lower bound (Min Price) of the trading band is applicable. This implies that the execution price of a sell order cannot be less than Min Sell.
+To prevent market manipulation as well as idiosyncratic price moves trading on Delta Exchange can take place only within the allowed trading band. Generally, speaking the allowed trading band is defined around the prevailing [Mark Price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking). However, the exact methodology for creating the trading band differs from different product types. 
 
 Please do note that trading bands are not applicable to liquidation orders.
+
+## Futures & Perpetual Contracts
+
+**Band1: Price Volatility Band**
+Band1 is defined as as +/-2 standard deivation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
+
+$$Upper\_Band1=Mark\ Price + 2 * Standard\_Deviation (Mark\ Price)$$
+
+$$Lower\_Band1 = Mark\ Price - 2 * Standard\_Deviation (Mark\ Price)$$
+
+Thus, Band1 expands when market is volatile and contracts when there's little volatility in the market.
+
+
+**Band2: Price Range Band**
+Band2 is defined around the current Mark Price in terms of percentage of Mark Price. 
+
+$$Upper\_Band2=Mark\ Price + Mark\ Price (1 + Range)$$
+
+$$Lower\_Band1 = Mark\ Price - Mark\ Price (1 - Range)$$
+
+The allowed trading band for futures and perpetual contracts is computed by combining Band1 and Band2 in such a way that on either side the wider of the two bands is selected.
+
+$$Upper\_Band = max (Upper\_Band1, Upper\_Band2)$$
+
+$$Lower\_Band = min (Lower\_Band1, Lower\_Band2)$$
+
+##Calendar Spread Contracts
+The allowed trading band for calendar spread contracts is created by combining two different bands which are described below:
+
+**Band1: Price Volatility Band**
+Band1 is defined as as +/-2 standard deivation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
+
+$$Upper\_Band1=Mark\ Price + 2 * Standard\_Deviation (Mark\ Price)$$
+
+$$Lower\_Band1 = Mark\ Price - 2 * Standard\_Deviation (Mark\ Price)$$
+
+**Band2: Price Range Band**
+Band2 is defined around the current Mark Price in terms of percentage of Spot Price. 
+
+$$Upper\_Band2=Mark\ Price + Spot\ Price * Range$$
+
+$$Lower\_Band1 = Mark\ Price - Spot\ Price * Range$$
+
+Band1 and Band2 are combined in such a way that on either side the wider of the two bands is selected.
+
+$$Upper\_Band = max (Upper\_Band1, Upper\_Band2)$$
+
+$$Lower\_Band = min (Lower\_Band1, Lower\_Band2)$$
+
+
+## Options
+The allowed trading band for options (call, put and MOVE) contracts is created by combining three different bands which are described below:
+
+**Band1: Price Volatility Band**
+Band1 is defined as as +/-2 standard deivation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
+
+$$Upper\_Band1=Mark\ Price + 2 * Standard\_Deviation (Mark\ Price)$$
+
+$$Lower\_Band1 = Mark\ Price - 2 * Standard\_Deviations (Mark\ Price)$$
+
+**Band2: Implied Volatility Band**
+This band is created by computing the theoretical prices of the options contract at mid implied volatility +/- IV Range. The mid implied volatility is average of implied volatility for impact bids and impact offers.
+
+$$Upper\_Band2 = Black\ Scholes\ Option\ Price (mid\_implied\_volatility + IV\_Range, Spot_Price, Time\ to\ Expiry)
+
+
+$$Lower\_Band2 = Black\ Scholes\ Option\ Price (mid\_implied\_volatility - IV\_Range, Spot_Price, Time\ to\ Expiry)
+
+**Band3: Price Range Band**
+Band3 is defined around the current Mark Price in terms of percentage of Spot Price. 
+
+$$Upper\_Band2=Mark\ Price + Spot\ Price * Range$$
+
+$$Lower\_Band1 = Mark\ Price - Spot\ Price * Range$$
+
+The allowed trading band for options is computed by combining Band1, Band2 and Band3 in such a way that on either side the wider of the two bands is selected.
+
+$$Upper\_Band = max (Upper\_Band1, Upper\_Band2, Upper\_Band3)$$
+
+$$Lower\_Band = min (Lower\_Band1, Lower\_Band2, Lower\_Band3)$$
+
+## Interest Rate Swaps
+The allowed trading band for interest rate swap (IRS) contracts is created by combining three different bands which are described below:
+
+**Band1: Rate Volatility Band**
+Band1 is defined as as +/-2 standard deivation band around the current Mark Rate. The standard deviation of the Mark Rate in the last 15 minutes. 
+
+$$Upper\_Band1=Mark\ Rate + 2 * Standard\_Deviation (Mark\ Rate)$$
+
+$$Lower\_Band1 = Mark\ Rate - 2 * Standard\_Deviations (Mark\ Rate)$$
+
+**Band2: Rate Range Band**
+Band3 is defined around the current Mark Rate in terms of percentage of maximum (Vmax) and minimum (Vmin) values that the interest rate over which the swap contract is defined is allowed to take.
+
+$$Upper\_Band2=Mark\ Price + max (Vmax, abs(Vmin)) * Range$$
+
+$$Lower\_Band2=Mark\ Price - max (Vmax, abs(Vmin)) * Range$$
+
+**Band3: Rate Limit Band**
+Since the interest rate over which the IRS contract is defined is bounded between (Vmin, Vmax), no trading should happend outside this band. Therefore,
+
+$$Upper\_Band3 = Vmax $$
+
+$$Lower\_Band3=Vmin$$
+
+The allowed trading band for IRS contracts is derivated by combining Band1, Band2 and Band3 as per the following equation:
+
+$$Upper\_Band = min (max (Upper\_Band1, Upper\_Band2), Upper\_Band3)$$
+
+$$Lower\_Band = max (min (Lower\_Band1, Lower\_Band2), Lower\_Band3)$$
 
 
 ## Impact of the Trading Band on various types of orders
