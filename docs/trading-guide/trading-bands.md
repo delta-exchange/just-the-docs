@@ -32,9 +32,9 @@ Thus, Band1 expands when market is volatile and contracts when there's little vo
 
 Band2 is defined around the current Mark Price in terms of percentage of Mark Price. 
 
-$$UpperBand2=Mark\ Price + Mark\ Price (1 + Range/ 100)$$
+$$UpperBand2=Mark\ Price + Mark\ Price * Range/ 100 $$
 
-$$LowerBand2 = Mark\ Price - Mark\ Price (1 - Range/ 100)$$
+$$LowerBand2 = Mark\ Price - Mark\ Price * Range/ 100 $$
 
 where value of Range is provided as Price Band in a contract's specification.
 
@@ -89,10 +89,10 @@ $$LowerBand1 = Mark\ Price - 2 * Standard\ Deviation (Mark\ Price)$$
 
 This band is created by computing the theoretical prices of the options contract at mid implied volatility +/- IV Range. The mid implied volatility is average of implied volatility for impact bids and impact offers.
 
-$$UpperBand2 = Black\ Scholes\ Price (Mid\ Implied\ Volatility + IV\_Range, Spot\ Price, Time\ to\ Expiry)$$
+$$UpperBand2 = Black\ Scholes\ Price (Mid\ Implied\ Volatility + IV\ Range, Spot\ Price, Time\ to\ Expiry)$$
 
 
-$$LowerBand2 = Black\ Scholes\ Price (Mid\ Implied\ Volatility - IV\_Range, Spot\ Price, Time\ to\ Expiry)$$
+$$LowerBand2 = Black\ Scholes\ Price (Mid\ Implied\ Volatility - IV\ Range, Spot\ Price, Time\ to\ Expiry)$$
 
 **Band3: Price Range Band**
 
@@ -120,7 +120,7 @@ Band1 is defined as a +/-2 standard deviation band around the current Mark Rate.
 
 $$UpperBand1=Mark\ Rate + 2 * Standard\ Deviation (Mark\ Rate)$$
 
-$$LowerBand1 = Mark\ Rate - 2 * Standard\ Deviations (Mark\ Rate)$$
+$$LowerBand1 = Mark\ Rate - 2 * Standard\ Deviation (Mark\ Rate)$$
 
 **Band2: Rate Range Band**
 
@@ -140,7 +140,7 @@ $$UpperBand3 = Vmax $$
 
 $$LowerBand3=Vmin$$
 
-Note that Vmax and Vmin are part of the contract's specification
+Note that Vmax and Vmin are part of the contract's specification.
 
 The allowed trading band for IRS contracts is derived by combining Band1, Band2 and Band3 as per the following equation:
 
