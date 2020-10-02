@@ -15,7 +15,7 @@ Please do note that trading bands are not applicable to liquidation orders.
 
 **Band1: Price Volatility Band**
 
-Band1 is defined as as +/-2 standard deivation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
+Band1 is defined as a +/-2 standard deviation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
 
 $$UpperBand1=Mark\ Price + 2 * Standard\ Deviation (Mark\ Price)$$
 
@@ -44,7 +44,7 @@ The allowed trading band for calendar spread contracts is created by combining t
 
 **Band1: Price Volatility Band**
 
-Band1 is defined as as +/-2 standard deivation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
+Band1 is defined as a +/-2 standard deviation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
 
 $$UpperBand1=Mark\ Price + 2 * Standard\ Deviation (Mark\ Price)$$
 
@@ -71,7 +71,7 @@ The allowed trading band for options (call, put and MOVE) contracts is created b
 
 **Band1: Price Volatility Band**
 
-Band1 is defined as as +/-2 standard deivation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
+Band1 is defined as a +/-2 standard deviation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
 
 $$UpperBand1=Mark\ Price + 2 * Standard\ Deviation (Mark\ Price)$$
 
@@ -106,7 +106,7 @@ The allowed trading band for interest rate swap (IRS) contracts is created by co
 
 **Band1: Rate Volatility Band**
 
-Band1 is defined as as +/-2 standard deivation band around the current Mark Rate. The standard deviation of the Mark Rate in the last 15 minutes. 
+Band1 is defined as a +/-2 standard deviation band around the current Mark Rate. The standard deviation of the Mark Rate in the last 15 minutes. 
 
 $$UpperBand1=Mark\ Rate + 2 * Standard\ Deviation (Mark\ Rate)$$
 
@@ -122,13 +122,13 @@ $$LowerBand2=Mark\ Price - max (Vmax, abs(Vmin)) * Range$$
 
 **Band3: Rate Limit Band**
 
-Since the interest rate over which the IRS contract is defined is bounded between (Vmin, Vmax), no trading should happend outside this band. Therefore,
+Since the interest rate over which the IRS contract is defined is bounded between (Vmin, Vmax), no trading should happen outside this band. Therefore,
 
 $$UpperBand3 = Vmax $$
 
 $$LowerBand3=Vmin$$
 
-The allowed trading band for IRS contracts is derivated by combining Band1, Band2 and Band3 as per the following equation:
+The allowed trading band for IRS contracts is derived by combining Band1, Band2 and Band3 as per the following equation:
 
 $$UpperBand = min (max (UpperBand1, UpperBand2), UpperBand3)$$
 
