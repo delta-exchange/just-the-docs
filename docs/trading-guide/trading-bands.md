@@ -38,7 +38,7 @@ $$UpperBand = max (UpperBand1, UpperBand2)$$
 
 $$LowerBand = min (LowerBand1, LowerBand2)$$
 
-##Calendar Spread Contracts
+## Calendar Spread Contracts
 
 The allowed trading band for calendar spread contracts is created by combining two different bands which are described below:
 
@@ -56,7 +56,7 @@ Band2 is defined around the current Mark Price in terms of percentage of Spot Pr
 
 $$UpperBand2=Mark\ Price + Spot\ Price * Range$$
 
-$$LowerBand1 = Mark\ Price - Spot\ Price * Range$$
+$$LowerBand2 = Mark\ Price - Spot\ Price * Range$$
 
 Band1 and Band2 are combined in such a way that on either side the wider of the two bands is selected.
 
@@ -81,10 +81,10 @@ $$LowerBand1 = Mark\ Price - 2 * Standard\ Deviation (Mark\ Price)$$
 
 This band is created by computing the theoretical prices of the options contract at mid implied volatility +/- IV Range. The mid implied volatility is average of implied volatility for impact bids and impact offers.
 
-$$UpperBand2 = Black\ Scholes\ Option\ Price (mid\_implied\_volatility + IV\_Range, Spot_Price, Time\ to\ Expiry)$$
+$$UpperBand2 = Black\ Scholes\ Price (Mid\ Implied\ Volatility + IV\_Range, Spot\ Price, Time\ to\ Expiry)$$
 
 
-$$LowerBand2 = Black\ Scholes\ Option\ Price (mid\_implied\_volatility - IV\_Range, Spot_Price, Time\ to\ Expiry)$$
+$$LowerBand2 = Black\ Scholes\ Price (Mid\ Implied\ Volatility - IV\_Range, Spot\ Price, Time\ to\ Expiry)$$
 
 **Band3: Price Range Band**
 
