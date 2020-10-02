@@ -39,9 +39,11 @@ $$UpperBand = max (UpperBand1, UpperBand2)$$
 $$LowerBand = min (LowerBand1, LowerBand2)$$
 
 ##Calendar Spread Contracts
+
 The allowed trading band for calendar spread contracts is created by combining two different bands which are described below:
 
 **Band1: Price Volatility Band**
+
 Band1 is defined as as +/-2 standard deivation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
 
 $$UpperBand1=Mark\ Price + 2 * Standard\ Deviation (Mark\ Price)$$
@@ -49,6 +51,7 @@ $$UpperBand1=Mark\ Price + 2 * Standard\ Deviation (Mark\ Price)$$
 $$LowerBand1 = Mark\ Price - 2 * Standard\ Deviation (Mark\ Price)$$
 
 **Band2: Price Range Band**
+
 Band2 is defined around the current Mark Price in terms of percentage of Spot Price. 
 
 $$UpperBand2=Mark\ Price + Spot\ Price * Range$$
@@ -63,16 +66,19 @@ $$LowerBand = min (LowerBand1, LowerBand2)$$
 
 
 ## Options
+
 The allowed trading band for options (call, put and MOVE) contracts is created by combining three different bands which are described below:
 
 **Band1: Price Volatility Band**
+
 Band1 is defined as as +/-2 standard deivation band around the current Mark Price. The standard deviation of the Mark Price in the last 15 minutes. 
 
 $$UpperBand1=Mark\ Price + 2 * Standard\ Deviation (Mark\ Price)$$
 
-$$LowerBand1 = Mark\ Price - 2 * Standard\ Deviations (Mark\ Price)$$
+$$LowerBand1 = Mark\ Price - 2 * Standard\ Deviation (Mark\ Price)$$
 
 **Band2: Implied Volatility Band**
+
 This band is created by computing the theoretical prices of the options contract at mid implied volatility +/- IV Range. The mid implied volatility is average of implied volatility for impact bids and impact offers.
 
 $$UpperBand2 = Black\ Scholes\ Option\ Price (mid\_implied\_volatility + IV\_Range, Spot_Price, Time\ to\ Expiry)$$
@@ -81,6 +87,7 @@ $$UpperBand2 = Black\ Scholes\ Option\ Price (mid\_implied\_volatility + IV\_Ran
 $$LowerBand2 = Black\ Scholes\ Option\ Price (mid\_implied\_volatility - IV\_Range, Spot_Price, Time\ to\ Expiry)$$
 
 **Band3: Price Range Band**
+
 Band3 is defined around the current Mark Price in terms of percentage of Spot Price. 
 
 $$UpperBand3=Mark\ Price + Spot\ Price * Range$$
@@ -94,9 +101,11 @@ $$UpperBand = max (UpperBand1, UpperBand2, UpperBand3)$$
 $$LowerBand = min (LowerBand1, LowerBand2, LowerBand3)$$
 
 ## Interest Rate Swaps
+
 The allowed trading band for interest rate swap (IRS) contracts is created by combining three different bands which are described below:
 
 **Band1: Rate Volatility Band**
+
 Band1 is defined as as +/-2 standard deivation band around the current Mark Rate. The standard deviation of the Mark Rate in the last 15 minutes. 
 
 $$UpperBand1=Mark\ Rate + 2 * Standard\ Deviation (Mark\ Rate)$$
@@ -104,6 +113,7 @@ $$UpperBand1=Mark\ Rate + 2 * Standard\ Deviation (Mark\ Rate)$$
 $$LowerBand1 = Mark\ Rate - 2 * Standard\ Deviations (Mark\ Rate)$$
 
 **Band2: Rate Range Band**
+
 Band3 is defined around the current Mark Rate in terms of percentage of maximum (Vmax) and minimum (Vmin) values that the interest rate over which the swap contract is defined is allowed to take.
 
 $$UpperBand2=Mark\ Price + max (Vmax, abs(Vmin)) * Range$$
@@ -111,6 +121,7 @@ $$UpperBand2=Mark\ Price + max (Vmax, abs(Vmin)) * Range$$
 $$LowerBand2=Mark\ Price - max (Vmax, abs(Vmin)) * Range$$
 
 **Band3: Rate Limit Band**
+
 Since the interest rate over which the IRS contract is defined is bounded between (Vmin, Vmax), no trading should happend outside this band. Therefore,
 
 $$UpperBand3 = Vmax $$
