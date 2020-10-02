@@ -7,6 +7,10 @@ nav_order: 9
 ---
 
 # Allowed Trading Band
+
+1. Table of Contents
+{:toc}
+
 To prevent market manipulation as well as idiosyncratic price moves trading on Delta Exchange can take place only within the allowed trading band. Generally, speaking the allowed trading band is defined around the prevailing [Mark Price]({{site.baseurl}}/docs/trading-guide/fair-price/#fair-price-marking). However, the exact methodology for creating the trading band differs from different product types. 
 
 Please do note that trading bands are not applicable to liquidation orders.
@@ -28,9 +32,11 @@ Thus, Band1 expands when market is volatile and contracts when there's little vo
 
 Band2 is defined around the current Mark Price in terms of percentage of Mark Price. 
 
-$$UpperBand2=Mark\ Price + Mark\ Price (1 + Range)$$
+$$UpperBand2=Mark\ Price + Mark\ Price (1 + Range/ 100)$$
 
-$$LowerBand2 = Mark\ Price - Mark\ Price (1 - Range)$$
+$$LowerBand2 = Mark\ Price - Mark\ Price (1 - Range/ 100)$$
+
+where value of Range is provided as Price Band in a contract's specification.
 
 The allowed trading band for futures and perpetual contracts is computed by combining Band1 and Band2 in such a way that on either side the wider of the two bands is selected.
 
@@ -54,9 +60,11 @@ $$LowerBand1 = Mark\ Price - 2 * Standard\ Deviation (Mark\ Price)$$
 
 Band2 is defined around the current Mark Price in terms of percentage of Spot Price. 
 
-$$UpperBand2=Mark\ Price + Spot\ Price * Range$$
+$$UpperBand2=Mark\ Price + Spot\ Price * Range/100$$
 
-$$LowerBand2 = Mark\ Price - Spot\ Price * Range$$
+$$LowerBand2 = Mark\ Price - Spot\ Price * Range/100$$
+
+where value of Range is provided as Price Band in a contract's specification.
 
 Band1 and Band2 are combined in such a way that on either side the wider of the two bands is selected.
 
@@ -90,9 +98,11 @@ $$LowerBand2 = Black\ Scholes\ Price (Mid\ Implied\ Volatility - IV\_Range, Spot
 
 Band3 is defined around the current Mark Price in terms of percentage of Spot Price. 
 
-$$UpperBand3=Mark\ Price + Spot\ Price * Range$$
+$$UpperBand3=Mark\ Price + Spot\ Price * Range/100$$
 
-$$LowerBand3 = Mark\ Price - Spot\ Price * Range$$
+$$LowerBand3 = Mark\ Price - Spot\ Price * Range/100$$
+
+where value of Range is provided as Price Band in a contract's specification.
 
 The allowed trading band for options is computed by combining Band1, Band2 and Band3 in such a way that on either side the wider of the two bands is selected.
 
@@ -116,9 +126,11 @@ $$LowerBand1 = Mark\ Rate - 2 * Standard\ Deviations (Mark\ Rate)$$
 
 Band3 is defined around the current Mark Rate in terms of percentage of maximum (Vmax) and minimum (Vmin) values that the interest rate over which the swap contract is defined is allowed to take.
 
-$$UpperBand2=Mark\ Price + max (Vmax, abs(Vmin)) * Range$$
+$$UpperBand2=Mark\ Price + max (Vmax, abs(Vmin)) * Range/100$$
 
-$$LowerBand2=Mark\ Price - max (Vmax, abs(Vmin)) * Range$$
+$$LowerBand2=Mark\ Price - max (Vmax, abs(Vmin)) * Range/100$$
+
+where value of Range is provided as Price Band in a contract's specification.
 
 **Band3: Rate Limit Band**
 
@@ -127,6 +139,8 @@ Since the interest rate over which the IRS contract is defined is bounded betwee
 $$UpperBand3 = Vmax $$
 
 $$LowerBand3=Vmin$$
+
+Note that Vmax and Vmin are part of the contract's specification
 
 The allowed trading band for IRS contracts is derived by combining Band1, Band2 and Band3 as per the following equation:
 
