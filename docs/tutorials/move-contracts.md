@@ -117,7 +117,7 @@ Traders that are short MOVE contracts have the option of enabling [Auto Margin T
 ## Trading Fees
 For MOVE contracts, both maker and taker fees are 0.05%. Trading fees is charged on the notional value of the position. 
 
-The trading fees schedule for all the contracts listed on Delta Exchange is a available [here](https://wwww.delta.exchange/fees).
+The trading fees schedule for all the contracts listed on Delta Exchange is available [here](https://wwww.delta.exchange/fees).
 
 
 ## Expired MOVE Contracts

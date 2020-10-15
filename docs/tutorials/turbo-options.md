@@ -22,7 +22,7 @@ We currently offer Turbo options only on Bitcoin. These are of two types:
 
 - **Turbo Call Options:** Turbo call options increase in value when price of the underlying goes up. You should buy Turbo calls when you are bullish on the underlying asset. 
 
-- **Turbo Put Options:** Turbo put options increase in value when price of the underluing goes down. You should buy Turbo puts when you are bearish on the underlying asset.
+- **Turbo Put Options:** Turbo put options increase in value when price of the underlying goes down. You should buy Turbo puts when you are bearish on the underlying asset.
 
 ## Mechanics of Turbo Options
 
@@ -47,7 +47,7 @@ $$Pay-off = Num\_of\_contracts * Contract\ Value * Mark\ Price$$
 
 $$ Profit/\ Loss = Pay-off - Premium $$
 
-$$Profit/\ Loss = Num\_of\_contracts * Contract\ Value * (Mark\ Price$ - Entry\ Price)$$
+$$Profit/\ Loss = Num\_of\_contracts * Contract\ Value * (Mark\ Price - Entry\ Price)$$
 
 Please do note the following:
 
@@ -57,16 +57,16 @@ Please do note the following:
 
 ### Liquidations
 
-Long options postions can never get liquidated. This holds true for Turbo options as well.
+Long options positions can never get liquidated. This holds true for Turbo options as well.
 
 ## Trading Fees
 
 Turbo options do not have any trading fees, i.e. both marker and taker fees are 0%. 
 
-The trading fees schedule for all the contracts listed on Delta Exchange is a available [here](https://wwww.delta.exchange/fees).
+The trading fees schedule for all the contracts listed on Delta Exchange is available [here](https://wwww.delta.exchange/fees).
 
 
-## Expired MOVE Contracts
+## Expired Turbo options
 The Settlement Prices of expired options and futures contracts are available on this [page](https://www.delta.exchange/app/expired_futures).
 
 - 
