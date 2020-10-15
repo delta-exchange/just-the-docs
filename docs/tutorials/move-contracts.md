@@ -1,7 +1,9 @@
 ---
 layout: default
 title: MOVE Contracts Guide
-nav_order: 5
+has_children: false
+parent: Options Guide
+nav_order: 1
 ---
 
 # MOVE Contracts Guide

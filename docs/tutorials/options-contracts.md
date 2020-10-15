@@ -12,7 +12,7 @@ options are a class of derivtive contracts. At Delta Exchange, we offer the foll
 There are two types of vanilla options: call options and put options
 
 - **MOVE Options**
-MOVE options are a direct way to speculate on the volatility of the underlying assets. More details are available [here]({{site.baseurl}}/docs/tutorial/move-contracts)
+MOVE options are a direct way to speculate on the volatility of the underlying assets. More details are available [here]({{site.baseurl}}/docs/tutorials/move-contracts)
 
 - **Turbo Options**
 Turbo options are callable bull/ bear contracts

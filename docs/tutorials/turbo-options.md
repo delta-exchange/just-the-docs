@@ -6,4 +6,4 @@ parent: Options Guide
 nav_order: 2
 ---
 
-# Turbo Option Guide
+# Turbo Options Guide
