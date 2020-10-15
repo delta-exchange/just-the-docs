@@ -45,7 +45,7 @@ $$Pay-off = Num\_of\_contracts * Contract\ Value * Mark\ Price$$
 
 $$ Profit/\ Loss = Pay-off - Premium $$
 
-$$Profit/\ Loss = Num\_of\_contracts * Contract\ Value * (Mark\ Price$ - Entry\ Price)$
+$$Profit/\ Loss = Num\_of\_contracts * Contract\ Value * (Mark\ Price$ - Entry\ Price)$$
 
 Please do note the following:
 
