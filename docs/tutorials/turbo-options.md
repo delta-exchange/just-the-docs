@@ -29,7 +29,7 @@ We currently offer Turbo options only on Bitcoin. These are of two types:
 
 Turbo options are marked at the absolute value of the difference between price of the underlying and the Knockout Price
 
-$$Mark Price = absolute (Underlying\ asset\ price - Knockout\ Price)
+$$Mark Price = absolute (Underlying\ asset\ price - Knockout\ Price)$$
 
 It is worth nothing that for Turbo call options, Underling asset price must always stay above the Knockout Price. This is because a Turbo call option expires instantly when the Underlying asset price goes below the Knockout Price.
 
