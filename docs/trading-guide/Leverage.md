@@ -2,7 +2,7 @@
 layout: default
 title: Leverage
 has_children: false
-parent: Margin Trading Guide
+parent: Trading Guide
 nav_order: 4
 ---
 

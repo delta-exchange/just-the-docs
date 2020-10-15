@@ -2,7 +2,7 @@
 layout: default
 title: Order Types
 has_children: false
-parent: Margin Trading Guide
+parent: Trading Guide
 nav_order: 3
 ---
 
