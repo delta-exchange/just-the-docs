@@ -12,7 +12,9 @@ nav_order: 2
 {:toc}
 
 ## Turbo Options: Motivation & Use Cases
-Turbo options are exotic options that combine vanilla call/ put options with a knockout barrier to create a different return/ risk profile. 
+Turbo options are exotic options that combine vanilla call/ put options with a knockout barrier to create a different return/ risk profile. A vanilla option has a fixed expiry time. This is what the Knockout barrier changes. A Turbo options immediately expires if the price of the option's underlying asset touches/ crosses the Knockout barrier. This risk of pre-mature expiry helps to reduce the price of Turbo options and consequently, increases the inherent leverage in these instruments. 
+
+The Turbo options that we offer on Delta Exchange have another defining characteristic - these options are always deep in the money. An call/ put option is 'in the money' when its strike price is less/ greater than the current price of the underlying assets. The more the money-ness of an options, the more it behaves like a futures. This means a position in our Turbo options for practical purposes behaves like a leveraged position in the underlying assets which: (a) must be closed at the time of expiry and (b) has a fixed stoploss at the Knockout barrier.
 
 
 ## Types of Turbo Options
