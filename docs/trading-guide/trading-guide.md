@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Margin Trading Guide
+title: Trading Guide
 has_children: true
 nav_order: 6
 permalink: /docs/margin-trading-guide
