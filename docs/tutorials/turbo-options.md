@@ -34,13 +34,13 @@ Because the Turbo options on Delta Exchange are deep in the money, they can be p
 
 **Turbo Calls**
 
-$$Fair\ Value = Underlying\ Index\ Price - Knockout\ Price + Underlying\ Index\ Price * Time\_to\-expiry * Funding\ Rate$$
+$$Fair\ Value = Spot\ Price - Knockout\ Price + Spot\ Price * Time-to-expiry * Funding\ Rate$$
 
 **Turbo Puts**
 
-$$Fair\ Value = Knockout\ Price - Underlying\ Index\ Price  + Underlying\ Index\ Price * Time\_to\-expiry * Funding\ Rate$$
+$$Fair\ Value = Knockout\ Price - Spot\ Price  + Spot\ Price * Time-to-expiry * Funding\ Rate$$
 
-where, Funding Rate is the implied cost of carry for a long position. Funding Rate is not directly observable, but can be imputed from the prices seen in the order book.
+where, Funding Rate is the implied cost of carry for a long position. Funding Rate is not directly observable, but can be imputed from the prices that are seen in the order book.
 
 Further note that the smaller the distance between Underlying Index Price and Knockout Price, the lower is the fair value of a Turbo option.
 
@@ -50,7 +50,7 @@ Further note that the smaller the distance between Underlying Index Price and Kn
 
 Turbo options are marked at the absolute value of the difference between price of the underlying and the Knockout Price
 
-$$Mark Price = absolute (Underlying\ asset\ price - Knockout\ Price)$$
+$$Mark\ Price = absolute (Underlying\ asset\ price - Knockout\ Price)$$
 
 It is worth nothing that for Turbo call options, Underling asset price must always stay above the Knockout Price. This is because a Turbo call option expires instantly when the Underlying asset price goes below the Knockout Price.
 
