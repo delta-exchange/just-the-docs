@@ -30,27 +30,31 @@ The symbols of all options contracts on Delta Exchange are based on the followin
 
 - **ProductSymbol:** specifies which product category a given contract belongs to. Currently, it can take the following values:
 
-C: Call 
-
-TC: Turbo Call
-
-P: Put
-
-TP: Turbo Put
-
-MV: Move
+| ProductSymbol | Product Type 	| 
+|:---------:| :------------:| 
+|    C    	|     Call    	   |     
+|    TC    	|     Turbo Call   |       
+|    P   	|     Put          |  
+|   TP   	|     Trubo Put    | 
+|   MV   	|     MOVE         | 
 
 - **UnderlyingSymbol:** is the symbol of the underlying asset of the options contract. Currently, we offer options on BTC, ETH, BNB and LINK.
 
 - **LifeSpan:** conveys information about the lifespan, i.e. difference between expiry and time of launch, of an options contract. Currently, an options contract can have one of the following three lifespans:
 
-D: lifespan is 1 day
+| LifeSpan | Explanation 	| 
+|:---------:| :------------:| 
+|    D    	|     Lifepsan is 1 day  |     
+|    W   	|     Lifespan is 1 week   |       
+|    M  	|     Lifespan is 1 month  |  
 
-W: lifespan is 1 week
-
-M: lifepsna is 1 month
 
 - **ExpiryDate:** is the date in ddmmyy format at which the option expires. On Delta, all options expire at 12pm UTC.
+
+**Examples**
+
+1. TC-BTC-D-200820: this is the symbol for a daily Turbo call contract with expiry date of 20th August 2020
+2. MV-BNB-W-051120: this is the symbol for a weekly MOVE contract with expiry date of 5th November 2020
 
 
 ## Options Launch Schedule
