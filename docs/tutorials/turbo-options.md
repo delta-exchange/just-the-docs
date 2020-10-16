@@ -16,6 +16,8 @@ Turbo options are exotic options that combine vanilla call/ put options with a k
 
 The Turbo options that we offer on Delta Exchange have another defining characteristic - these options are always deep in the money. An call/ put option is 'in the money' when its strike price is less/ greater than the current price of the underlying assets. The more the money-ness of an options, the more it behaves like a futures. This means a position in our Turbo options for practical purposes behaves like a leveraged position in the underlying assets which: (a) must be closed at the time of expiry and (b) has a fixed stoploss at the Knockout barrier.
 
+The leverage inherent in a turbo option is directly connected to the relative position of the underlying's price and Knockout Price. The closer the spot price to the Knockout Price, the higher the probability of the option getting 'knocked out' and thus, lower the price of the option. Since, the contract size remains unchanged, as price of the option goes down, the effective leverage it offers goes up. The leverage of Turbo options at the time of launch is 200x. As spot price moves towards/ away from the Knockout Price, the leverages goes up/ down.
+
 
 ## Types of Turbo Options
 We currently offer Turbo options only on Bitcoin. These are of two types:
@@ -25,6 +27,23 @@ We currently offer Turbo options only on Bitcoin. These are of two types:
 - **Turbo Put Options:** Turbo put options increase in value when price of the underlying goes down. You should buy Turbo puts when you are bearish on the underlying asset.
 
 ## Mechanics of Turbo Options
+
+### Pricing
+
+Because the Turbo options on Delta Exchange are deep in the money, they can be priced as delta-one instruments. Therefore, the fair value of these options can be written as:
+
+**Turbo Calls**
+
+$$Fair\ Value = Underlying\ Index\ Price - Knockout\ Price + Underlying\ Index\ Price * Time\_to\-expiry * Funding\ Rate$$
+
+**Turbo Puts**
+
+$$Fair\ Value = Knockout\ Price - Underlying\ Index\ Price  + Underlying\ Index\ Price * Time\_to\-expiry * Funding\ Rate$$
+
+where, Funding Rate is the implied cost of carry for a long position. Funding Rate is not directly observable, but can be imputed from the prices seen in the order book.
+
+Further note that the smaller the distance between Underlying Index Price and Knockout Price, the lower is the fair value of a Turbo option.
+
 
 
 ### Mark Price
