@@ -24,18 +24,33 @@ Turbo options are exotic options in which a knockout barrier is attached to vani
 
 ## Options Symbology
 
-The symbols of all options contracts on Delta Exchange are based on the following scheme: ProductSymbol-UnderlyingSymbol-LifeSpan-ExpiryDate
+The symbols of all options contracts on Delta Exchange are based on the following scheme: 
 
-- **ProductSymbol**
+**ProductSymbol-UnderlyingSymbol-LifeSpan-ExpiryDate**
+
+- **ProductSymbol:** specifies which product category a given contract belongs to. Currently, it can take the following values:
 
 C: Call 
+
 TC: Turbo Call
+
 P: Put
+
 TP: Turbo Put
+
 MV: Move
 
+- **UnderlyingSymbol:** is the symbol of the underlying asset of the options contract. Currently, we offer options on BTC, ETH, BNB and LINK.
 
+- **LifeSpan:** conveys information about the lifespan, i.e. difference between expiry and time of launch, of an options contract. Currently, an options contract can have one of the following three lifespans:
 
+D: lifespan is 1 day
+
+W: lifespan is 1 week
+
+M: lifepsna is 1 month
+
+- **ExpiryDate:** is the date in ddmmyy format at which the option expires. On Delta, all options expire at 12pm UTC.
 
 
 ## Options Launch Schedule
