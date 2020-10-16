@@ -21,3 +21,29 @@ MOVE options are a direct way to speculate on the volatility of the underlying a
 - **Turbo Options**
 
 Turbo options are exotic options in which a knockout barrier is attached to vanilla call/ put options. Just like a call option, a Turbo call option increases in value when price of the underlying goes up. And, like put options, a Turbo put option increase in value when price of the underlying goes down. It is the knockout barrier which is differentiates Turbo options from vanilla options. Vanilla options have a fixed expiry date, whereas a Turbo option may expire (or get knocked out) before its expiry date if the underlying's price touches the knockout barrier.More details on Turbo options are available [here]({{site.baseurl}}/docs/tutorials/turbo-options).
+
+## Options Symbology
+
+The symbols of all options contracts on Delta Exchange are based on the following scheme: ProductSymbol-UnderlyingSymbol-LifeSpan-ExpiryDate
+
+- **ProductSymbol**
+
+C: Call 
+TC: Turbo Call
+P: Put
+TP: Turbo Put
+MV: Move
+
+
+
+
+
+## Options Launch Schedule
+
+- **Daily Options:** The expiry of these options is set at 24 hours from the time at which trading in the contracts start. Daily options are launched at 11:55am UTC everyday and trading starts 5 minutes later at 12pm UTC.
+
+- **Weekly Options:** The expiry of these options is set at 7 days from the time at which trading in the contracts start. Weekly options are launched at 11:55am UTC on fridays and trading starts 5 minutes later at 12pm UTC.
+
+- **Monthly Options:** The expiry of these options is set at 1 month from the time at which trading in the contract starts. Monthly options are launched at 11:55am UTC on the last friday of the current month, trading starts 5 minutes later at 12pm UTC, and they expire at 12pm UTC on the last friday of the next month.
+
+
