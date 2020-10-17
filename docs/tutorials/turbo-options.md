@@ -18,6 +18,7 @@ The Turbo options that we offer on Delta Exchange have another defining characte
 
 The leverage inherent in a Turbo option is directly connected to the relative position of the underlying's price and Knockout Price. The closer the spot price to the Knockout Price, the higher the probability of the option getting 'knocked out' and thus, lower the price of the option. Since, the contract size remains unchanged, as price of the option goes down, the effective leverage it offers goes up. The leverage of Turbo options at the time of launch is 200x. As spot price moves towards/ away from the Knockout Price, the leverages goes up/ down.
 
+![image]({{site.baseurl}}/assets/images/turbo_options.jpeg "Pay-off Profiles of Turbo Options")
 
 ## Types of Turbo Options
 We currently offer Turbo options only on Bitcoin. These are of two types:
@@ -81,6 +82,25 @@ Please do note the following:
 - A Turbo option instantly expires when the Underlying asset price crosses the Knockout Price. A knocked out option does not have any residual value.
 
 - Only designated market makers can take net short positions in Turbo options. All other traders can only take long positions. Depending up on whether your view is bullish or bearish, you can buy Turbo call or Turbo put options.
+
+
+### Examples
+
+You buy 1000 contracts of a BTC Turbo Call (Strike Price = 10,000 and Knockout Price = 11250) for USDT 100. At the time, the spot price of BTC is 11345. Further, the Turbo call is set to expire in 6 hours.
+
+
+Scenario 1: BTC spot price goes to 11248 after 2 hours
+
+Since the spot price has gone below the Knocout Price, the Turbo Calls expire immediately with a residual value of 0. You realise a loss of USDT 100.
+
+Scenario 2: BTC spot price is at 12000 when the Turbo calls expire
+
+At settlement, you get a pay-off of USDT 750. Thus, you realise a profit of USDT (750 - 100) = USDT 650 in the trade.
+
+Scenario 3: BTC spot price is at 11300 when the Turbo calls expire
+
+At settlement, you get a pay-off of USDT 50. Thus, you realise a loss of USDT (50 - 100) = - USDT 50 in the trade.
+
 
 ### Liquidations
 
