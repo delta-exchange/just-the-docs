@@ -12,19 +12,27 @@ nav_order: 2
 {:toc}
 
 ## Turbo Options: Motivation & Use Cases
-Turbo options are exotic options that combine vanilla call/ put options with a knockout barrier to create a different return/ risk profile. A vanilla option has a fixed expiry time. This is what the Knockout barrier changes. A Turbo options immediately expires if the price of the option's underlying asset touches/ crosses the Knockout barrier. This risk of pre-mature expiry helps to reduce the price of Turbo options and consequently, increases the inherent leverage in these instruments. 
+Turbo options are exotic options that combine vanilla call/ put options with a knockout barrier to create a different return/ risk profile. A vanilla option has a fixed expiry time. This is what the Knockout barrier changes. A Turbo options expires instantly (gets 'knocked out') if the price of the option's underlying asset touches/ crosses the Knockout barrier. This risk of pre-mature expiry helps to reduce the price of Turbo options and consequently, increases the inherent leverage in these instruments. 
 
-The Turbo options that we offer on Delta Exchange have another defining characteristic - these options are always deep in the money. An call/ put option is 'in the money' when its strike price is less/ greater than the current price of the underlying assets. The more the money-ness of an options, the more it behaves like a futures. This means a position in our Turbo options for practical purposes behaves like a leveraged position in the underlying assets which: (a) must be closed at the time of expiry and (b) has a fixed stoploss at the Knockout barrier.
+The Turbo options that we offer on Delta Exchange have another defining characteristic - these options are always deep in the money. An call/ put option is 'in the money' when its strike price is less/ greater than the current price of the underlying assets. The more the money-ness of an options, the more it behaves like a futures. If you are famililar with options greeks, you would know that the delta of a deep in the money option is very close to 1. The upshot of these design choices is that for practical purposes, a position in our Turbo options for behaves like a leveraged long (for Turbo calls) or short (for Turbo puts) position in the underlying asset which: (a) must be closed at the time of expiry and (b) has a fixed stoploss at the Knockout barrier.
 
-The leverage inherent in a turbo option is directly connected to the relative position of the underlying's price and Knockout Price. The closer the spot price to the Knockout Price, the higher the probability of the option getting 'knocked out' and thus, lower the price of the option. Since, the contract size remains unchanged, as price of the option goes down, the effective leverage it offers goes up. The leverage of Turbo options at the time of launch is 200x. As spot price moves towards/ away from the Knockout Price, the leverages goes up/ down.
+The leverage inherent in a Turbo option is directly connected to the relative position of the underlying's price and Knockout Price. The closer the spot price to the Knockout Price, the higher the probability of the option getting 'knocked out' and thus, lower the price of the option. Since, the contract size remains unchanged, as price of the option goes down, the effective leverage it offers goes up. The leverage of Turbo options at the time of launch is 200x. As spot price moves towards/ away from the Knockout Price, the leverages goes up/ down.
 
 
 ## Types of Turbo Options
 We currently offer Turbo options only on Bitcoin. These are of two types:
 
-- **Turbo Call Options:** Turbo call options increase in value when price of the underlying goes up. You should buy Turbo calls when you are bullish on the underlying asset. 
+- **Turbo Call Options:** Turbo call options increase in value when price of the underlying goes up. Therefore, a long position in a Turbo Call is akin to a leveraged long position in the underlying asset. You should buy Turbo calls when you are bullish on the underlying asset.
 
-- **Turbo Put Options:** Turbo put options increase in value when price of the underlying goes down. You should buy Turbo puts when you are bearish on the underlying asset.
+- **Turbo Put Options:** Turbo put options increase in value when price of the underlying goes down. Therefore, a long position in a Turbo Put is akin to a leveraged short position in the underlying asset. You should buy Turbo puts when you are bearish on the underlying asset.
+
+Besides, the expiry date a Turbo option is defined by two price levels:
+
+- **Strike Price:** This is the strike price of the constituent call/ put option of the Turbo option
+
+- **Knockout Price:** This is the price level the breach of which by the underlying's price leads to immediate expiration of the Turbo opion.
+
+Currently, we offer Turbo options only on BTC. These options have a lifespan of 1 day. Everyday, new Turbo options are listed at 11:55am UTC. The trading in these options begin 5 minutes later at 12pm UTC and unless knocked out, are settled the followed day at 12pm UTC.
 
 ## Mechanics of Turbo Options
 
