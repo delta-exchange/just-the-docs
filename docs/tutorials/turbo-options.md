@@ -37,7 +37,7 @@ Currently, we offer Turbo options only on BTC. These options have a lifespan of 
 
 ## Mechanics of Turbo Options
 
-### Pricing
+### **Pricing**
 
 Because the Turbo options on Delta Exchange are deep in the money, they can be priced as delta-one instruments. Therefore, the fair value of these options can be written as:
 
@@ -55,7 +55,7 @@ Further note that the smaller the distance between Underlying Index Price and Kn
 
 
 
-### Mark Price
+### **Mark Price**
 
 Turbo options are marked at the absolute value of the difference between price of the underlying and the Knockout Price
 
@@ -65,7 +65,7 @@ It is worth nothing that for Turbo call options, Underling asset price must alwa
 
 Conversely, for Turbo put options, the Underlying asset price must always stay below the Knockout Price, as these options expire when Underlying asset price goes above the Knockout Price.
 
-### Profit/ Loss Equation
+### **Profit/ Loss Equation**
 
 The Premium for a long Turbo option trade is directly subtracted from the Available Balance. The cashflow that is received when a long position in a Turbo option is closed is referred to as **Pay-off**. The Profit/ Loss of a long position in a Turbo option can thus be computed as 
 
@@ -84,25 +84,25 @@ Please do note the following:
 - Only designated market makers can take net short positions in Turbo options. All other traders can only take long positions. Depending up on whether your view is bullish or bearish, you can buy Turbo call or Turbo put options.
 
 
-### Examples
+### **Examples**
 
 You buy 1000 contracts of a BTC Turbo Call (Strike Price = 10,000 and Knockout Price = 11250) for USDT 100. At the time, the spot price of BTC is 11345. Further, the Turbo call is set to expire in 6 hours.
 
 
-Scenario 1: BTC spot price goes to 11248 after 2 hours
+**Scenario 1** BTC spot price goes to 11248 after 2 hours
 
 Since the spot price has gone below the Knocout Price, the Turbo Calls expire immediately with a residual value of 0. You realise a loss of USDT 100.
 
-Scenario 2: BTC spot price is at 12000 when the Turbo calls expire
+**Scenario 2:** BTC spot price is at 12000 when the Turbo calls expire
 
 At settlement, you get a pay-off of USDT 750. Thus, you realise a profit of USDT (750 - 100) = USDT 650 in the trade.
 
-Scenario 3: BTC spot price is at 11300 when the Turbo calls expire
+**Scenario 3:** BTC spot price is at 11300 when the Turbo calls expire
 
 At settlement, you get a pay-off of USDT 50. Thus, you realise a loss of USDT (50 - 100) = - USDT 50 in the trade.
 
 
-### Liquidations
+### **Liquidations**
 
 Long options positions can never get liquidated. This holds true for Turbo options as well.
 
