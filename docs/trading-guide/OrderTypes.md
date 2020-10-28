@@ -43,8 +43,6 @@ To enable users to place multiple stop orders with ease, margin for a stop order
 
 Trigger Price can be based off one of the three price indices: (a) Mark Price, (b) Last Traded Price, or (c) Index Price (i.e. price of the contract's underlying). By default, Mark Price is used as the Triggering Index. 
 
-It is important to note that currently only **Mark Price** can be used to specify the Trigger Price of a stop order. In the case of a Buy stop order, the stop price must be below the current Mark Price. Correspondingly, for a Sell stop order, the stop price must be above the current Mark Price.
-
 A stop order thus has three states:
 - _Untriggered_- Market has not reached the Trigger Price. 
 - _Triggered_ - Market has reached the Trigger Price. The stop order has become active and has entered the order book. In the case of a Buy stop order, the stop price must be below the current value of the Triggering Index. Correspondingly, for a Sell stop order, the stop price must be above the current value of the Triggering Index.
