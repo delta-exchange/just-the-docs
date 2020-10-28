@@ -41,11 +41,13 @@ Stop orders are conditional orders which become active only after the market rea
 
 To enable users to place multiple stop orders with ease, margin for a stop order is blocked only when it is triggered. This means that if there isn't sufficient margin available when a stop order is triggered, it will be cancelled.  
 
+Trigger Price can be based off one of the three price indices: (a) Mark Price, (b) Last Traded Price, or (c) Index Price (i.e. price of the contract's underlying). By default, Mark Price is used as the Triggering Index. 
+
 It is important to note that currently only **Mark Price** can be used to specify the Trigger Price of a stop order. In the case of a Buy stop order, the stop price must be below the current Mark Price. Correspondingly, for a Sell stop order, the stop price must be above the current Mark Price.
 
 A stop order thus has three states:
 - _Untriggered_- Market has not reached the Trigger Price. 
-- _Triggered_ - Market has reached the Trigger Price. The stop order has become active and has entered the order book.
+- _Triggered_ - Market has reached the Trigger Price. The stop order has become active and has entered the order book. In the case of a Buy stop order, the stop price must be below the current value of the Triggering Index. Correspondingly, for a Sell stop order, the stop price must be above the current value of the Triggering Index.
 - _Filled_ - After getting activated, the stop order has been filled.
 
 Delta Exchange currently offers three types of stop orders:
@@ -59,7 +61,7 @@ Delta Exchange currently offers three types of stop orders:
 	Stop price = 3800
 	Direction = Buy
 	```
-	_A buy market order for 50 contracts will be sent to the order book when Mark Price goes above 3800_
+	_A buy market order for 50 contracts will be sent to the order book when Triggering Index Price goes above 3800_
 - **Stop limit order** - When the stop order is triggered, a limit order is sent to the order book. 
 
 	```
@@ -70,7 +72,7 @@ Delta Exchange currently offers three types of stop orders:
 	Limit price = 3750
 	Direction = Buy
 	```
-	_A buy limit order for 50 contracts with a limit price of 3750 will be sent to the order book when Mark Price goes above 3800_
+	_A buy limit order for 50 contracts with a limit price of 3750 will be sent to the order book when Triggering Index Price goes above 3800_
 
 - **Trailing stop order** - In this order type, the stop price follows the market at a fixed distance (known as the Trail Amount) when the market is moving in favour of the trader. However, stop price remains unchanged when the market is moving against the trader. This feature of trailing stop orders enables a trader to specify a limit on the maximum possible loss, without setting a limit on the maximum possible gain. When the market reaches the trigger price, a market order is sent to the other book.
 
@@ -81,11 +83,11 @@ Delta Exchange currently offers three types of stop orders:
 	Trail Amount = 40 (Trail Amount would be negative for Sell orders)
 	Direction = Buy
 	```
-	_For this order, the Trigger Price will follow the Mark Price at a distance of 40 when the Mark Price is going down. And, a Buy market order of 50 contracts will be sent to the order book when Mark Price rises by 40._
+	_For this order, the Trigger Price will follow the Triggering Index at a distance of 40 when the Triggering Index Price is going down. And, a Buy market order of 50 contracts will be sent to the order book when Triggering Index Price rises by 40._
 
 ## Bracket Orders
 
-A bracket order lets a trader to 'bracket' any given order with two opposite-side orders, i.e. take-profit and stoploss order. The take-profit order is a market order which is triggered at a pre-defined level and aims to lock-in profits. And, the stoploss order is a stop market order to limit losses. When one of these two orders (take-profit or stoploss) gets executed, the other order will automatically get cancelled.
+A bracket order lets a trader to 'bracket' any given order with two opposite-side orders, i.e. take-profit and stoploss order. The take-profit order is a market order which is triggered at a pre-defined level and aims to lock-in profits. And, the stoploss order is a stop market order to limit losses. When one of these two orders (take-profit or stoploss) gets executed, the other order will automatically get cancelled. Only Mark Price can be used as the Triggering Index for bracket orders.
 
 A bracket order can be placed along with a buy or sell order. In this case, the take-profit and stoploss orders are placed in the order book as soon as the main order is executed. Alternatively, a bracket order can be placed for a position that is already open. In either case, bracket orders are inextricably linked to an open position. As the position sizes changes, the quantity specified in the take-profit and stoploos orders changes in tandem. 
 
