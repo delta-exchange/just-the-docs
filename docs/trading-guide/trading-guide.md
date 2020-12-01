@@ -2,7 +2,7 @@
 layout: default
 title: Trading Guide
 has_children: true
-nav_order: 6
+nav_order: 8
 permalink: /docs/margin-trading-guide
 ---
 
@@ -13,10 +13,11 @@ permalink: /docs/margin-trading-guide
 
 ## Funding exchange wallet
 
-Bitcoin is the only funding currency on Delta Exchange. This means that you can deposit bitcoins to your Delta wallet and withdraw only bitcoins from your Delta wallet. After logging on to Delta Exchange, you need to go to your [Account Page](https://www.delta.exchange/app/account) to get your bitcoin deposit address and to learn how to withdraw bitcoin from Delta Exchange.
+Delta Exchange has two funding currencies - BTC and USDT. This means that you can deposit eithe bitcoins or Tether (USDT) to your Delta wallet and withdraw only bitcoins or USDT from your Delta wallet. After logging on to Delta Exchange, you need to go to your [Account Page](https://www.delta.exchange/app/account) to get your bitcoin/ USDT deposit address and to learn how to withdraw bitcoin/ USDT from Delta Exchange.
 
 ## Currency conversion
-Even though bitcoin is the only funding currency on Delta Exchange, not all futures contracts are settled in bitcoin. For example, we have stablecoin-settled contracts where the margining and settlement happens in USDC. Therefore, you'd need USDC for trading these futures contracts. Since we currently don't support deposit/ withdrawal of USDC (or for that matter any other crypto apart from bitcoin), we have provided a **currency converter tool** that enables users to change bitcoin to the desired cryptocurrency.
+All the derivative contracts on Delta Exchange are margined and settled in either BTC or USDT. For the convenience of our traders, we give them a way to convert BTC to USDT or vice versa through our 
+ **currency converter tool** 
 
 ![image]({{site.baseurl}}/assets/images/CurrencyConverter1.jpg "Delta Exchange Currency Converter")
 
