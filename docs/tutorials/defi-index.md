@@ -39,9 +39,9 @@ Weight of each token in the index is the average of capitalization and liquidity
 
 $$Weight = ( Capitalization\ Weight + Liquidity\ Weight)/2$$
 
-$$Capitalization Weight = (Market Cap of the token)/ (sum of the market cap of all the tokens)$$
+$$Capitalization\ Weight = (Market\ Cap\ of\ the\ token)/ (Sum\ of\ the\ market\ cap\ of\ all\ the\ tokens)$$
 
-$$Liquidity Weight = (30\ day\ volume\ of\ the\ token)/ (sum\ of\ the\ 30\ day\ volume\ of\ all\ the\ tokens)$$
+$$Liquidity Weight = (30\ day\ volume\ of\ the\ token)/ (Sum\ of\ the\ 30\ day\ volume\ of\ all\ the\ tokens)$$
 
 If the capitalization or liquidity weight is greater than 30%, the weight is limited to 30%. Therefore, none of the component tokens can get weight greater than 30%.
 
