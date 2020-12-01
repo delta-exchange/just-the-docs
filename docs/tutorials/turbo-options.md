@@ -14,7 +14,7 @@ nav_order: 2
 ## Turbo Options: Motivation & Use Cases
 Turbo options are exotic options that combine vanilla call/ put options with a knockout barrier to create a different return/ risk profile. A vanilla option has a fixed expiry time. This is what the Knockout barrier changes. A Turbo options expires instantly (gets 'knocked out') if the price of the option's underlying asset touches/ crosses the Knockout barrier. This risk of pre-mature expiry helps to reduce the price of Turbo options and consequently, increases the inherent leverage in these instruments. 
 
-The Turbo options that we offer on Delta Exchange have another defining characteristic - these options are always deep in the money. An call/ put option is 'in the money' when its strike price is less/ greater than the current price of the underlying assets. The more the money-ness of an options, the more it behaves like a futures. If you are famililar with options greeks, you would know that the delta of a deep in the money option is very close to 1. The upshot of these design choices is that for practical purposes, a position in our Turbo options for behaves like a leveraged long (for Turbo calls) or short (for Turbo puts) position in the underlying asset which: (a) must be closed at the time of expiry and (b) has a fixed stoploss at the Knockout barrier.
+The Turbo options that we offer on Delta Exchange have another defining characteristic - these options are always deep in the money. An call/ put option is 'in the money' when its strike price is less/ greater than the current price of the underlying assets. The more the money-ness of an options, the more it behaves like a futures. If you are familiar with options greeks, you would know that the delta of a deep in the money option is very close to 1. The upshot of these design choices is that for practical purposes, a position in our Turbo options for behaves like a leveraged long (for Turbo calls) or short (for Turbo puts) position in the underlying asset which: (a) must be closed at the time of expiry and (b) has a fixed stoploss at the Knockout barrier.
 
 The leverage inherent in a Turbo option is directly connected to the relative position of the underlying's price and Knockout Price. The closer the spot price to the Knockout Price, the higher the probability of the option getting 'knocked out' and thus, lower the price of the option. Since, the contract size remains unchanged, as price of the option goes down, the effective leverage it offers goes up. The leverage of Turbo options at the time of launch is 200x. As spot price moves towards/ away from the Knockout Price, the leverages goes up/ down.
 
@@ -31,9 +31,9 @@ Besides, the expiry date a Turbo option is defined by two price levels:
 
 - **Strike Price:** This is the strike price of the constituent call/ put option of the Turbo option
 
-- **Knockout Price:** This is the price level the breach of which by the underlying's price leads to immediate expiration of the Turbo opion.
+- **Knockout Price:** This is the price level the breach of which by the underlying's price leads to immediate expiration of the Turbo option.
 
-Currently, we offer Turbo options only on BTC. These options have a lifespan of 1 day. Everyday, new Turbo options are listed at 11:55am UTC. The trading in these options begin 5 minutes later at 12pm UTC and unless knocked out, are settled the followed day at 12pm UTC.
+Currently, we offer Turbo options only on BTC. These options have a lifespan of 1 day. Every day, new Turbo options are listed at 11:55am UTC. The trading in these options begin 5 minutes later at 12pm UTC and unless knocked out, are settled the followed day at 12pm UTC.
 
 ## Mechanics of Turbo Options
 
@@ -61,7 +61,7 @@ Turbo options are marked at the absolute value of the difference between price o
 
 $$Mark\ Price = absolute (Underlying\ asset\ price - Knockout\ Price)$$
 
-It is worth nothing that for Turbo call options, Underling asset price must always stay above the Knockout Price. This is because a Turbo call option expires instantly when the Underlying asset price goes below the Knockout Price.
+It is worth noting that for Turbo call options, Underlying asset price must always stay above the Knockout Price. This is because a Turbo call option expires instantly when the Underlying asset price goes below the Knockout Price.
 
 Conversely, for Turbo put options, the Underlying asset price must always stay below the Knockout Price, as these options expire when Underlying asset price goes above the Knockout Price.
 
@@ -91,7 +91,7 @@ You buy 1000 contracts of a BTC Turbo Call (Strike Price = 10,000 and Knockout P
 
 **Scenario 1** BTC spot price goes to 11248 after 2 hours
 
-Since the spot price has gone below the Knocout Price, the Turbo Calls expire immediately with a residual value of 0. You realise a loss of USDT 100.
+Since the spot price has gone below the Knockout Price, the Turbo Calls expire immediately with a residual value of 0. You realise a loss of USDT 100.
 
 **Scenario 2:** BTC spot price is at 12000 when the Turbo calls expire
 
