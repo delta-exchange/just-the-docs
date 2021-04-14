@@ -41,7 +41,7 @@ To place a trade, you need to:
 
 -   Select the contract you are interested in
 
--   Recall that futures contracts on Delta Exchange are margined and settled in either BTC or USDC. If you are looking to trade a USDT settled contract, you could use the currency converter tool to change BTC to USDT.
+-   Recall that futures contracts on Delta Exchange are margined and settled in either BTC or USDT. If you are looking to trade a USDT settled contract, you could use the currency converter tool to change BTC to USDT.
     
 -   Specify the number of contracts that you are looking to buy/ sell
     
