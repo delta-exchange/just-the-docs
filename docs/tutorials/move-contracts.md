@@ -30,9 +30,9 @@ It is evident from the above chart that profitability of a trade depends on the 
 
 We offer two types of MOVE contracts:
 
-- **Daily MOVE contracts:** These MOVE contracts track the movement of the underlying in a 24 hour period. The ticker for daily MOVE contract has the following format: MV-[Underlying_Asset]-D-[Settlement Date], where Settlement Date is in ddmmyy format. For example, MV-BTC-D-050320 is the ticker of a daily MOVE contract on BTC that will settle on 5th March 2020.
+- **Daily MOVE contracts:** These MOVE contracts track the movement of the underlying in a 24 hour period. .
 
-- **Weekly MOVE contracts:** These MOVE contracts track the movement of the underlying in a 7 day period. The ticker for weekly MOVE contract has the following format: MV-[Underlying_Asset]-W-[Settlement Date], where Settlement Date is in ddmmyy format. For example, MV-ETH-W-130320 is the ticker of a weekly MOVE contract on ETH that will settle on 13th March 2020.
+- **Weekly MOVE contracts:** These MOVE contracts track the movement of the underlying in a 7 day period. 
 
 ## Mechanics of MOVE Contracts
 

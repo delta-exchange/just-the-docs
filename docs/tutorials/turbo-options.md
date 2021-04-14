@@ -6,7 +6,7 @@ parent: Options Guide
 nav_order: 2
 ---
 
-# Turbo Options Guide
+# Turbo Options Guide (deprecated)
 
 1. Table of Contents
 {:toc}
